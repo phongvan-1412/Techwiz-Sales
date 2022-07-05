@@ -24,7 +24,7 @@ class App extends Component {
             <Header />
             <div className="row">
               <div className="col-md-2"></div>
-              <div className="col-md-8">
+              <div className="col-md-8" style={{padding: '0px', margin: '0px'}}>
                 <LandingPage />
                 {/* <ProductByCategory /> */}
               </div>

@@ -8,7 +8,7 @@ import BottomImg from "./BottomImg";
 class LandingPage extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container" style={{padding: '0px', margin: '0px'}}>
         <TopSlider />
         <LandingPageSlider1 />
         <LandingPageSlider2/>
