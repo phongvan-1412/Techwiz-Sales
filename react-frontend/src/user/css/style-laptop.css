@@ -264,7 +264,7 @@
 .slick-prev::before, .slick-next::before{
     display: none;
 }
-/* ----------LANDINGPAGE-SLIDE1---------- */
+/* ----------LANDINGPAGE-SLIDE---------- */
 .slick-list{
     position: relative;
     z-index: -1; 
@@ -290,6 +290,31 @@
     margin-left: 5px;
     border: none;
 
+}
+/* ----------PANEL-BOTTOM---------- */
+.panel-bottom{
+    display: flex;
+    margin-bottom: 50px;
+}
+.row-panel-bottom-img-col2{
+    width: 100%;
+    height: 87%;
+    object-fit: center;
+    object-position: center;
+}
+.bottom-col-2{
+    display: flex;
+    justify-content: center;
+}
+.img1{
+    margin-left: 24px;
+}
+.img2{
+    margin-top: 24px;
+    margin-left: 24px;
+}
+.img4{
+    margin-left: 24px;
 }
 /* ---------------PRODUCT--------------- */
 /* ----------WRAPCRUMB---------- */

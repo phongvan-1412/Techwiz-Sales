@@ -12,9 +12,8 @@ import "./user/css/style-laptop.css";
 
 import store from "./store";
 import { Provider } from "react-redux";
-import LandingPage from "./user/layout/LandingPageSlider/LandingPage";
-import ProductByCategory from "./user/pages/Products/ProductByCategory";
 import MainRoute from "./MainRoute";
+
 class App extends Component {
   render() {
     return (
@@ -24,9 +23,8 @@ class App extends Component {
             <Header />
             <div className="row">
               <div className="col-md-2"></div>
-              <div className="col-md-8">
+              <div className="col-md-8" style={{padding: '0px', margin: '0px'}}>
                 <MainRoute />
-                {/* <ProductByCategory /> */}
               </div>
               <div className="col-md-2"></div>
             </div>
@@ -39,3 +37,7 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+
