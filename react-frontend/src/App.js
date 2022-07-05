@@ -12,8 +12,8 @@ import "./user/css/style-laptop.css";
 
 import store from "./store";
 import { Provider } from "react-redux";
-import LandingPage from './user/layout/LandingPageSlider/LandingPage';
-import WrapBreadcrumb from './user/pages/Products/WrapBreadcrumb';
+// import LandingPage from './user/layout/LandingPageSlider/LandingPage';
+import ProductByCategory from './user/pages/Products/ProductByCategory';
 
 class App extends Component {
   render() {
@@ -23,8 +23,13 @@ class App extends Component {
           <div>
             <Header />
             <div className="row">
-                  <LandingPage/>
-                  <WrapBreadcrumb />
+              <div className="col-md-2"></div>
+                  {/* <LandingPage/> */}
+              <div className="col-md-8">
+                <ProductByCategory />
+              </div>   
+              <div className="col-md-2"></div>
+
             </div>
             <Footer />
           </div>
