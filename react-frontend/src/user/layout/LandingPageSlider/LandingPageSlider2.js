@@ -28,20 +28,24 @@ class LandingPageSlider2 extends Component {
     const { products } = this.props;
 
     const settings = {
-      dots: true,
-      infinite: true,
+      dots: false,
+      infinite: false,
       speed: 500,
-      slidesToShow: 4,
+      slidesToShow: 5,
       slidesToScroll: 1,
+      arrows: false,
     };
     return (
-      <div className="row" style={{alignSelf:'center'}}>
-        <button className="button previous col-1" onClick={this.previous} style={{alignSelf:'center',backgroundColor: '#003366', border: 'none', height:'40px',borderRadius:'10px',color:'white',fontWeight:'bold',textAlign:'center',width:'70px',padding:'0px',fontSize:'13px'}}>
-          Previous
-        </button>
+      <div className="row">
+        <div className="col-2"></div>
+        <div className="col-8">
+          <div>
+            <h4>
+              <b>FRESH FOOD</b>
+            </h4>
+          </div>
 
-        <div className="col-10 panel-content" style={{objectFit:'center',objectPosition:'center',alignItems:'center'}}>
-          <Slider ref={(c) => (this.slider = c)} {...settings} >
+          <Slider ref={(c) => (this.slider = c)} {...settings}>
             {products.map((product) => (
               <LandingPageItem
                 key={product.product_SKU}
@@ -49,21 +53,32 @@ class LandingPageSlider2 extends Component {
               ></LandingPageItem>
             ))}
           </Slider>
+          <div>
+            <button
+              type="button"
+              style={{
+                marginLeft: "400px",
+              }}
+              onClick={this.previous}
+            >
+              Previous
+            </button>
+            <button type="button" onClick={this.next}>
+              Next
+            </button>
+          </div>
         </div>
-
-        <button className="button next col-1" onClick={this.next} style={{alignSelf:'center',backgroundColor: '#003366', border: 'none', height:'40px',borderRadius:'10px',color:'white',fontWeight:'bold',textAlign:'center',width:'70px',padding:'0px',fontSize:'13px'}}>
-          Next
-        </button>
+        <div className="col-2"></div>
       </div>
     );
   }
 }
 LandingPageSlider2.propTypes = {
-    getProducts: PropTypes.func.isRequired,
+  getProducts: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-    products: state.product.products,
+  products: state.product.products,
 });
 
 export default connect(mapStateToProps, { getProducts })(LandingPageSlider2);

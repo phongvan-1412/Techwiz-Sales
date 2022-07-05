@@ -18,7 +18,7 @@ class TopSlider extends Component {
 
   render() {
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       autoplay: true,
       autoplaySpeed :3000,

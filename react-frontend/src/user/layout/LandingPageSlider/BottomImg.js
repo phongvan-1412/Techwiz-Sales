@@ -1,49 +1,48 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-
 class BottomImg extends Component {
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-3">
-            
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 ">
+          <div class="row align-item-center">
+            <div class="col-md-4 pr-0">
               <img
                 className="page-content row-panel-img"
-                src={require(`./tempImg/F104593_1_2746.jpg`)}
+                src={require(`./tempImg/1.jpg`)}
+                style={{ width: "100%" }}
               />
-
-          </div>
-          <div className="col-6">
-            <div className="row">
-              <div className="col-12">
-
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-12 mb-2">
                   <img
                     className="page-content row-panel-img"
-                    src={require(`./tempImg/F122061_Lindt_Lindor_Assorted_168g_00b9_b9d5.jpg`)}
+                    src={require(`./tempImg/2.jpg`)}
+                    style={{ width: "100%" }}
                   />
-
-              </div>
-              <div className="col-12">
-
+                </div>
+                <div class="col-md-12">
                   <img
                     className="page-content row-panel-img"
-                    src={require(`./tempImg/F122061_Lindt_Lindor_Assorted_168g_00b9_b9d5.jpg`)}
+                    src={require(`./tempImg/3.png`)}
+                    style={{ width: "100%" }}
                   />
- 
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-3">
-    
+            <div class="col-md-4 pl-0">
               <img
                 className="page-content row-panel-img"
-                src={require(`./tempImg/F104593_1_2746.jpg`)}
+                src={require(`./tempImg/4.png`)}
+                style={{ width: "100%" }}
               />
-    
+            </div>
           </div>
         </div>
+        <div class="col-md-2"></div>
       </div>
     );
   }
