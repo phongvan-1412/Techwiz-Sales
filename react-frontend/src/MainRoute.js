@@ -34,6 +34,8 @@ class MainRoute extends Component {
           <Route path="/about" element={<About />}></Route>
           <Route path="/contactus" element={<ContactUs />}></Route>
           <Route path="/product" element={<ProductByCategory />}></Route>
+          <Route path="/cart" element={<ProductByCategory />}></Route>
+
           
           {/* {spotlights.map((spotlight) => (
             <Route
