@@ -9,8 +9,8 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="container">
-        <TopSlider className="col-md-12"/>
-        <LandingPageSlider1/>
+        <TopSlider />
+        <LandingPageSlider1 />
         <LandingPageSlider2/>
         <LandingPageSlider3/>
         <BottomImg/>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { GiNextButton, GiPreviousButton} from 'react-icons/gi'
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -36,39 +37,31 @@ class LandingPageSlider2 extends Component {
       arrows: false,
     };
     return (
-      <div className="row">
-        <div className="col-2"></div>
-        <div className="col-8">
-          <div>
+      <div>
+        <div>
+          <div  className="slide-title">
             <h4>
-              <b>FRESH FOOD</b>
+              <b>FEATURED PRODUCTS</b>
             </h4>
           </div>
 
           <Slider ref={(c) => (this.slider = c)} {...settings}>
             {products.map((product) => (
-              <LandingPageItem
+              <LandingPageItem 
                 key={product.product_SKU}
                 content={product}
               ></LandingPageItem>
             ))}
           </Slider>
-          <div>
-            <button
-              type="button"
-              style={{
-                marginLeft: "400px",
-              }}
-              onClick={this.previous}
-            >
-              Previous
+          <div className="btn-click">
+            <button type="button" className="btn-previous" onClick={this.previous}>
+              <GiPreviousButton />
             </button>
-            <button type="button" onClick={this.next}>
-              Next
+            <button type="button" className=" btn-next" onClick={this.next}>
+              <GiNextButton />
             </button>
           </div>
         </div>
-        <div className="col-2"></div>
       </div>
     );
   }
