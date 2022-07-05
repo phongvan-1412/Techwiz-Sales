@@ -6,22 +6,22 @@ import {
   Link,
   NavLink,
 } from "react-router-dom";
-import Category from "./user/pages/Category/Category";
-import Content from "./user/layout/Content/Content";
-import HomeContent from "./user/pages/Home/HomeContent";
-import Login from "../src/user/pages/Login-Register/Login";
-import Register from "../src/user/pages/Login-Register/Register";
+// import Category from "./user/pages/Category/Category";
+// import Content from "./user/layout/Content/Content";
+// import HomeContent from "./user/pages/Home/HomeContent";
+// import Login from "../src/user/pages/Login-Register/Login";
+// import Register from "../src/user/pages/Login-Register/Register";
 
 // import { connect } from "react-redux";
 // import PropTypes from "prop-types";
 // import { getBlogs } from "./actions/blogsActions";
 
 import LandingPage from "./user/layout/LandingPageSlider/LandingPage";
-
+import About from "./user/pages/About";
 class MainRoute extends Component {
-//   componentDidMount() {
-//     this.props.getBlogs();
-//   }
+  //   componentDidMount() {
+  //     this.props.getBlogs();
+  //   }
   render() {
     // const { spotlights } = this.props;
 
@@ -29,11 +29,7 @@ class MainRoute extends Component {
       <div className="contaier">
         <Routes>
           <Route path="/" element={<LandingPage />}></Route>
-          <Route path="/" element={<LandingPage />}></Route>
-          <Route path="/" element={<LandingPage />}></Route>
-          <Route path="/" element={<LandingPage />}></Route>
-          <Route path="/" element={<LandingPage />}></Route>
-          <Route path="/" element={<LandingPage />}></Route>
+          <Route path="/about" element={<About />}></Route>
 
           {/* {spotlights.map((spotlight) => (
             <Route
@@ -49,8 +45,8 @@ class MainRoute extends Component {
               element={<Category />}
             ></Route>
           ))} */}
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/register" element={<Register />}></Route>
+          {/* <Route path="/login" element={<Login />}></Route>
+          <Route path="/register" element={<Register />}></Route> */}
         </Routes>
       </div>
     );

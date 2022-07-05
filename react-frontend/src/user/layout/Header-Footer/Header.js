@@ -12,13 +12,13 @@ class Header extends Component {
       <div>
         <div className="header-menu">
           <header className="menu">
-            <Link to="/">
+            <Link to="/" replace>
               <img
                 src={require("../../img/Header/logo.jpg")}
                 className="logo"
               />
             </Link>
-            <Link to="/about" className="about">
+            <Link to="/about" replace className="about">
               About
             </Link>
             <Link to="/blog" className="blog">

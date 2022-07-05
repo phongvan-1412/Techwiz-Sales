@@ -14,7 +14,7 @@ import store from "./store";
 import { Provider } from "react-redux";
 import LandingPage from "./user/layout/LandingPageSlider/LandingPage";
 import ProductByCategory from "./user/pages/Products/ProductByCategory";
-
+import MainRoute from "./MainRoute";
 class App extends Component {
   render() {
     return (
@@ -25,7 +25,7 @@ class App extends Component {
             <div className="row">
               <div className="col-md-2"></div>
               <div className="col-md-8">
-                <LandingPage />
+                <MainRoute />
                 {/* <ProductByCategory /> */}
               </div>
               <div className="col-md-2"></div>
