@@ -12,8 +12,7 @@ import "./user/css/style-laptop.css";
 
 import store from "./store";
 import { Provider } from "react-redux";
-import LandingPage from "./user/layout/LandingPageSlider/LandingPage";
-import ProductByCategory from "./user/pages/Products/ProductByCategory";
+import MainRoute from "./MainRoute";
 
 class App extends Component {
   render() {
