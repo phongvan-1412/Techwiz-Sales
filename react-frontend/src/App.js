@@ -10,42 +10,24 @@ import "./user/css/style-mobile.css";
 import "./user/css/style-tablet.css";
 import "./user/css/style-laptop.css";
 
+import store from "./store";
+import { Provider } from "react-redux";
+import LandingPage from './user/layout/LandingPageSlider/LandingPage';
 
 class App extends Component {
   render() {
     return (
-      // <Provider>
+      <Provider store={store}>
         <Router>
           <div>
             <Header />
-            <div>
-              aklsjdfasfjsad
-              <br />
-              aklsjdfasfjsad
-              <br />
-              aklsjdfasfjsad
-              <br />
-              aklsjdfasfjsad
-              <br />
-              aklsjdfasfjsad
-              <br />
-              aklsjdfasfjsad
-              <br />
-              aklsjdfasfjsad
-              <br />
-              aklsjdfasfjsad
-              <br />
-              aklsjdfasfjsad
-              <br />
-              aklsjdfasfjsad
-              <br />
-              aklsjdfasfjsad
-              <br />
+            <div className="row">
+                  <LandingPage/>
             </div>
             <Footer />
           </div>
         </Router>
-      // </Provider>
+      </Provider>
     );
   }
 }

@@ -11,9 +11,9 @@ class Footer extends Component{
     render(){
         return(
             <footer>
-                <div class="footer-container1">
-                    <div class="footer-container1-col1">
-                        <div class="contact">
+                <div className="footer-container1">
+                    <div className="footer-container1-col1">
+                        <div className="contact">
                             <h4>CONTACT US</h4>
                             <Link to="#">
                                 <MdLocationOn />
@@ -31,7 +31,7 @@ class Footer extends Component{
                             </Link>
                         </div>
 
-                        <div class="openingtimes">
+                        <div className="openingtimes">
                             <h4>OPENING TIMES</h4>
                             <span>
                                 <b>Weekdays</b> 07:30 - 22:30
@@ -41,7 +41,7 @@ class Footer extends Component{
                         </div>
                     </div>
 
-                    <div class="footer-container1-col2">
+                    <div className="footer-container1-col2">
                         <h4>LATEST BLOG</h4>
                         <div className="latest-blog1">
                             <span>
@@ -69,24 +69,24 @@ class Footer extends Component{
                         </div>
                     </div>
 
-                    <div class="footer-container1-col3">
+                    <div className="footer-container1-col3">
                         <h4>GALLERY</h4>
-                        <div class="gallery1">
-                            <img src={require('../../img/Footer/image-1.jpg')} class="gallery1__img1" />
-                            <img src={require('../../img/Footer/image-2.jpg')} class="gallery1__img2" />
-                            <img src={require('../../img/Footer/image-3.jpg')} class="gallery1__img3" />
-                            <img src={require('../../img/Footer/image-7.jpg')} class="gallery1__img4" />
-                            <img src={require('../../img/Footer/image-5.jpg')} class="gallery1__img5" />
-                            <img src={require('../../img/Footer/image-9.jpg')} class="gallery1__img6" />
-                            <img src={require('../../img/Footer/image-4.jpg')} class="gallery1__img7" />
-                            <img src={require('../../img/Footer/image-8.jpg')} class="gallery1__img8" />
-                            <img src={require('../../img/Footer/image-6.jpg')} class="gallery1__img9" />
+                        <div className="gallery1">
+                            <img src={require('../../img/Footer/image-1.jpg')} className="gallery1__img1" />
+                            <img src={require('../../img/Footer/image-2.jpg')} className="gallery1__img2" />
+                            <img src={require('../../img/Footer/image-3.jpg')} className="gallery1__img3" />
+                            <img src={require('../../img/Footer/image-7.jpg')} className="gallery1__img4" />
+                            <img src={require('../../img/Footer/image-5.jpg')} className="gallery1__img5" />
+                            <img src={require('../../img/Footer/image-9.jpg')} className="gallery1__img6" />
+                            <img src={require('../../img/Footer/image-4.jpg')} className="gallery1__img7" />
+                            <img src={require('../../img/Footer/image-8.jpg')} className="gallery1__img8" />
+                            <img src={require('../../img/Footer/image-6.jpg')} className="gallery1__img9" />
                         </div>
                     </div>
                 </div>
 
-                <div class="footer-containter2">
-                    <div class="footer-icon">
+                <div className="footer-containter2">
+                    <div className="footer-icon">
                         <Link to="#"><FaFacebook /></Link>
                         <Link to="#"><FaInstagramSquare /></Link>
                         <Link to="#"><FaTwitter /></Link>
