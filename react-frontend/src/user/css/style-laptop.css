@@ -303,6 +303,9 @@
     .menu .contact{
         display: none;
     }
+    .footer-container1-col2{
+        display: none;
+    }
 }
 @media screen and (max-width: 768px){
     .logo{
@@ -310,7 +313,5 @@
         height: 35px;
         margin-left: 10px;
     }
-    , {
-        display: none;
-    }  
+   
 }
