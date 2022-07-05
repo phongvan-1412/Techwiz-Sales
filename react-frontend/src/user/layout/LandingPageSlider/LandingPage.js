@@ -4,11 +4,12 @@ import LandingPageSlider2 from "./LandingPageSlider2";
 import LandingPageSlider3 from "./LandingPageSlider3";
 import TopSlider from "./TopSlider";
 import BottomImg from "./BottomImg";
+
 class LandingPage extends Component {
   render() {
     return (
       <div className="container">
-        <TopSlider/>
+        <TopSlider className="col-md-12"/>
         <LandingPageSlider1/>
         <LandingPageSlider2/>
         <LandingPageSlider3/>

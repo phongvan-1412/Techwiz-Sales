@@ -252,7 +252,15 @@
     grid-row-start: 3;
     grid-row-end: 3;
 }
-
+/* ---------------LANDING-PAGE--------------- */
+/* ----------TOP-SLIDE---------- */
+.page-content-panel{
+    position: relative;
+    z-index: -1;
+}
+.slick-prev::before, .slick-next::before{
+    display: none;
+}
 /* ---------------PRODUCT--------------- */
 /* ----------WRAPCRUMB---------- */
 .wrap-breadcrumb{

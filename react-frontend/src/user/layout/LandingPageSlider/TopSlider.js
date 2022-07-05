@@ -28,40 +28,35 @@ class TopSlider extends Component {
       fade: true,
     };
     return (
-      <div className="row" style={{ background: "gray"}}>
-        <div className="col-3">
-          {/* <button
+      <div className="row page-content-panel">
+        <div>
+          <button
             type="button"
-            class="slick-prev"
-            style={{ backgroundColor: "red", height: "100px", width: "100px",marginLeft:"200px"}}
+            className="slick-prev"
             onClick={this.previous}
           >
             Previous
-          </button> */}
+          </button>
         </div>
-        <div className="col-6">
+        <div>
           <Slider ref={(c) => (this.slider = c)}{...settings}>
             <img
               className="page-content row-panel-img"
               src={require(`./tempImg/banner-ecom-1920x900-loyalty-app.jpg`)}
-              style={{width: '10%', height: 'auto'}}
-            />
+              />
             <img
               className="page-content row-panel-img"
               src={require(`./tempImg/EN-grab-agm-ecom-1920x900.jpg`)}
-              style={{width: '10%', height: 'auto'}}
-            />
+              />
           </Slider>
         </div>
-        <div className="col-3">
-          {/* <button
+        <div>
+          <button
             type="button"
-            class="slick-next"
-            style={{ backgroundColor: "red", height: "100px", width: "100px" ,marginRight:"200px"}}
-            onClick={this.next}
-          >
+            className="slick-next"
+            onClick={this.next}>
             Next
-          </button> */}
+          </button>
         </div>
       </div>
     );
