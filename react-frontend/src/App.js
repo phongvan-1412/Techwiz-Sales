@@ -25,8 +25,7 @@ class App extends Component {
             <div className="row">
               <div className="col-md-2"></div>
               <div className="col-md-8" style={{padding: '0px', margin: '0px'}}>
-                <LandingPage />
-                {/* <ProductByCategory /> */}
+                <MainRoute />
               </div>
               <div className="col-md-2"></div>
             </div>
@@ -39,3 +38,7 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+
