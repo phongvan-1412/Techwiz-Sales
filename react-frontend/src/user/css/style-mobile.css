@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+* a{
+    text-decoration: none;
+    color: var(--textColor);
+    cursor: pointer;
+}
+* li{
+    list-style: none;
+}
+:root{
+    --headerBackground: rgba(0, 0, 0, 0.5);
+    --textColor: #fff;
+    --textHover: rgb(208, 75, 78);
+}
+/* ---------------LAYOUT--------------- */
+/* ----------HEADER---------- */
+.menu{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: var(--headerBackground);
+    padding: 0px;
+    margin: 0px;
+}
+.logo{
+    width: 55px;
+    height: 55px;
+    margin-left: 20px;
+    border-radius: 1000px;
+}
+.menu a{
+    text-decoration: none;
+    color: var(--textColor);
+    font-weight: 600;
+    padding: 10px 15px;
+}
+.menu>a:hover{
+    color: var(--textHover);
+}
+.meta-facebook, .meta-instagram, .meta-twitter{
+    color: var(--textColor);
+}
+.menu .btn-bars{
+    font-size: 2.5em;
+    display: none;
+}
+@media screen and (max-width: 425px){
+    .menu .blog{
+        display: none;
+    }
+}
+@media screen and (max-width: 375px){  
+    .menu .about{
+        display: none;
+    } 
+
+}
+@media screen and (max-width: 320px){   
+    .menu .shopping{
+        display: none;
+    }      
+}
+@media screen and (max-width: 280px){   
+    .menu .register, .menu .login{
+        display: none;
+    } 
+    
+}

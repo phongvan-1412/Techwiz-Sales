@@ -5,6 +5,7 @@ import Header from "./user/layout/Header-Footer/Header";
 // import Footer from "./user/layout/Header-Footer/Footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import "./user/css/style-mobile.css";
 import "./user/css/style-tablet.css";
 import "./user/css/style-laptop.css";
