@@ -2,14 +2,14 @@ import {
   GET_PRODUCTS,
   GET_PRODUCTS_BY_CATEGORY,
   GET_PRODUCTS_BY_ID,
-} from "../actions/types";
+} from "./type";
 import axios from "axios";
 
 export const getProducts = () => async (dispatch) => {
-  const res = await axios.get("http://127.0.0.1:8000/api/selectactiveblog");
+  //const res = await axios.get("http://127.0.0.1:8000/api/selectactiveblog");
   dispatch({
     type: GET_PRODUCTS,
-    payload: res.data,
+    //payload: res.data,
   });
 };
 

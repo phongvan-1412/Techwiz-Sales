@@ -1,7 +1,7 @@
 import {
     GET_CATEGORY,
     GET_CATEGORY_BY_ROOT,
-  } from "../actions/types";
+  } from "../actions/type";
   
   const initialState = {
     categories: [
