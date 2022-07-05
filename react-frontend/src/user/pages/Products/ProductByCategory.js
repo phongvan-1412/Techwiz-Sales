@@ -14,11 +14,11 @@ class ProductByCategory extends Component{
     render(){
         return(
             <div className="row">
-                <div className="col-md-2">
+                <div className="col-md-3">
                     <WrapBreadcrumb />
                     {/* <SidebarFilter /> */}
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-9">
                     {/* <SortProductNav />
                     <DisplayProduct /> */}
                 </div>

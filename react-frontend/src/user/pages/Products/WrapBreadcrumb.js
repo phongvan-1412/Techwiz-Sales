@@ -11,7 +11,7 @@ class WrapBreadcrumb extends Component{
             <div>
                 <div class="wrap-breadcrumb">
                     <ul>
-                        <li class="item-link"><Link to="#" class="link">HOME</Link></li>
+                        <li class="item-link"><Link to="#" class="home-link">HOME</Link></li>
                         <li class="item-link"><span>SWEET GROCERY</span></li>
                     </ul>
                 </div>

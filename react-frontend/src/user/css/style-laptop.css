@@ -15,6 +15,7 @@
 :root{
     --headerBackground: rgba(0, 0, 0, 0.5);
     --footerBackground: rgb(44, 44, 44);
+    --componentBackground: #F4F4F4;
     --footerExpandnavBackground: rgb(17, 17, 17);
     --textColor: #fff;
     --footerSmallText: rgb(200, 200, 200);
@@ -254,6 +255,28 @@
 
 /* ---------------PRODUCT--------------- */
 /* ----------WRAPCRUMB---------- */
+.wrap-breadcrumb ul{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px;
+    margin: 0px;
+}
+.item-link a{
+    background-color: var(--componentBackground);
+    color: black;
+    padding: 10px;
+    font-weight: bold;
+}
+.item-link span{
+    background-color: var(--iconHover);
+    color: var(--textColor);
+    padding: 10px;
+    font-weight: bold;
+}
+.wrap-breadcrumb ul li a{
+    text-decoration: none;
+    
+}
 
 
 /* ---------------RESPONSIVE--------------- */
