@@ -11,17 +11,24 @@ import "../../css/style-tablet.css";
 import "../../css/style-laptop.css";
 
 class ProductByCategory extends Component{
-    <div className="container">
-        <div className="col-md-3">
-            <WrapBreadcrumb />
-        </div>
+    render(){
+        return(
+            <div className="row">
+                <div className="col-md-2">
+                    <WrapBreadcrumb />
+                    {/* <SidebarFilter /> */}
+                </div>
+                <div className="col-md-6">
+                    {/* <SortProductNav />
+                    <DisplayProduct /> */}
+                </div>
+            </div>
+            
+        )
+    }
+    
 
-        <div className="col-md-9">
-
-        </div>
-    </div>
-
-<section class="col-lg-12">
+/* <section class="col-lg-12">
     <div class="product-container">
         <div class="row">
 
@@ -407,8 +414,7 @@ class ProductByCategory extends Component{
 
         </div>
     </div>
-</section>
-    </div>
+</section> */
 }
 
 export default ProductByCategory;
