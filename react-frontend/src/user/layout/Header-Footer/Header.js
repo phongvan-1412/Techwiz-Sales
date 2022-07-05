@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaInstagramSquare, FaTwitter, FaBars } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagramSquare,
+  FaTwitter,
+  FaBars,
+} from "react-icons/fa";
 
 import "../../css/style-mobile.css";
 import "../../css/style-tablet.css";
@@ -21,28 +26,28 @@ class Header extends Component {
             <Link to="/about" replace className="about">
               About
             </Link>
-            <Link to="/blog" className="blog">
+            <Link to="/blog" replace className="blog">
               Blog
             </Link>
-            <Link to="/contact" className="contact">
+            <Link to="/contactus" replace className="contact">
               Contact
             </Link>
-            <Link to="/product" className="shopping">
+            <Link to="/product" replace className="shopping">
               Shopping
             </Link>
-            <Link to="/cart" className="cart">
+            <Link to="/cart" replace className="cart">
               Cart
             </Link>
-            <Link to="/shipping" className="shipping">
+            <Link to="/shipping" replace className="shipping">
               Shipping
             </Link>
-            <Link to="/needhelp" className="needhelp">
+            <Link to="/needhelp" replace className="needhelp">
               Needhelp
             </Link>
-            <Link to="/register" className="register">
+            <Link to="/register" replace className="register">
               Register
             </Link>
-            <Link to="/login" className="login">
+            <Link to="/login" replace className="login">
               Login
             </Link>
             <Link to="/" className="meta-facebook">

@@ -18,6 +18,7 @@ import {
 
 import LandingPage from "./user/layout/LandingPageSlider/LandingPage";
 import About from "./user/pages/About";
+import ContactUs from "./user/pages/ContactUs";
 class MainRoute extends Component {
   //   componentDidMount() {
   //     this.props.getBlogs();
@@ -30,6 +31,7 @@ class MainRoute extends Component {
         <Routes>
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/about" element={<About />}></Route>
+          <Route path="/contactus" element={<ContactUs />}></Route>
 
           {/* {spotlights.map((spotlight) => (
             <Route
