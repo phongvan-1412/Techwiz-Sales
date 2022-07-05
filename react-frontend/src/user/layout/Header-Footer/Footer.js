@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaInstagramSquare, FaTwitter, FaPhoneAlt } from 'react-icons/Fa';
+import { FaFacebook, FaInstagramSquare, FaTwitter, FaPhoneAlt } from 'react-icons/fa';
 import { MdLocationOn, MdEmail } from 'react-icons/md';
 
 import '../../css/style-mobile.css';
