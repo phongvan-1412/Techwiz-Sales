@@ -26,7 +26,7 @@ class App extends Component {
               <div className="col-md-2"></div>
               <div className="col-md-8">
                 <LandingPage />
-                <ProductByCategory />
+                {/* <ProductByCategory /> */}
               </div>
               <div className="col-md-2"></div>
             </div>

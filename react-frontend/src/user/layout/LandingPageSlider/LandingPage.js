@@ -7,7 +7,7 @@ import BottomImg from "./BottomImg";
 class LandingPage extends Component {
   render() {
     return (
-      <div className="contaier">
+      <div className="container">
         <TopSlider/>
         <LandingPageSlider1/>
         <LandingPageSlider2/>

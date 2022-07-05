@@ -9,10 +9,10 @@ class WrapBreadcrumb extends Component{
     render(){
         return(
             <div>
-                <div class="wrap-breadcrumb">
+                <div className="wrap-breadcrumb">
                     <ul>
-                        <li class="item-link"><Link to="#" class="home-link">HOME</Link></li>
-                        <li class="item-link"><span>SWEET GROCERY</span></li>
+                        <li className="item-link"><Link to="#" className="home-link">HOME</Link></li>
+                        <li className="item-link"><span>SWEET GROCERY</span></li>
                     </ul>
                 </div>
             </div> 
