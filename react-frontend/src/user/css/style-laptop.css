@@ -249,10 +249,55 @@
     grid-row-end: 3;
 }
 /* ---------------RESPONSIVE--------------- */
+@media screen and (max-width: 2560px){
+}
+@media screen and (max-width: 1440px){
+}
+@media screen and (max-width: 1300px){
+}
+@media screen and (max-width: 1200px){
+    .menu .meta-twitter, .menu .meta-instagram{
+        display: none;
+    }
+    .gallery1 {
+        margin: 0 15px;
+        display: grid;
+        grid-template-columns: repeat(3, 90px);
+        grid-template-rows: repeat(3, 90px);
+        grid-gap: 5px;
+    }
+}
+@media screen and (max-width: 1100px){
+    .footer-container1-col1, .footer-container1-col2, .footer-container1-col3{
+        width: 350px;
+    }
+    .gallery1 {
+        margin: 0 15px;
+        display: grid;
+        grid-template-columns: repeat(3, 65px);
+        grid-template-rows: repeat(3, 65px);
+        grid-gap: 5px;
+    }
+}
+@media screen and (max-width: 1024px){
+    .footer-container1-col1, .footer-container1-col2, .footer-container1-col3{
+        width: 250px;
+    }
+    .gallery1 {
+        margin: 0 15px;
+        display: grid;
+        grid-template-columns: repeat(3, 35px);
+        grid-template-rows: repeat(3, 35px);
+        grid-gap: 5px;
+    }
+}
 @media screen and (max-width: 950px){
     .menu .needhelp{
         display: none;
     }  
+    .footer-container1-col3{
+        display: none;
+    }
 }
 @media screen and (max-width: 850px){
     .menu .contact{
@@ -265,7 +310,7 @@
         height: 35px;
         margin-left: 10px;
     }
-    .menu .meta-facebook, .menu .meta-instagram, .menu .meta-twitter{
+    , {
         display: none;
     }  
 }
