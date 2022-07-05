@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {
-  FaFacebook,
-  FaInstagramSquare,
-  FaTwitter,
-  FaBars,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagramSquare, FaTwitter, FaBars } from "react-icons/fa";
 
 import "../../css/style-mobile.css";
 import "../../css/style-tablet.css";
@@ -15,7 +10,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <div style={{ height: "100px" }}>
+        <div className="header-menu">
           <header className="menu">
             <Link to="/">
               <img
