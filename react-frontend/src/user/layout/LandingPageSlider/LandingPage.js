@@ -11,9 +11,9 @@ class LandingPage extends Component {
       <div className="container">
         <TopSlider />
         <LandingPageSlider1 />
-        <LandingPageSlider2/>
-        <LandingPageSlider3/>
-        <BottomImg/>
+        <LandingPageSlider2 />
+        <LandingPageSlider3 />
+        <BottomImg />
       </div>
     );
   }
