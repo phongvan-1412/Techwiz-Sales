@@ -26,9 +26,9 @@ class Header extends Component {
             <Link to="/about" replace className="about">
               About
             </Link>
-            <Link to="/blog" replace className="blog">
+            {/* <Link to="/blog" replace className="blog">
               Blog
-            </Link>
+            </Link> */}
             <Link to="/contactus" replace className="contact">
               Contact
             </Link>
