@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Header from "./user/layout/Header-Footer/Header";
-// import Footer from "./user/layout/Header-Footer/Footer";
+import Footer from "./user/layout/Header-Footer/Footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -18,8 +18,31 @@ class App extends Component {
         <Router>
           <div>
             <Header />
-            
-            {/* <Footer /> */}
+            <div>
+              aklsjdfasfjsad
+              <br />
+              aklsjdfasfjsad
+              <br />
+              aklsjdfasfjsad
+              <br />
+              aklsjdfasfjsad
+              <br />
+              aklsjdfasfjsad
+              <br />
+              aklsjdfasfjsad
+              <br />
+              aklsjdfasfjsad
+              <br />
+              aklsjdfasfjsad
+              <br />
+              aklsjdfasfjsad
+              <br />
+              aklsjdfasfjsad
+              <br />
+              aklsjdfasfjsad
+              <br />
+            </div>
+            <Footer />
           </div>
         </Router>
       // </Provider>

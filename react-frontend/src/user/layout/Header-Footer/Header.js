@@ -11,7 +11,7 @@ class Header extends Component{
     render(){
         return(
             <header className="menu">
-                <Link to='/'><img src={require('../../img/logo.jpg')} className="logo" /></Link> 
+                <Link to='/'><img src={require('../../img/Header/logo.jpg')} className="logo" /></Link> 
                 <Link to ='/about' className="about">About</Link>
                 <Link to ='/blog' className="blog">Blog</Link>
                 <Link to ='/contact' className="contact">Contact</Link>
