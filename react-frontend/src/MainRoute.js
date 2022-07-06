@@ -29,7 +29,7 @@ class MainRoute extends Component {
     // const { spotlights } = this.props;
 
     return (
-      <div className="container">
+      <div className="container" style={{padding: '0px', margin: '0px'}}>
         <Routes>
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/about" element={<About />}></Route>

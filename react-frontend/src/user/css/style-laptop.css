@@ -24,6 +24,7 @@
     --textHover: rgb(208, 75, 78);
     --iconHover: red;
     --border: 1px solid rgba(0,0,0,0.25);
+    --selectBorder: 1px solid #C4C4C4;
 }
 /* ---------------LAYOUT--------------- */
 /* ----------HEADER---------- */
@@ -317,7 +318,7 @@
     margin-left: 24px;
 }
 /* ---------------PRODUCT--------------- */
-/* ----------WRAPCRUMB---------- */
+/* ----------Wrapcrumb---------- */
 .wrap-breadcrumb{
     margin: 20px;
 }
@@ -341,7 +342,7 @@
 .wrap-breadcrumb ul li a{
     text-decoration: none;
 }
-/* ----------FILTER-SIDEBAR---------- */
+/* ----------Filter-sidebar---------- */
 .sidebar-filter{
     padding: 0px;
     margin: 0px;
@@ -441,6 +442,26 @@
 .widget.filter-widget .vertical-list li a.active::after{
    opacity: 1;
    filter: alpha(opacity=100);
+}
+/* ----------Sort-Product-Nav---------- */
+.wrap-shop-control{
+    padding: 0px;
+    margin: 20px 0px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.sort-item-head-text, .use-chosen{
+    margin-right: 10px;
+}
+.sort-item-head-text{
+    font-size: 14px;
+}
+.use-chosen{
+    padding: 3px;
+    font-size: 14px;
+    border: var(--selectBorder);
 }
 
 /* ---------------RESPONSIVE--------------- */
