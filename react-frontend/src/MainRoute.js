@@ -20,6 +20,7 @@ import LandingPage from "./user/layout/LandingPageSlider/LandingPage";
 import About from "./user/pages/About";
 import ContactUs from "./user/pages/ContactUs";
 import ProductByCategory from './user/pages/Products/ProductByCategory'
+import Cart from "./user/layout/Cart/Cart";
 class MainRoute extends Component {
   //   componentDidMount() {
   //     this.props.getBlogs();
@@ -34,7 +35,7 @@ class MainRoute extends Component {
           <Route path="/about" element={<About />}></Route>
           <Route path="/contactus" element={<ContactUs />}></Route>
           <Route path="/product" element={<ProductByCategory />}></Route>
-          <Route path="/cart" element={<ProductByCategory />}></Route>
+          <Route path="/cart" element={<Cart />}></Route>
 
           
           {/* {spotlights.map((spotlight) => (

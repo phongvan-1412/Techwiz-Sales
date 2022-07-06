@@ -10,6 +10,7 @@ import {
 import "../../css/style-mobile.css";
 import "../../css/style-tablet.css";
 import "../../css/style-laptop.css";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 class Header extends Component {
   render() {
@@ -36,7 +37,12 @@ class Header extends Component {
               Shopping
             </Link>
             <Link to="/cart" replace className="cart">
-              Cart
+              <div className="nav-bag">
+                <AiOutlineShoppingCart />
+                <span className="bag-quantity">
+                  <span>1</span>
+                </span>
+              </div>
             </Link>
             <Link to="/shipping" replace className="shipping">
               Shipping
