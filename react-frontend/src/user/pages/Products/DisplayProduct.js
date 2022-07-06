@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import axios from 'axios'
 import { Link } from "react-router-dom";
-import Product from './Product';
+import Products from './Product';
 import Pagination from "./Pagination";
 
 
@@ -10,34 +10,33 @@ import "../../css/style-tablet.css";
 import "../../css/style-laptop.css";
 
 const DisplayProduct = () => {
-    const [posts, setPosts] = useState([]);
+    const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState (1);
-    const [postsPerPage] = useState(10);
+    const [productsPerPage] = useState(10);
 
     useEffect(() => {
-        const fetchPosts = async () => {
+        const fetchProducts = async () => {
             setLoading(true);
-            const res = await axios.get('https://jsonplaceholder.typicode.com/posts')
-            setPosts(res.data);
+            const res = await axios.get('')
+            setProducts(res.data);
             setLoading(false);
         }
 
-        fetchPosts();
+        fetchProducts();
     }, []);
 
     //Get current products
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+    const indexOfLastProduct = currentPage * productsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+    const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
     //Change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
         return(
-        <div className="container mt-5">
-            <h1 className="text-danger mb-3">My Blog</h1>
-            <Product posts={currentPosts} loading={loading} />
-            <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
+        <div className="container">
+            <Products products={currentProducts} loading={loading} />
+            <Pagination productsPerPage={productsPerPage} totalProducts={products.length} paginate={paginate}/>
         </div>
     )
 }

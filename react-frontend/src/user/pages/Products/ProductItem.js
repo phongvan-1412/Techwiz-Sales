@@ -9,21 +9,25 @@ class ProductItem extends Component {
       this.props.content;
 
     return (
-      <div className="mb-3 secondary-panel">
+      <div className="secondary-panel">
         <div>
           <img
             className="page-content row-panel-img"
-            src={require(`./tempImg/${product_thumbnail_name}`)}
+            src={require(`../../layout/LandingPageSlider/tempImg/${product_thumbnail_name}`)}
           />
         </div>
         <div>{product_name}</div>
         <div>{product_price}</div>
+        <div className="cart-icons">
+          <FaShoppingCart />
+          <FaHeart  />
+        </div>
       </div>
     );
   }
 }
-LandingPageItem.propTypes = {
+ProductItem.propTypes = {
   content: PropTypes.object.isRequired,
 };
 
-export default LandingPageItem;
+export default ProductItem;
