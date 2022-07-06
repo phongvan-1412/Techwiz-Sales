@@ -12,16 +12,9 @@ import "../../css/style-tablet.css";
 import "../../css/style-laptop.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Dropdown from "../DropdownNavBar/Dropdown";
-
+import { useState } from "react";
 function Header() {
-  var drop = false;
-  console.log(drop);
-  const handleMouseEnter = () => {
-    drop = true;
-  };
-  const handleMouseLeave = () => {
-    drop = false;
-  };
+  const [drop,setDrop] = useState(false);
   return (
     <div>
       <div className="header-menu">
@@ -42,8 +35,8 @@ function Header() {
             to="/product"
             replace
             className="product"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => setDrop(true)}
+            onMouseLeave={() => setDrop(false)}
           >
             Product
           </Link>
