@@ -67,23 +67,6 @@ class SidebarFilter extends Component{
 						</div>
 					</div>
 
-                    {/* price-widget  */}
-                    <div className="widget mercado-widget filter-widget price-filter">
-						<h2 className="widget-title">Price</h2>
-						<div className="widget-content">
-							<div id="slider-range" className="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                                <div className="ui-slider-range ui-corner-all ui-widget-header" style={{left: '15%', width: '45%'}}></div>
-                                <span tabIndex="0" className="ui-slider-handle ui-corner-all ui-state-default" style={{left: '15%'}}></span>
-                                <span tabIndex="0" className="ui-slider-handle ui-corner-all ui-state-default" style={{left: '60%'}}></span>
-                            </div>
-							<p>
-								<label htmlFor="amount">Price:</label>
-								<input type="text" id="amount" readOnly />
-								<button className="filter-submit">Filter</button>
-							</p>
-						</div>
-					</div>
-
                     {/* spdiet-widget */}
                     <div className="widget mercado-widget filter-widget brand-widget">
 						<h2 className="widget-title">SPECIAL DIET</h2>

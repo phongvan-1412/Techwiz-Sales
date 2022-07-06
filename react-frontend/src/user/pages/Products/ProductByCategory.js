@@ -19,8 +19,8 @@ class ProductByCategory extends Component{
                     <SidebarFilter />
                 </div>
                 <div className="col-md-9">
-                    {/* <SortProductNav />
-                    <DisplayProduct /> */}
+                    {/* <SortProductNav /> */}
+                    <DisplayProduct />
                 </div>
             </div>
             
