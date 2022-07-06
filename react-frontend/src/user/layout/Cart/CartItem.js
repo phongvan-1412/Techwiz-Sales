@@ -20,20 +20,18 @@ class CartItem extends Component {
               }}
             />
           </div>
-          <div className="col-7">
+          <div className="col-4">
             <div className="container">
               <div className="row">
-                <div className="col-12">
-                  <h3>title</h3>
-                </div>
-                <div className="col-12">
-                  <h6>Qty</h6>
-                  <input type="text" />
+                <div className="col-6">
+                  <h3>{product_name}</h3>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-3">{product_price}</div>
+          <div className="col-2">{product_price}</div>
+          <div className="col-2">quantity</div>
+          <div className="col-2">{product_price}</div>
         </div>
       </div>
     );

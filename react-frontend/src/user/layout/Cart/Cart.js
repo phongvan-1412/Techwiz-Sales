@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getProducts } from "../../../actions/productsActions";
 import CartItem from "./CartItem";
+
 class Cart extends Component {
   componentDidMount() {
     this.props.getProducts();
