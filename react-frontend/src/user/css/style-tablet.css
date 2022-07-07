@@ -324,7 +324,7 @@
 /* ---------------PRODUCT--------------- */
 /* ----------Wrapcrumb---------- */
 .wrap-breadcrumb{
-    margin-top: 20px;
+    margin: 20px 0px;
 }
 .wrap-breadcrumb ul{
     display: flex;
@@ -339,15 +339,15 @@
 .item-link a{
     background-color: var(--componentBackground);
     color: black;
-    font-size: 14px;
-    font-weight: 550;
+    font-size: 20px;
+    font-weight: 500;
     padding: 7px;
 }
 .item-link span{
     background-color: var(--iconHover);
     color: var(--textColor);
-    font-size: 14px;
-    font-weight: 550;
+    font-size: 20px;
+    font-weight: 500;
     padding: 7px;
 }
 .wrap-breadcrumb ul li a{
@@ -462,12 +462,11 @@
 }
 /* ----------Sort-Product-Nav---------- */
 .wrap-shop-control{
-    padding: 0px;
-    margin: 20px 0px;
     height: 50px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .sort-item-head-text, .use-chosen{
     margin-right: 10px;

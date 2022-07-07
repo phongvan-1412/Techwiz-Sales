@@ -8,7 +8,7 @@ import "../../../css/style-laptop.css";
 class SortProductNav extends Component{
     render() {
       return (
-        <div className="wrap-shop-control">
+        <div className="wrap-shop-control" style={{marginTop: '62px'}}>
             <div className="sort-item orderby">
                 <span className="sort-item-head-text">Sort by</span>
                 <select name="orderby" defaultValue={'Product Name'} className="use-chosen" >
