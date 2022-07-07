@@ -9,22 +9,22 @@ import "../../../css/style-mobile.css";
 import "../../../css/style-tablet.css";
 import "../../../css/style-laptop.css";
 
-const DisplayProduct = () => {
-    const [products, setProducts] = useState([]);
+const DisplayProduct = (products) => {
+    // const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState (1);
     const [productsPerPage] = useState(10);
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            setLoading(true);
-            const res = await axios.get('')
-            setProducts(res.data);
-            setLoading(false);
-        }
+    // useEffect(() => {
+    //     const fetchProducts = async () => {
+    //         setLoading(true);
+    //         const res = await axios.get('')
+    //         setProducts(res.data);
+    //         setLoading(false);
+    //     }
 
-        fetchProducts();
-    }, []);
+    //     fetchProducts();
+    // }, []);
 
     //Get current products
     const indexOfLastProduct = currentPage * productsPerPage;
