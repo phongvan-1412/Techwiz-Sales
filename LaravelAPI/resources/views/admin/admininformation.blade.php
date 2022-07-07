@@ -26,19 +26,30 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card-box">
-                    <div class="newadmin ">
-                        <button class="btn btn-success waves-effect waves-light float-right mb-2" data-toggle="modal" data-target="#con-close-modal">
-                            New Admin
-                        </button>
+                    <div class="row">
+                        <div class="col-md-11 float-start">
+                           @if (Session::has('succ-msg'))
+                                <div class="alert alert-success">
+                                    {{Session::get('succ-msg')}}
+                                </div>
+                            @endif                           
+                            @if (Session::has('fail-msg'))
+                                <div class="alert alert-danger">
+                                    {{Session::get('fail-msg')}}
+                                </div>
+                            @endif
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-success waves-effect waves-light float-right mb-2" data-toggle="modal" data-target="#con-close-modal">
+                                New Admin
+                            </button>
+                        </div>
                     </div>
+
 
                     <div class="table-responsive">
                         <table class="table table-striped mb-0">
-                            @if (Session::has('msg'))
-                                <div class="alert alert-success">
-                                    {{Session::get('msg')}}
-                                </div>
-                            @endif
+
                             <thead>
                                 <tr>
                                     <th>#</th>

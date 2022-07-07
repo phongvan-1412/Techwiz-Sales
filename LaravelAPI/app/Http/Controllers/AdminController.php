@@ -20,14 +20,22 @@ class AdminController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $admin = new Admin;
-        $admin->emp_name = $request->emp_name;
-        $admin->emp_email = $request->emp_email;
-        $admin->emp_pwd = md5($request->emp_pwd);
-        $admin->save();
+    {   $emp_name =  $request->emp_name;
+        $emp_email = $request->emp_email;
+        $emp_pwd = md5($request->emp_pwd);
+        $isExist = Admin::select()->where('emp_email', $emp_email)->exists();
+        if($isExist){
+            return redirect()->route('adminprofile.index')->with('fail-msg', 'Email is already exist');
+        }else{
+            $admin = new Admin;
+            $admin->emp_name = $emp_name;
+            $admin->emp_email = $emp_email;
+            $admin->emp_pwd = $emp_pwd;
+            $admin->save();
+            return redirect()->route('adminprofile.index')->with('succ-msg', 'New admin account created');
+        }
 
-        return redirect()->route('adminprofile.index')->with('msg', 'New admin account created');
+
     }
 
     public function show($id)
