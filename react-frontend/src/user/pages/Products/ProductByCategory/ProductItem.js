@@ -6,14 +6,14 @@ import { FaShoppingCart, FaHeart } from 'react-icons/fa'
 class ProductItem extends Component {
   render() {
     const { product_thumbnail_name, product_name, product_price } =
-      this.props.content;
+      this.props.product;
 
     return (
       <div className="secondary-panel">
         <div>
           <img
             className="page-content row-panel-img"
-            src={require(`../../layout/LandingPageSlider/tempImg/${product_thumbnail_name}`)}
+            src={require(`../../../layout/LandingPageSlider/tempImg/${product_thumbnail_name}`)}
           />
         </div>
         <div>{product_name}</div>
@@ -27,7 +27,7 @@ class ProductItem extends Component {
   }
 }
 ProductItem.propTypes = {
-  content: PropTypes.object.isRequired,
+  product: PropTypes.object.isRequired,
 };
 
 export default ProductItem;

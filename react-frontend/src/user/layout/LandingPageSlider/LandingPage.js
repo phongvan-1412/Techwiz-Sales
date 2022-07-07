@@ -7,12 +7,14 @@ import BottomImg from "./BottomImg";
 
 class LandingPage extends Component {
   render() {
+    const { products } = this.props;
+
     return (
       <div className="container" style={{padding: '0px', margin: '0px'}}>
         <TopSlider />
-        <LandingPageSlider1 />
-        <LandingPageSlider2 />
-        <LandingPageSlider3 />
+        <LandingPageSlider1 products={products}/>
+        <LandingPageSlider2 products={products}/>
+        <LandingPageSlider3 products={products}/>
         <BottomImg />
       </div>
     );

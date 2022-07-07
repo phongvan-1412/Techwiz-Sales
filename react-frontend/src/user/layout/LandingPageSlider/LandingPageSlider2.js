@@ -4,15 +4,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { GiNextButton, GiPreviousButton} from 'react-icons/gi'
 
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { getProducts } from "../../../actions/productsActions";
 import LandingPageItem from "./LandingPageSliderItem";
 
 class LandingPageSlider2 extends Component {
-  componentDidMount() {
-    this.props.getProducts();
-  }
+
   constructor(props) {
     super(props);
     this.next = this.next.bind(this);
@@ -66,12 +61,5 @@ class LandingPageSlider2 extends Component {
     );
   }
 }
-LandingPageSlider2.propTypes = {
-  getProducts: PropTypes.func.isRequired,
-};
 
-const mapStateToProps = (state) => ({
-  products: state.product.products,
-});
-
-export default connect(mapStateToProps, { getProducts })(LandingPageSlider2);
+export default LandingPageSlider2;
