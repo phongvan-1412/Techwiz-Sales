@@ -29,9 +29,8 @@ class SidebarFilter extends Component{
                                     </li>
 
                                     <li className="list-item">
-                                        <Link className="filter-link " to="#">Chocolate & Confectionery
+                                        <Link className="filter-link " to="#">Chocolate & Confectionery</Link>
                                         <span className="count">(462)</span>
-                                        </Link>
                                     </li>
 
                                     <li className="list-item">
@@ -42,20 +41,18 @@ class SidebarFilter extends Component{
 
                                     <li className="list-item">
                                         <Link className="filter-link " to="#">Spread
-                                            <span className="count">(207)</span>
+                                            <span className="count flex-end">(207)</span>
                                         </Link>
                                     </li>
                                     
                                     <li className="list-item">
-                                        <Link className="filter-link " to="#">Baking Ingredients
-                                            <span className="count">(275)</span>
-                                        </Link>
+                                        <Link className="filter-link " to="#">Baking Ingredients</Link>
+                                        <span className="count">(275)</span>
                                     </li>
                                     
                                     <li className="list-item">
-                                        <Link className="filter-link " to="#">Condensed Milk / Nut Milk
-                                            <span className="count">(30)</span>
-                                        </Link>
+                                        <Link className="filter-link " to="#">Condensed Milk / Nut Milk</Link>
+                                        <span className="count">(30)</span>
                                     </li>
 
                                     <li className="list-item">
