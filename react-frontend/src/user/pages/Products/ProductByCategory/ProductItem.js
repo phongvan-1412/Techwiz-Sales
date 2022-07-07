@@ -9,16 +9,21 @@ class ProductItem extends Component {
       this.props.product;
 
     return (
-      <div className="secondary-panel">
+      <div className="col-lg-3 col-md-4 col-sm-6">
         <div>
           <img
-            className="page-content row-panel-img"
+            className="product-item-content product-img"
             src={require(`../../../layout/LandingPageSlider/tempImg/${product_thumbnail_name}`)}
+            
           />
         </div>
-        <div>{product_name}</div>
-        <div>{product_price}</div>
-        <div className="cart-icons">
+        <div className="mb-2">
+          <div>{product_name}</div> 
+        </div>
+        <div className="mb-2">
+          <div>{product_price}</div>
+        </div>
+        <div className="mt-1 cart-icons">
           <FaShoppingCart />
           <FaHeart  />
         </div>

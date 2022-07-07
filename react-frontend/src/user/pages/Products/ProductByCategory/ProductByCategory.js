@@ -19,7 +19,7 @@ class ProductByCategory extends Component{
                     <WrapBreadcrumb products={products}/>
                     <SidebarFilter products={products}/>
                 </div>
-                <div className="col-md-9">
+                <div className="col-md-9 col-sm-12">
                     <SortProductNav />
                     <DisplayProduct products={products}/>
                 </div>

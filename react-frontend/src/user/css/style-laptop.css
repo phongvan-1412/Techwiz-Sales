@@ -410,6 +410,7 @@
 .widget ul{
    padding: 0;
    margin: 0;
+
 }
 .widget.filter-widget .vertical-list li a:not(.btn-control)::before{
    content: '';
@@ -462,6 +463,20 @@
     padding: 3px;
     font-size: 14px;
     border: var(--selectBorder);
+}
+/* ----------Display-Product---------- */
+.products-grid{
+    position: relative;
+    z-index: -1; 
+}
+.products-items{
+    display: flex;
+}
+.product-img{
+    width: 200px;
+    height: 200px;
+    object-fit: center;
+    object-position: center;
 }
 
 /* ---------------RESPONSIVE--------------- */
