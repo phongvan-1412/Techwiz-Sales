@@ -392,6 +392,12 @@
    padding: 10px 0 10px 5px;
    float: left;
 }
+.widget ul li{
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
 .widget ul li span{
    color: #7d7d7d;
    position: relative;
