@@ -4,8 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { GiNextButton, GiPreviousButton} from 'react-icons/gi'
 
-
-import LandingPageItem from "./LandingPageSliderItem";
+import ProductItem from "../../pages/Products/ProductByCategory/ProductItem";
 
 class LandingPageSlider1 extends Component {
 
@@ -43,10 +42,10 @@ class LandingPageSlider1 extends Component {
 
           <Slider ref={(c) => (this.slider = c)} {...settings}>
             {products.map((product) => (
-              <LandingPageItem 
-                key={product.product_SKU}
-                content={product}
-              ></LandingPageItem>
+               <ProductItem 
+               key={product.product_SKU}
+               product={product}
+             ></ProductItem>
             ))}
           </Slider>
           <div className="btn-click">
