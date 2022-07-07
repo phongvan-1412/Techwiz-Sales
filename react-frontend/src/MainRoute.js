@@ -12,35 +12,41 @@ import {
 // import Login from "../src/user/pages/Login-Register/Login";
 // import Register from "../src/user/pages/Login-Register/Register";
 
-// import { connect } from "react-redux";
-// import PropTypes from "prop-types";
-// import { getBlogs } from "./actions/blogsActions";
-
 import LandingPage from "./user/layout/LandingPageSlider/LandingPage";
 import About from "./user/pages/About";
 import ContactUs from "./user/pages/ContactUs";
-import ProductByCategory from './user/pages/Products/ProductByCategory/ProductByCategory'
+import ProductByCategory from "./user/pages/Products/ProductByCategory/ProductByCategory";
 import Cart from "./user/layout/Cart/Cart";
 import ProductDetailDisplay from "./user/pages/Products/ProductDetail/ProductDetailDisplay";
+
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { getProducts } from "./actions/productsActions";
+
 class MainRoute extends Component {
-  //   componentDidMount() {
-  //     this.props.getBlogs();
-  //   }
+  componentDidMount() {
+    this.props.getProducts();
+  }
   render() {
-    // const { spotlights } = this.props;
+    const { products } = this.props;
+    console.log(products);
 
     return (
-      <div className="container" style={{padding: '0px', margin: '0px'}}>
+      <div className="container" style={{ padding: "0px", margin: "0px" }}>
         <Routes>
-          <Route path="/" element={<LandingPage />}></Route>
+          <Route path="/" element={<LandingPage products={products} />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/contactus" element={<ContactUs />}></Route>
-          <Route path="/product" element={<ProductByCategory />}></Route>
-          <Route path="/productdetail" element={<ProductDetailDisplay />}></Route> {/* <Route path="/productdetail:product_name" component={<ProductDetailDisplay />}></Route> */}
-
+          <Route
+            path="/product"
+            element={<ProductByCategory products={products} />}
+          ></Route>
+          <Route
+            path="/productdetail"
+            element={<ProductDetailDisplay products={products} />}
+          ></Route>{" "}
+          {/* <Route path="/productdetail:product_name" component={<ProductDetailDisplay />}></Route> */}
           <Route path="/cart" element={<Cart />}></Route>
-
-          
           {/* {spotlights.map((spotlight) => (
             <Route
               key={spotlight.blog_id}
@@ -62,13 +68,12 @@ class MainRoute extends Component {
     );
   }
 }
-// MainRoute.propTypes = {
-//   getBlogs: PropTypes.func.isRequired,
-// };
+MainRoute.propTypes = {
+  getProducts: PropTypes.func.isRequired,
+};
 
-// const mapStateToProps = (state) => ({
-//   spotlights: state.spotlight.spotlights,
-// });
+const mapStateToProps = (state) => ({
+  products: state.product.products,
+});
 
-//export default connect(mapStateToProps,{getBlogs})(MainRoute);
-export default MainRoute;
+export default connect(mapStateToProps, { getProducts })(MainRoute);
