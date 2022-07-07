@@ -29,8 +29,6 @@ class MainRoute extends Component {
   }
   render() {
     const { products } = this.props;
-    console.log(products);
-
     return (
       <div className="container" style={{ padding: "0px", margin: "0px" }}>
         <Routes>

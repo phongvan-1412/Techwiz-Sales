@@ -169,6 +169,7 @@ const initialState = {
       product_thumbnail_name: "F122061_Lindt_Lindor_Assorted_168g_00b9_b9d5.jpg",
     },
   ],
+  
 };
 
 export default function (state = initialState, action) {
