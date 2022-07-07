@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CategoryAPI;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/selectcategoryroot',[CategoryAPI::class, 'SelectCategoryRoot']);
+Route::get('/selectallcategory',[CategoryAPI::class, 'SelectCategories']);
+
+
+// Route::get('/selectactiveblog',[BlogApi::class, 'SelectActiveBlog']);
+// Route::get('/selectactiveblog',[BlogApi::class, 'SelectActiveBlog']);
+// Route::get('/selectactiveblog',[BlogApi::class, 'SelectActiveBlog']);
+// Route::get('/selectactiveblog',[BlogApi::class, 'SelectActiveBlog']);

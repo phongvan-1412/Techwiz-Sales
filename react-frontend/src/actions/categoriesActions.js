@@ -1,17 +1,12 @@
-import { GET_CATEGORY, GET_CATEGORY_BY_ROOT } from ".types";
+import { GET_CATEGORY} from "./type";
 import axios from "axios";
 
 export const getCategories = () => async (dispatch) => {
-  //const res = await axios.get("http://127.0.0.1:8000/api/selectactiveblog");
+  const res = await axios.get("http://127.0.0.1:8000/api/selectallcategory");
   dispatch({
     type: GET_CATEGORY,
-    //payload: res.data,
+    payload: res.data,
   });
 };
 
-export const getCategoriesById = (blog_id) => {
-  return {
-    type: GET_CATEGORY_BY_ROOT,
-    payload: blog_id,
-  };
-};
+

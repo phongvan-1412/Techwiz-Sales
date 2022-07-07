@@ -1,72 +1,50 @@
-import React, { useState } from "react";
-import { serviveDropdown } from "./NavItems";
 import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import DropdownItem from "./DropdownItem";
+const Dropdown = ({ categoriesRoot, categories }) => {
 
-function Dropdown() {
   return (
     <div>
-      <div style={{ height: "100px" }}></div>
+      <div style={{ height: "100px", position: "absolute" }}></div>
       <div>
         <ul
           className="services-submenu"
           style={{
             background: "black",
-            width: "400px",
+            width: "800px",
             marginLeft: "-100px",
+            marginTop: "20px",
             position: "absolute",
           }}
         >
-          {serviveDropdown.map((item) => {
-            return (
-              <div className="container">
-                <div className="row">
-                  <div className="col-4">
-                    <ul>
-                      <li key="item.id">
+          <div className="container">
+            <div className="row">
+              {categoriesRoot.map((category) => {
+                return (
+                  <div className="col-3" key={category.category_id}>
+                    <div className="row">
+                      <div className="col-12">
                         <Link
-                          to={item.path}
-                          className={item.cName}
+                          to={category.category_name}
                           style={{ cursor: "pointer" }}
                         >
-                          {item.title}
+                          {category.category_name}
                         </Link>
-                      </li>
-                    </ul>
+
+                        <div>
+                          <DropdownItem categories={categories} category_name={category.category_name}/>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="col-4">
-                    <ul>
-                      <li key="item.id">
-                        <Link
-                          to={item.path}
-                          className={item.cName}
-                          style={{ cursor: "pointer" }}
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="col-4">
-                    <ul>
-                      <li key="item.id">
-                        <Link
-                          to={item.path}
-                          className={item.cName}
-                          style={{ cursor: "pointer" }}
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+                );
+              })}
+            </div>
+          </div>
         </ul>
       </div>
     </div>
   );
-}
+};
 
 export default Dropdown;

@@ -1,64 +1,9 @@
-export const navbarItems = [
-    {
-        id: 1,
-        title: "Home",
-        path: "/",
-        cName: "nav-item"
-    },
-    {
-        id: 1,
-        title: "Product",
-        path: "/product",
-        cName: "nav-item"
-    },
-    {
-        id: 1,
-        title: "Cart",
-        path: "/cart",
-        cName: "nav-item"
-    },
-    {
-        id: 1,
-        title: "About",
-        path: "/about",
-        cName: "nav-item"
-    },
-]
-export const serviveDropdown = [
-    {
-        id: 1,
-        title: "Food",
-        path: "/product/food",
-        cName: "nav-item"
-    },
-    {
-        id: 2,
-        title: "Drink",
-        path: "/product/drink",
-        cName: "nav-item"
-    },
-    {
-        id: 1,
-        title: "Food",
-        path: "/product/food",
-        cName: "nav-item"
-    },
-    {
-        id: 2,
-        title: "Drink",
-        path: "/product/drink",
-        cName: "nav-item"
-    },
-    {
-        id: 1,
-        title: "Food",
-        path: "/product/food",
-        cName: "nav-item"
-    },
-    {
-        id: 2,
-        title: "Drink",
-        path: "/product/drink",
-        cName: "nav-item"
-    }
-]
+import axios from "axios";
+
+export const serviveDropdown = []
+export const getCategoriesRoot = () => async (dispatch) => {
+    const res = await axios.get("http://127.0.0.1:8000/api/selectallcategory");
+    dispatch({
+        serviveDropdown: res.data,
+    });
+  };
