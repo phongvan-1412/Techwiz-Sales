@@ -21,10 +21,14 @@
     --textColor: #fff;
     --footerSmallText: rgb(200, 200, 200);
     --footerDateText: rgb(131,131,131);
+    --categoryNameColor: #6F6F6F;
+    --productPriceColor: #007a65;
+    --redPrimaryColor: #DC3545;
     --textHover: rgb(208, 75, 78);
     --iconHover: red;
     --border: 1px solid rgba(0,0,0,0.25);
     --selectBorder: 1px solid #C4C4C4;
+    
 }
 /* ---------------LAYOUT--------------- */
 /* ----------HEADER---------- */
@@ -320,7 +324,7 @@
 /* ---------------PRODUCT--------------- */
 /* ----------Wrapcrumb---------- */
 .wrap-breadcrumb{
-    margin: 20px 0px;
+    margin-top: 20px;
 }
 .wrap-breadcrumb ul{
     display: flex;
@@ -480,17 +484,71 @@
 .products-grid{
     position: relative;
     z-index: -1; 
+    margin-bottom: 20px;
 }
 .products-items{
     display: flex;
 }
 .product-img{
-    width: 200px;
+    width: 150px;
     height: 200px;
     object-fit: center;
     object-position: center;
 }
-
+.category-name{
+    font-size: 12px;
+    color: var(--categoryNameColor);
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+.product-name{
+    width: 200px;
+    height: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.product-name-item{
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+    height: 16px;
+}
+.product-name-item:focus{
+    cursor: pointer;
+}
+.product-price{
+    margin: 5px 0px;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--productPriceColor);
+}
+.cart-icons{
+    display: flex;
+}
+.meta-cart{
+    background-color: black;
+    color: var(--textColor);
+    font-size: 30px;
+    padding: 4px;
+}
+.meta-wishlist{
+    margin-left: 10px;
+    background-color: var(--iconHover);
+    color: var(--textColor);
+    font-size: 30px;
+    padding: 4px;
+}
+.pagination{
+    position: relative;
+    z-index: -1;
+}
+.pagination li{
+    margin-right: 10px;
+}
+.pagination a{
+    color: var(--iconHover);
+}
 /* ---------------RESPONSIVE--------------- */
 @media screen and (max-width: 2560px){
 }
