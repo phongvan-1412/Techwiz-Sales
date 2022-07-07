@@ -337,12 +337,14 @@
     color: black;
     font-size: 14px;
     font-weight: 550;
+    padding: 7px;
 }
 .item-link span{
     background-color: var(--iconHover);
     color: var(--textColor);
     font-size: 14px;
     font-weight: 550;
+    padding: 7px;
 }
 .wrap-breadcrumb ul li a{
     text-decoration: none;
