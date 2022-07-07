@@ -5,9 +5,9 @@ import Products from './Product';
 import Pagination from "./Pagination";
 
 
-import "../../css/style-mobile.css";
-import "../../css/style-tablet.css";
-import "../../css/style-laptop.css";
+import "../../../css/style-mobile.css";
+import "../../../css/style-tablet.css";
+import "../../../css/style-laptop.css";
 
 const DisplayProduct = () => {
     const [products, setProducts] = useState([]);

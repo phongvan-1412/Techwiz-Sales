@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 import WrapBreadcrumb from "../ProductByCategory/WrapBreadcrumb";
 
-import "../../css/style-mobile.css";
-import "../../css/style-tablet.css";
-import "../../css/style-laptop.css";
+import "../../../css/style-mobile.css";
+import "../../../css/style-tablet.css";
+import "../../../css/style-laptop.css";
 
 class ProductDetailDisplay extends Component{
     render(){

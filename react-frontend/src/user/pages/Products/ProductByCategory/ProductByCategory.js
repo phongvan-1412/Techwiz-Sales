@@ -6,9 +6,9 @@ import SidebarFilter from "./SidebarFilter";
 import SortProductNav from "./SortProductNav";
 import DisplayProduct from "./DisplayProduct";
 
-import "../../css/style-mobile.css";
-import "../../css/style-tablet.css";
-import "../../css/style-laptop.css";
+import "../../../css/style-mobile.css";
+import "../../../css/style-tablet.css";
+import "../../../css/style-laptop.css";
 
 class ProductByCategory extends Component{
     render(){

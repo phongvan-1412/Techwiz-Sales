@@ -19,7 +19,7 @@ import {
 import LandingPage from "./user/layout/LandingPageSlider/LandingPage";
 import About from "./user/pages/About";
 import ContactUs from "./user/pages/ContactUs";
-import ProductByCategory from './user/pages/Products/ProductByCategory'
+import ProductByCategory from './user/pages/Products/ProductByCategory/ProductByCategory'
 import Cart from "./user/layout/Cart/Cart";
 import ProductDetailDisplay from "./user/pages/Products/ProductDetail/ProductDetailDisplay";
 class MainRoute extends Component {

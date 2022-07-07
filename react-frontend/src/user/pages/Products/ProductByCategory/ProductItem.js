@@ -13,7 +13,7 @@ class ProductItem extends Component {
         <div>
           <img
             className="page-content row-panel-img"
-            src={require(`../../layout/LandingPageSlider/tempImg/${product_thumbnail_name}`)}
+            src={require(`../../../layout/LandingPageSlider/tempImg/${product_thumbnail_name}`)}
           />
         </div>
         <div>{product_name}</div>
