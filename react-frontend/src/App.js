@@ -15,6 +15,7 @@ import { Provider } from "react-redux";
 import MainRoute from "./MainRoute";
 
 class App extends Component {
+  
   render() {
     return (
       <Provider store={store}>

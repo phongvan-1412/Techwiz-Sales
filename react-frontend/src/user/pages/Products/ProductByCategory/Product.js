@@ -6,17 +6,17 @@ const Products =({products,loading})=> {
     if (loading != true) {
         return <h2>Products not found</h2>
     }
-        return  <div className="list-group mb-4">
-        {products.map(product => (
-        <ProductItem 
-            key={product.product_SKU} 
-            className="list-group-item"
-            product={product}
-        >
-            <Link to="/productdetail">{product.title}</Link> 
-        </ProductItem>
-        ))}
-    </div>
+        return  <div className="products-grid">
+                        <div className='row'>
+                            {products.map(product => (
+                                <ProductItem 
+                                    key={product.product_SKU} 
+                                    className="list-group-item"
+                                    product={product}>
+                                </ProductItem>
+                            ))}
+                        </div>
+                </div>
 
     
 }

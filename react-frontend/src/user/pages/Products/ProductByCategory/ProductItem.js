@@ -1,33 +1,62 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { FaShoppingCart, FaHeart } from 'react-icons/fa'
+import { FaShoppingCart, FaHeart } from "react-icons/fa";
+
+import { connect } from "react-redux";
+import { addProductToCart } from "../../../../actions/cartAction";
 
 class ProductItem extends Component {
   render() {
-    const { product_thumbnail_name, product_name, product_price } =
-      this.props.product;
-
+    const { product } = this.props;
     return (
-      <div className="secondary-panel">
-        <div>
-          <img
-            className="page-content row-panel-img"
-            src={require(`../../../layout/LandingPageSlider/tempImg/${product_thumbnail_name}`)}
-          />
-        </div>
-        <div>{product_name}</div>
-        <div>{product_price}</div>
-        <div className="cart-icons">
-          <FaShoppingCart />
-          <FaHeart  />
-        </div>
+      <div className="col-lg-3 col-md-4 col-sm-6">
+        <form onSubmit={this.onSubmit}>
+          <div>
+            <Link
+              to={`/${product.category_name}/${product.product_name}`}
+              replace
+              className="product-name-item"
+            >
+              <img
+                className="product-item-content product-img"
+                src={require(`../../../layout/LandingPageSlider/tempImg/${product.product_thumbnail_name}`)}
+              />
+            </Link>
+          </div>
+
+          <div className="category-name">
+            {product.category_name.replace(/-/g, " ")}
+          </div>
+
+          <div className="product-name">
+            <Link
+              to={`/${product.category_name}/${product.product_name}`}
+              replace
+              className="product-name-item"
+            >
+              {product.product_name.replace(/-/g, " ")}
+            </Link>
+          </div>
+
+          <div className="product-price">{product.product_price}đ</div>
+
+          <div className="cart-icons">
+            <FaShoppingCart
+              className="meta-cart"
+              style={{ cursor: "pointer" }}
+              onClick={()=> {this.props.addProductToCart(product)}}
+            />
+            <FaHeart className="meta-wishlist" style={{ cursor: "pointer" }} />
+          </div>
+        </form>
       </div>
     );
   }
 }
 ProductItem.propTypes = {
   product: PropTypes.object.isRequired,
+  addProductToCart: PropTypes.func.isRequired,
 };
 
-export default ProductItem;
+export default connect(null, { addProductToCart })(ProductItem);

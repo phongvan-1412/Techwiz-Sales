@@ -36,7 +36,7 @@ const DisplayProduct = ({products}) => {
     //Change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
         return(
-        <div className="container">
+        <div className="container product-by-category-display">
             <Products products={currentProducts} loading={loading} />
             <Pagination productsPerPage={productsPerPage} totalProducts={product.length} paginate={paginate}/>
         </div>

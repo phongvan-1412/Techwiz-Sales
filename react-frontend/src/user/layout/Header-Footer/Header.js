@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   FaFacebook,
@@ -12,9 +12,27 @@ import "../../css/style-tablet.css";
 import "../../css/style-laptop.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Dropdown from "../DropdownNavBar/Dropdown";
-import { useState } from "react";
+import axios from "axios";
+
 function Header() {
-  const [drop,setDrop] = useState(false);
+  const [drop, setDrop] = useState(false);
+  const [categoriesRoot, setCategoriesRoot] = useState([]);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const resRoot = await axios.get(
+        "http://127.0.0.1:8000/api/selectcategoryroot"
+      );
+      const resCate = await axios.get(
+        "http://127.0.0.1:8000/api/selectallcategory"
+      );
+      setCategoriesRoot(resRoot.data);
+      setCategories(resCate.data);
+    };
+
+    fetchCategories();
+  }, []);
   return (
     <div>
       <div className="header-menu">
@@ -37,10 +55,11 @@ function Header() {
             className="product"
             onMouseEnter={() => setDrop(true)}
             onMouseLeave={() => setDrop(false)}
+            style={{ height: "100px"}}
           >
-            Product
+            <p style={{ marginTop: "30px" }}>Product</p> 
+            {drop && <Dropdown categoriesRoot={categoriesRoot} categories={categories}/>}
           </Link>
-          {drop ? <Dropdown /> : null}
 
           <Link to="/cart" replace className="cart">
             <div className="nav-bag">
