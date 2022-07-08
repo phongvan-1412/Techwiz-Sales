@@ -35,7 +35,6 @@ class AdminController extends Controller
             return redirect()->route('adminprofile.index')->with('succ-msg', 'New admin account created');
         }
 
-
     }
 
     public function show($id)

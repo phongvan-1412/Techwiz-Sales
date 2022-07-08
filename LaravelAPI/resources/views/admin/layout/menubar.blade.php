@@ -8,7 +8,7 @@
             <li class="menu-title">Navigation</li>
 
             <li>
-                <a href="javascript: void(0);">
+                <a href="/">
                     <i class="la la-dashboard"></i>
                     <span> Dashboards </span>
                 </a>
@@ -35,7 +35,7 @@
                 </a>
                 <ul class="nav-second-level" aria-expanded="false">
                     <li>
-                        <a href="layouts-sidebar-sm.html">Customer Profile</a>
+                        <a href="{{route('customerprofile.index')}}">Customer Profile</a>
                     </li>
                 </ul>
             </li>
@@ -48,7 +48,7 @@
                 </a>
                 <ul class="nav-second-level" aria-expanded="false">
                     <li>
-                        <a href="email-inbox.html">Add Payment</a>
+                        <a href="{{route('payment.index')}}">Add Payment</a>
                     </li>
                 </ul>
             </li>

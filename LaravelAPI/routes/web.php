@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController as Admin;
+use App\Http\Controllers\CustomerController as Customer;
+use App\Http\Controllers\PaymentController as Payment;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +21,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/adminprofile', Admin::class);
+Route::resource('/customerprofile', Customer::class);
+Route::resource('/payment', Payment::class);
+
+
