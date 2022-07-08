@@ -34,7 +34,6 @@
 /* ----------HEADER---------- */
 .header-menu{
     height: 100px;
-    z-index: 0;
 }
 .menu{
     width: 100%;
@@ -46,6 +45,7 @@
     background: var(--headerBackground);
     padding: 0px;
     margin: 0px;
+    z-index: 3;
 }
 .logo{
     width: 55px;
