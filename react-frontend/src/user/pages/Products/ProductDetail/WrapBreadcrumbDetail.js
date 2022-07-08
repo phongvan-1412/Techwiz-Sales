@@ -8,7 +8,7 @@ import "../../../css/style-laptop.css";
 
 class WrapBreadcrumbDetail extends Component{
     render(){
-        const {  product_name, category_name } = this.props.content;
+        const {  category_name, product_name } = this.props.content;
         return(
             <div className="wrap-breadcrumb">
                 <ul>
@@ -17,7 +17,6 @@ class WrapBreadcrumbDetail extends Component{
                     <li className="item-link"><span>{product_name}</span></li>
                 </ul>
             </div>
- 
         )
     }
 }
