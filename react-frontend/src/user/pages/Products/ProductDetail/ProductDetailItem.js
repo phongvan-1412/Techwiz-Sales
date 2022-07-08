@@ -5,20 +5,20 @@ import { FaShoppingCart, FaHeart } from 'react-icons/fa'
 
 class ProductDetailItem extends Component {
   render (){
-    const { product_thumbnail_name, product_name, product_price, category_name } = this.props.content;
+    const { product } = this.props;
     return(
       <div className="">
         <div>
-          <img className="product-item-content product-img" src={require(`../../../layout/LandingPageSlider/tempImg/${product_thumbnail_name}`)} />
+          <img className="product-item-content product-img" src={require(`../../../layout/LandingPageSlider/tempImg/${product.product_thumbnail_name}`)} />
         </div>
 
-        <div className="category-name">{category_name}</div>
+        <div className="category-name">{product.category_name.replace(/-/g, " ")}</div>
 
         <div className="product-name">
-          <Link to="#" className="product-name-item">{product_name}</Link>
+          <Link to="#" className="product-name-item">{product.product_name.replace(/-/g, " ")}</Link>
         </div> 
 
-        <div className="product-price">{product_price}đ</div>
+        <div className="product-price">{product.product_price}đ</div>
 
         <div className="cart-icons">
           <FaShoppingCart className="meta-cart"/>
@@ -30,7 +30,7 @@ class ProductDetailItem extends Component {
 }
 
 ProductDetailItem.propTypes = {
-  content: PropTypes.object.isRequired,
+  product: PropTypes.object.isRequired,
 };
 
 export default ProductDetailItem;

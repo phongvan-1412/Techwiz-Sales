@@ -11,11 +11,11 @@ import "../../../css/style-laptop.css";
 
 class DisplayProductDetail extends Component {
     render(){
-        const { products } = this.props;
+        const { product } = this.props;
 
         return(
             <div className="container product-detail-display">
-                <ProductDetailItem products={products} />
+                <ProductDetailItem product={product} />
             </div>
         )
     }
