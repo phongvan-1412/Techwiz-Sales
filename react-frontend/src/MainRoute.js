@@ -22,13 +22,17 @@ import ProductDetail from "./user/pages/Products/ProductDetail/ProductDetail";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getProducts } from "./actions/productsActions";
+import { getCart } from "./actions/cartAction";
 
 class MainRoute extends Component {
   componentDidMount() {
     this.props.getProducts();
+    this.props.getCart();
+
   }
+
   render() {
-    const { products } = this.props;
+    const { products,cart } = this.props;
     return (
       <div className="container" style={{ padding: "0px", margin: "0px" }}>
         <Routes>
@@ -37,7 +41,7 @@ class MainRoute extends Component {
           <Route path="/contactus" element={<ContactUs />}></Route>
           <Route path="/product" element={<ProductByCategory products={products} />}></Route>
           {/* <Route path="/productdetail/${products.category_name}" element={<ProductDetail products={products} />}></Route> */}
-          <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/cart" element={<Cart cart={cart}/>}></Route>
 
           {products.map((product) => (
             <Route
@@ -62,10 +66,12 @@ class MainRoute extends Component {
 }
 MainRoute.propTypes = {
   getProducts: PropTypes.func.isRequired,
+  getCart: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   products: state.product.products,
+  cart: state.cart.cart,
 });
 
-export default connect(mapStateToProps, { getProducts })(MainRoute);
+export default connect(mapStateToProps, { getProducts,getCart })(MainRoute);

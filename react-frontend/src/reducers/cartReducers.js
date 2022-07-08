@@ -2,6 +2,7 @@ import {
   ADD_PRODUCT_TO_CART,
   DELETE_PRODUCT_FROM_CART,
   GET_CART,
+  UPDATE_PRODUCT_FROM_CART
 } from "../actions/type";
 
 const initialState = {
@@ -14,12 +15,16 @@ export default function (state = initialState, action) {
       return {
         ...state,
       };
-    case ADD_PRODUCT_TO_CART:
+    case ADD_PRODUCT_TO_CART: {
       let check = true;
-      state.cart.forEach((item) => {
-        if (item.product_SKU === action.payload.product_SKU) {
-          check = false;
-        }
+
+      state.cart.forEach((items) => {
+        items.forEach((item) => {
+          if (item.product_SKU === getProductId(action.payload)) {
+            check = false;
+            return;
+          }
+        });
       });
       if (check) {
         return {
@@ -30,7 +35,7 @@ export default function (state = initialState, action) {
           ...state,
         };
       }
-
+    }
     case DELETE_PRODUCT_FROM_CART:
       return {
         ...state,
@@ -40,7 +45,20 @@ export default function (state = initialState, action) {
     //     return {
     //       item: [...state, []],
     //     };
+    case UPDATE_PRODUCT_FROM_CART:
+      return {
+        ...state,
+      };
     default:
       return state;
   }
+}
+
+function getProductId(payload) {
+  let product_id = 0;
+
+  payload.map((item) => {
+    product_id = item.product_SKU;
+  });
+  return product_id;
 }

@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { getCart } from "../../../actions/cartAction";
+// import { connect } from "react-redux";
+// import PropTypes from "prop-types";
 import CartItem from "./CartItem";
 
-class Cart extends Component {
-  componentDidMount() {
-    this.props.getCart();
-  }
-  render() {
-    const { cart } = this.props;
-
+const Cart = ({cart}) =>{
+  
+    let subTotal = 0;
+    cart.forEach((items) => {
+      subTotal += parseInt(items.product_price);
+    })
+   
+    console.log(cart);
     return (
       <div className="container">
         <div className="row">
@@ -27,7 +27,7 @@ class Cart extends Component {
             </div>
             <div>{cart.length === 0 && <div>Cart is empty</div>}</div>
             {cart.map((item) => (
-              <CartItem key={item.product_SKU} content={item}></CartItem>
+              <CartItem key={item.product_SKU} items={item}></CartItem>
             ))}
           </div>
           <div className="col-3">
@@ -36,11 +36,11 @@ class Cart extends Component {
                 <div>SUMARY</div>
                 <div className="row">
                   <div className="col-8">Subtotal</div>
-                  <div className="col-4">111111</div>
+                  <div className="col-4">{subTotal}</div>
                 </div>
                 <div className="row">
                   <div className="col-8">Order Total</div>
-                  <div className="col-4">111111</div>
+                  <div className="col-4">{subTotal}</div>
                 </div>
                 <div className="container">
                   <button>PROCEED TO CHECKOUT</button>
@@ -52,13 +52,12 @@ class Cart extends Component {
       </div>
     );
   }
-}
-Cart.propTypes = {
-  getCart: PropTypes.func.isRequired,
-};
+// Cart.propTypes = {
+//   getCart: PropTypes.func.isRequired,
+// };
 
-const mapStateToProps = (state) => ({
-  cart: state.cart.cart,
-});
+// const mapStateToProps = (state) => ({
+//   cart: state.cart.cart,
+// });
 
-export default connect(mapStateToProps, { getCart })(Cart);
+export default Cart;
