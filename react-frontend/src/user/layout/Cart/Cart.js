@@ -2,15 +2,15 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getProducts } from "../../../actions/productsActions";
+import { getCart } from "../../../actions/cartAction";
 import CartItem from "./CartItem";
 
 class Cart extends Component {
   componentDidMount() {
-    this.props.getProducts();
+    this.props.getCart();
   }
   render() {
-    const { products } = this.props;
+    const { cart } = this.props;
 
     return (
       <div className="container">
@@ -25,11 +25,9 @@ class Cart extends Component {
                 <div className="col-2">SUBTOTAL</div>
               </div>
             </div>
-            {products.map((product) => (
-              <CartItem
-                key={product.product_SKU}
-                content={product}
-              ></CartItem>
+            <div>{cart.length === 0 && <div>Cart is empty</div>}</div>
+            {cart.map((item) => (
+              <CartItem key={item.product_SKU} content={item}></CartItem>
             ))}
           </div>
           <div className="col-3">
@@ -56,11 +54,11 @@ class Cart extends Component {
   }
 }
 Cart.propTypes = {
-  getProducts: PropTypes.func.isRequired,
+  getCart: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  products: state.product.products,
+  cart: state.cart.cart,
 });
 
-export default connect(mapStateToProps, { getProducts })(Cart);
+export default connect(mapStateToProps, { getCart })(Cart);
