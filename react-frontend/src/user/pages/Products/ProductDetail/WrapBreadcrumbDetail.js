@@ -8,13 +8,14 @@ import "../../../css/style-laptop.css";
 
 class WrapBreadcrumbDetail extends Component{
     render(){
-        const {  category_name, product_name } = this.props.content;
+        const {  product } = this.props.product;
+
         return(
             <div className="wrap-breadcrumb">
                 <ul>
                     <li className="item-link"><Link to="#" className="home-link">HOME</Link></li>
-                    <li className="item-link"><Link to="#">{category_name}</Link></li>
-                    <li className="item-link"><span>{product_name}</span></li>
+                    <li className="item-link"><Link to="#">{product.category_name}</Link></li>
+                    <li className="item-link"><span>{product.product_name}</span></li>
                 </ul>
             </div>
         )
@@ -22,7 +23,7 @@ class WrapBreadcrumbDetail extends Component{
 }
 
 WrapBreadcrumbDetail.propTypes = {
-    content: PropTypes.object.isRequired,
+    product: PropTypes.object.isRequired,
 };
 
 export default WrapBreadcrumbDetail;

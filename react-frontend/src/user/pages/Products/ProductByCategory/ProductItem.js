@@ -7,7 +7,7 @@ class ProductItem extends Component {
   render() {
     const { product_thumbnail_name, product_name, product_price, category_name } =
       this.props.product;
-
+    const productname = product_name.replace("-", " ");
     return (
       <div className="col-lg-3 col-md-4 col-sm-6">
         <div>
@@ -17,7 +17,7 @@ class ProductItem extends Component {
         <div className="category-name">{category_name}</div>
 
         <div className="product-name">
-          <Link to="#" className="product-name-item">{product_name}</Link>
+          <Link to={`/${category_name}/${product_name}`} replace className="product-name-item">{productname}</Link>
         </div> 
 
         <div className="product-price">{product_price}đ</div>

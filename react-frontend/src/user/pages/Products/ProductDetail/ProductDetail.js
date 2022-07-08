@@ -10,11 +10,11 @@ import "../../../css/style-laptop.css";
 
 class ProductDetail extends Component {
     render(){
-        const { products } = this.props;
+        const { product } = this.props;
         return(
             <div className="row">
                 <div className="col-lg-9 col-md-9 product-by-category-display" style={{padding: '0px', margin: '0px'}}>
-                    <WrapBreadcrumbDetail products={products}/>
+                    <WrapBreadcrumbDetail product={product}/>
                     {/* <DisplayProductDetail products={products}/> */}
                 </div>
                 <div className="col-lg-3 col-md-3 col-sm-12">

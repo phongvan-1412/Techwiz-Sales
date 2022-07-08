@@ -36,16 +36,17 @@ class MainRoute extends Component {
           <Route path="/about" element={<About />}></Route>
           <Route path="/contactus" element={<ContactUs />}></Route>
           <Route path="/product" element={<ProductByCategory products={products} />}></Route>
-          <Route path="/productdetail" element={<ProductDetail products={products} />}></Route>
+          {/* <Route path="/productdetail/${products.category_name}" element={<ProductDetail products={products} />}></Route> */}
           <Route path="/cart" element={<Cart />}></Route>
-          {/* {spotlights.map((spotlight) => (
+
+          {products.map((product) => (
             <Route
-              key={spotlight.blog_id}
-              path={`/${spotlight.category_name}/${spotlight.blog_title}/${spotlight.blog_id}}`}
-              element={<Content />}
+              key={product.product_SKU}
+              path={`/${product.category_name}/${product.product_name}`}
+              element={<ProductDetail product={product}/>}
             ></Route>
           ))}
-          {spotlights.map((spotlight) => (
+          {/* {spotlights.map((spotlight) => (
             <Route
               key={spotlight.blog_id}
               path={`/${spotlight.category_name}/${spotlight.blog_title}/:spotlight.blog_id`}
