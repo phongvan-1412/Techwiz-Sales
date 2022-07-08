@@ -34,8 +34,10 @@ class LandingPageSlider3 extends Component {
         <div>
           <div  className="slide-title">
             <h4>
-              <b>FEATURED PRODUCTS</b>
+              <b>Drink</b>
             </h4>
+            <button>Beer</button>
+            <button>Solf</button>
           </div>
 
           <Slider ref={(c) => (this.slider = c)} {...settings}>
