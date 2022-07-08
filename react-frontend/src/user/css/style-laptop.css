@@ -534,13 +534,105 @@
     padding: 4px;
 }
 .pagination{
-
+    z-index: 2;
 }
 .pagination li{
     margin-right: 10px;
 }
 .pagination a{
     color: var(--iconHover);
+}
+
+/* ----------Display-Product-Detail---------- */
+.product-detail-item-content{
+    display: flex;
+}
+.product-detail-img{
+    width: 100%;
+    height: auto;
+    object-fit: center;
+    object-position: center;
+}
+.product-detail-product-name{
+    font-weight: bold;
+    line-height: 1.66;
+}
+.product-detail-product-SKU{
+    font-size: 18px;
+    color: var(--categoryNameColor)
+}
+.product-info-review-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.reviews-action a{
+    text-decoration: none;
+    color: black;
+    font-size: 11px;
+}
+.stock{
+    display: flex;
+    align-items: center;
+}
+.stock span{
+    font-size: 11px;
+    color: var(--productPriceColor);
+}
+.meta-instock{
+    margin-right: 10px;
+    font-size: 20px;
+    color: var(--productPriceColor);
+}
+.product-detail-product-price{
+    font-size: 25px;
+    color: var(--productPriceColor);
+    font-weight: 550;
+    margin: 20px 0px;
+}
+.box-tocart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.field-qty{
+    display: flex;
+}
+.field-qty label>span{
+    font-size: 11px;
+    font-weight: bold;
+}
+.field-qty>input{
+    width: 50px;
+    height: 30px;
+    background-color: var(--componentBackground);
+    margin-left: 10px;
+    text-align: center;
+}
+.actions{
+    display: flex;
+    align-items: center;
+}
+.actions>button{
+    border: none;
+    background-color: var(--textColor);
+}
+.actions button>.meta-wishlist{
+    background-color: var(--iconHover);
+    color: var(--textColor);
+    font-size: 30px;
+    padding: 4px;
+}
+.actions button>.meta-addtocart{
+    padding: 8px;
+    width: 100px;
+    height: 35px;
+    background-color: var(--productPriceColor);
+    color: var(--textColor);
+    font-size: 14px;
+}
+.product-detail-description{
+    font-size: 12px;
+    line-height: 1.5;
 }
 /* ---------------RESPONSIVE--------------- */
 @media screen and (max-width: 2560px){

@@ -14,7 +14,7 @@ class DisplayProductDetail extends Component {
         const { product } = this.props;
 
         return(
-            <div className="container product-detail-display">
+            <div className="container product-detail-display" style={{margin:'0px',padding: '0px'}}>
                 <ProductDetailItem product={product} />
             </div>
         )

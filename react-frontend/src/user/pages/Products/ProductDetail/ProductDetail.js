@@ -13,7 +13,7 @@ class ProductDetail extends Component {
         const { product } = this.props;
         return(
             <div className="row">
-                <div className="col-lg-9 col-md-9 product-by-category-display" style={{padding: '0px', margin: '0px'}}>
+                <div className="col-lg-9 col-md-9 product-detail" style={{padding: '0px', margin: '0px'}}>
                     <WrapBreadcrumbDetail product={product}/>
                     <DisplayProductDetail product={product}/>
                 </div>
