@@ -2,15 +2,21 @@ import {
   ADD_PRODUCT_TO_CART,
   DELETE_PRODUCT_FROM_CART,
   SUBMIT_CART,
+  GET_CART,
 } from "./type";
 import axios from "axios";
 
-export const addProductToCart = () => async (dispatch) => {
-  //const res = await axios.get("http://127.0.0.1:8000/api/selectactiveblog");
-  dispatch({
+export const addProductToCart = (product) => {
+  return {
     type: ADD_PRODUCT_TO_CART,
-    //payload: res.data,
-  });
+    payload: product,
+  };
+};
+
+export const getCart = () => {
+  return {
+    type: GET_CART,
+  };
 };
 
 export const deleteProductFromCart = (product_id) => {
