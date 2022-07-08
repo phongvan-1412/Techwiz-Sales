@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController as Admin;
 use App\Http\Controllers\CustomerController as Customer;
 use App\Http\Controllers\PaymentController as Payment;
+use App\Http\Controllers\CategoryController as Category;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +25,6 @@ Route::get('/', function () {
 Route::resource('/adminprofile', Admin::class);
 Route::resource('/customerprofile', Customer::class);
 Route::resource('/payment', Payment::class);
+Route::resource('/category', Category::class);
 
 

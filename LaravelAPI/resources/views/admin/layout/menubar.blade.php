@@ -61,10 +61,7 @@
                 </a>
                 <ul class="nav-second-level" aria-expanded="false">
                     <li>
-                        <a href="pages-starter.html">Add Category</a>
-                    </li>
-                    <li>
-                        <a href="pages-login.html">Edit Category</a>
+                        <a href="{{route('category.index')}}">Add Category</a>
                     </li>
                 </ul>
             </li>

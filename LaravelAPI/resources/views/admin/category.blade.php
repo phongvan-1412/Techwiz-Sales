@@ -8,6 +8,12 @@
     @include('admin.layout.menubar')
 @endsection
 
+<!-- CSS -->
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/category.css')}}">
+@endsection
+
+<!-- BODY CONTENT -->
 @section('bodycontent')
 <div class="content">
 
@@ -18,7 +24,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
-                    <h4 class="page-title"> Admin Information </h4>
+                    <h4 class="page-title"> Category </h4>
                 </div>
             </div>
         </div>    
@@ -41,7 +47,7 @@
                         </div>
                         <div class="col-md-1">
                             <button class="btn btn-success waves-effect waves-light float-right mb-2" data-toggle="modal" data-target="#con-close-modal">
-                                New Admin
+                                New Category
                             </button>
                         </div>
                     </div>
@@ -49,31 +55,40 @@
 
                     <div class="table-responsive">
                         <table class="table table-striped mb-0">
-
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Avatar</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Contact</th>
-                                    <th>Date of Birth</th>
-                                    <th>Address</th>
-                                    <th>Action</th>
+                                    <th class="text-center">#</th>
+                                    <th class="text-center">Category</th>
+                                    <th class="text-center">Root</th>
+                                    <th class="text-center">Status</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
+                            <span hidden>{{$i=1}}</span>
                             <tbody>
-                                @foreach ($admin as $ad)
+                                @foreach ($categories as $cate)
                                     <tr>
-                                        <td>{{$i++}}</td>
-                                        <td>{{$ad->emp_img_name}}</td>
-                                        <td>{{$ad->emp_name}}</td>
-                                        <td>{{$ad->emp_email}}</td>
-                                        <td>{{$ad->emp_contact}}</td>
-                                        <td>{{$ad->emp_dob}}</td>
-                                        <td>{{$ad->emp_address}}</td>
-                                        <td>
-                                            <form action="{{route('adminprofile.destroy', $ad->emp_id)}}" method="POST">
+                                        <td class="text-center">{{$i++}}</td>
+                                        <td class="text-center">{{$cate->category_name}}</td>
+                                        <td class="text-center">{{$cate->category_root_name}}</td>
+                                        @if ($cate->category_status == 1)
+                                            <td class="text-center">
+                                                <label class="switch">
+                                                    <input name="category_status" type="checkbox" checked >
+                                                    <span class="slider round"></span>
+                                                </label>  
+                                            </td>
+                                        @else
+                                            <td class="text-center">
+                                                <label class="switch">
+                                                    <input name="category_status" type="checkbox" >
+                                                    <span class="slider round"></span>
+                                                </label>  
+                                            </td>
+                                        @endif
+                                        <td class="text-center">
+                                            <form action="{{route('category.destroy', $cate->category_id)}}" method="POST">
+                                                <a href="{{route('category.edit', $cate->category_id)}}" class="btn btn-info">Edit</a>
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -83,77 +98,49 @@
                                 @endforeach
                             </tbody>
                         </table>
-                    </div> <!-- end table-responsive-->
-                </div> <!-- end card-box -->
-            </div> <!-- end col -->
+                    </div> 
+                </div> 
+            </div> 
         </div>
-        <!-- end row -->
     </div>
 </div>
 
 <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{route('adminprofile.store')}}" method="POST">
+            <form action="{{route('category.store')}}" method="POST">
                 {{csrf_field()}}
                 <div class="modal-header">
-                    <h4 class="modal-title">New Admin</h4>
+                    <h4 class="modal-title">New Category</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body p-4">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">Name</label>
-                                <input type="text" class="form-control" name="emp_name" require>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="field-2" class="control-label">Email</label>
-                                <input type="email" class="form-control" name="emp_email" require>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="field-3" class="control-label">Password</label>
-                                <input type="password" class="form-control" id="pwd1" name="emp_pwd" require>
+                                <label for="field-1" class="control-label">Category</label>
+                                <input type="text" class="form-control" name="category_name" require>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="field-4" class="control-label">Confirm Password</label>
-                                <input type="password" onkeyup="check();" id="pwd2" class="form-control" require>
+                                <label for="field-2" class="control-label">Root</label>
+                                <select class="form-control" name="category_root" id="category_root">
+                                    @foreach ($category_roots as $category_root)
+                                        <option value="{{$category_root->category_name}}">
+                                            {{$category_root->category_name}}
+                                        </option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <div id="alert"></div>
                         </div>
                     </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                    <input type="submit" id="createadmin" class="btn btn-info waves-effect waves-light" value="Create" disabled>
+                    <input type="submit" id="createadmin" class="btn btn-info waves-effect waves-light" value="Create">
                 </div>
             </form>
         </div>
     </div>
 </div>
-@endsection
-
-@section('scripts')
-    <script>
-        function check(){
-            var pwd1 = $('#pwd1').val();
-            var pwd2 = $('#pwd2').val();
-            if(pwd1 == pwd2){
-                $('#alert').html('Passwords match').addClass('text-success').removeClass('text-danger');
-                $("#createadmin").prop('disabled', false); 
-
-            }else{
-                $('#alert').html('Passwords not match').addClass('text-danger').removeClass('text-success');
-            }
-        }
-    </script>
 @endsection
