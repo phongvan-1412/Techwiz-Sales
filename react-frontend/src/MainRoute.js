@@ -17,7 +17,7 @@ import About from "./user/pages/About";
 import ContactUs from "./user/pages/ContactUs";
 import ProductByCategory from "./user/pages/Products/ProductByCategory/ProductByCategory";
 import Cart from "./user/layout/Cart/Cart";
-import ProductDetailDisplay from "./user/pages/Products/ProductDetail/DisplayProductDetail";
+import ProductDetail from "./user/pages/Products/ProductDetail/ProductDetail";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -36,7 +36,7 @@ class MainRoute extends Component {
           <Route path="/about" element={<About />}></Route>
           <Route path="/contactus" element={<ContactUs />}></Route>
           <Route path="/product" element={<ProductByCategory products={products} />}></Route>
-          <Route path="/productdetail:product_name" element={<ProductDetail products={products} />}></Route>
+          <Route path="/productdetail" element={<ProductDetail products={products} />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
           {/* {spotlights.map((spotlight) => (
             <Route

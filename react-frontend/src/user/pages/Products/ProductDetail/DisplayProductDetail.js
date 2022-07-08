@@ -9,25 +9,18 @@ import "../../../css/style-mobile.css";
 import "../../../css/style-tablet.css";
 import "../../../css/style-laptop.css";
 
-const DisplayProductDetail = ({products}) => {
-    const [product, setProduct] = useState([]);
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        const fetchProducts = () => {
-            setProduct(products);
-            const haveProducts = products.length > 0;
-            setLoading(haveProducts);
-        }
-
-        fetchProducts();
-    }, []);
+class DisplayProductDetail extends Component {
+    render(){
+        const { products } = this.props;
 
         return(
-        <div className="container product-detail-display">
-            <ProductDetailItem products={product} loading={loading} />
-        </div>
-    )
+            <div className="container product-detail-display">
+                <ProductDetailItem products={products} />
+            </div>
+        )
+    }
+
+        
 }
 
 export default DisplayProductDetail;

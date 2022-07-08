@@ -4,12 +4,10 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart, FaHeart } from 'react-icons/fa'
 
 class ProductDetailItem extends Component {
-  render() {
-    const { product_thumbnail_name, product_name, product_price, category_name } =
-      this.props.product;
-
-    return (
-      <div className="col-lg-3 col-md-4 col-sm-6">
+  render (){
+    const { product_thumbnail_name, product_name, product_price, category_name } = this.props.content;
+    return(
+      <div className="">
         <div>
           <img className="product-item-content product-img" src={require(`../../../layout/LandingPageSlider/tempImg/${product_thumbnail_name}`)} />
         </div>
@@ -32,7 +30,7 @@ class ProductDetailItem extends Component {
 }
 
 ProductDetailItem.propTypes = {
-  product: PropTypes.object.isRequired,
+  content: PropTypes.object.isRequired,
 };
 
 export default ProductDetailItem;
