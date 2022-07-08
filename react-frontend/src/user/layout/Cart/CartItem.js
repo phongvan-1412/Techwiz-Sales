@@ -5,6 +5,7 @@ class CartItem extends Component {
   render() {
     const { product_thumbnail_name, product_name, product_price } =
       this.props.content;
+    const productname = product_name.replace(/-/g, " ");
     return (
       <div className="container">
         <div className="row">

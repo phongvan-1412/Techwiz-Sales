@@ -12,9 +12,7 @@ const Products =({products,loading})=> {
                                 <ProductItem 
                                     key={product.product_SKU} 
                                     className="list-group-item"
-                                    product={product}
-                                >
-                                    <Link to="/productdetail">{product.title}</Link> 
+                                    product={product}>
                                 </ProductItem>
                             ))}
                         </div>

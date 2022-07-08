@@ -9,13 +9,13 @@ import "../../../css/style-laptop.css";
 class WrapBreadcrumbDetail extends Component{
     render(){
         const {  product } = this.props.product;
-
+        
         return(
             <div className="wrap-breadcrumb">
                 <ul>
                     <li className="item-link"><Link to="#" className="home-link">HOME</Link></li>
-                    <li className="item-link"><Link to="#">{product.category_name}</Link></li>
-                    <li className="item-link"><span>{product.product_name}</span></li>
+                    <li className="item-link"><Link to="#">{product.category_name.replace(/-/g, " ")}</Link></li>
+                    <li className="item-link"><span>{product.product_name.replace(/-/g, " ")}</span></li>
                 </ul>
             </div>
         )

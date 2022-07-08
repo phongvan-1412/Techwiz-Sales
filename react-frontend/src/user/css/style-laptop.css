@@ -34,6 +34,7 @@
 /* ----------HEADER---------- */
 .header-menu{
     height: 100px;
+    z-index: 0;
 }
 .menu{
     width: 100%;
@@ -262,8 +263,6 @@
 /* ---------------LANDINGPAGE--------------- */
 /* ----------TOP-SLIDE---------- */
 .page-content-panel{
-    position: relative;
-    z-index: -1;
     margin-bottom: 30px;
 }
 .slick-prev::before, .slick-next::before{
@@ -271,8 +270,7 @@
 }
 /* ----------LANDINGPAGE-SLIDE---------- */
 .slick-list{
-    position: relative;
-    z-index: -1; 
+    z-index: 2;
 }
 .slide-title{
     border-bottom: var(--border);
@@ -481,18 +479,15 @@
 }
 /* ----------Display-Product---------- */
 .products-grid{
-    position: relative;
-    z-index: -1; 
     margin-bottom: 20px;
-}
-.products-items{
-    display: flex;
+    z-index: 1;
 }
 .product-img{
     width: 150px;
     height: 200px;
     object-fit: center;
     object-position: center;
+    z-index: -1;
 }
 .category-name{
     font-size: 12px;
@@ -539,8 +534,7 @@
     padding: 4px;
 }
 .pagination{
-    position: relative;
-    z-index: -1;
+
 }
 .pagination li{
     margin-right: 10px;
