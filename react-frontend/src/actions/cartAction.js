@@ -17,7 +17,7 @@ export const addProductToCart = (product, quantity) => {
       product_name: product.product_name,
       product_quantity: quantity,
       product_detail: product.product_detail,
-      product_subtotal: product.product_price * quantity,
+      product_subtotal: parseInt(product.product_price) * parseInt(quantity),
       product_thumbnail_name: product.product_thumbnail_name,
     },
   ];
@@ -45,7 +45,7 @@ export const submitCart = (products) => {
     payload: products,
   };
 };
-export const updateProductFromCart = (product,quantity) => {
+export const updateProductFromCart = (product, quantity) => {
   const newProduct = [
     {
       product_SKU: product.product_SKU,
@@ -55,7 +55,7 @@ export const updateProductFromCart = (product,quantity) => {
       product_name: product.product_name,
       product_quantity: quantity,
       product_detail: product.product_detail,
-      product_subtotal: product.product_price * quantity,
+      product_subtotal: parseInt(product.product_price) * parseInt(quantity),
       product_thumbnail_name: product.product_thumbnail_name,
     },
   ];

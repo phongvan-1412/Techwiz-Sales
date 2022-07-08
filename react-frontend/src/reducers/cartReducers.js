@@ -2,7 +2,7 @@ import {
   ADD_PRODUCT_TO_CART,
   DELETE_PRODUCT_FROM_CART,
   GET_CART,
-  UPDATE_PRODUCT_FROM_CART
+  UPDATE_PRODUCT_FROM_CART,
 } from "../actions/type";
 
 const initialState = {
@@ -15,7 +15,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
       };
-    case ADD_PRODUCT_TO_CART: {
+    case ADD_PRODUCT_TO_CART:
       let check = true;
 
       state.cart.forEach((items) => {
@@ -35,7 +35,7 @@ export default function (state = initialState, action) {
           ...state,
         };
       }
-    }
+
     case DELETE_PRODUCT_FROM_CART:
       return {
         ...state,
@@ -45,10 +45,22 @@ export default function (state = initialState, action) {
     //     return {
     //       item: [...state, []],
     //     };
-    case UPDATE_PRODUCT_FROM_CART:
+
+    case UPDATE_PRODUCT_FROM_CART: {
+      state.cart.forEach((items) => {
+        items.forEach((item) => {
+          if (item.product_SKU === getProductId(action.payload)) {
+            item.product_quantity = getProductQuantity(action.payload);
+            item.product_subtotal = getProductSubtotal(action.payload);
+            return;
+          }
+        });
+      });
       return {
         ...state,
       };
+    }
+
     default:
       return state;
   }
@@ -61,4 +73,24 @@ function getProductId(payload) {
     product_id = item.product_SKU;
   });
   return product_id;
+}
+
+function getProductQuantity(payload) {
+  let product_quantity = 0;
+
+  payload.map((item) => {
+    product_quantity = item.product_quantity;
+  });
+
+  return product_quantity;
+}
+
+function getProductSubtotal(payload) {
+  let product_subtotal = 0;
+
+  payload.map((item) => {
+    product_subtotal = item.product_subtotal;
+  });
+
+  return product_subtotal;
 }

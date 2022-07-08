@@ -18,7 +18,7 @@ function Header() {
   const [drop, setDrop] = useState(false);
   const [categoriesRoot, setCategoriesRoot] = useState([]);
   const [categories, setCategories] = useState([]);
-
+  
   useEffect(() => {
     const fetchCategories = async () => {
       const resRoot = await axios.get(

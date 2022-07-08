@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { addProductToCart } from "../../../../actions/cartAction";
 
 class ProductItem extends Component {
+
   render() {
     const { product } = this.props;
     return (

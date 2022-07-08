@@ -1,24 +1,26 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import { connect } from "react-redux";
+import { updateProductFromCart } from "../../../actions/cartAction";
+
 class CartItem extends Component {
   state = {
-    product_quantity: "",
+    product_quantity : '',
   };
 
-  onChange = () => {
-    const { product_quantity } = this.state;
-    const newQuantity = {product_quantity}
-    this.setState({product_quantity: newQuantity});
-  };
   render() {
     const { items } = this.props;
-    console.log(items);
-
+    const onChange = (item) => {
+      this.props.updateProductFromCart(item, this.state.product_quantity);
+    };
+    const onClick = (event) => {
+      this.setState({ product_quantity: event.target.value });
+    };
     return (
       <div>
         {items.map((item) => (
-          <div className="container" key={item.product_name}>
+          <div className="container" key={item.product_SKU}>
             <div className="row">
               <div className="col-2">
                 <img
@@ -45,11 +47,16 @@ class CartItem extends Component {
               <div className="col-2">
                 <input
                   type="number"
-                  step={1}
-                  value={item.product_quantity}
-                  style={{ width: "100px", textAlign: "right" }}
                   name="product_quantity"
-                  onChange={this.onChange}
+                  id="qty"
+                  max="999"
+                  min="1"
+                  step="1"
+                  className="input-text-qty"
+                  onChange={onChange.bind(this, item)}
+                  onClick={onClick}
+                  onBlur={onChange.bind(this, item)}
+                  defaultValue={item.product_quantity}
                 />
               </div>
               <div className="col-2">{item.product_subtotal}</div>
@@ -63,6 +70,10 @@ class CartItem extends Component {
 
 CartItem.propTypes = {
   items: PropTypes.array.isRequired,
+  updateProductFromCart: PropTypes.func.isRequired,
 };
 
-export default CartItem;
+const mapStateToProps = (state) => ({
+  cart: state.cart.cart,
+});
+export default connect(mapStateToProps, { updateProductFromCart })(CartItem);
