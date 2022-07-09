@@ -350,6 +350,75 @@
 .img4{
     margin-left: 24px;
 }
+/* --------------------PAGES-------------------- */
+/* ---------------CONTACT--------------- */
+
+.contact-map{
+    text-align: center;
+    margin: 50px 0px;
+}
+.send-massage .form{
+    display: grid;
+    grid-template-rows: 50px 300px 40px;
+    align-items: center;
+    justify-content: center;
+}
+.send-massage>.message{
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+.form>.message-info{
+    display: grid;
+    grid-template-columns: repeat(3,300px);
+    grid-gap: 50px;
+}
+.message-info>.name,.message-info>.email,.message-info>.phone{
+    display: grid;
+    grid-template-rows: repeat(2,25px);
+}
+.name>input,.email>input,.phone>input{
+    width: 300px;
+}
+.message-content{
+    display: grid;
+    grid-template-rows: 25px, 250px;
+}
+.send-massage .btn-submit{
+    text-align: center;
+}
+.send-massage .btn-submit>button{
+    padding: 10px 15px;
+    margin-bottom: 50px;
+    width: 500px;
+    border-radius: 3px;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+.info{
+    margin-bottom: 20px;
+}
+.info, .location, .callus, .opening, .location-content, .callus-content, .opening-content {
+    display: flex;
+}
+.location-content .content, .callus-content .content, .opening-content .content {
+    font-size: 13px;
+    margin-left: 10px;
+
+}
+.info .title{
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.meta-location, .meta-callus, .meta-clock{
+    width: 25px;
+    height: 25px;
+}
 /* ---------------PRODUCT--------------- */
 /* ----------Wrapcrumb---------- */
 .wrap-breadcrumb{
