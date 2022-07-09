@@ -31,8 +31,8 @@ class LandingPageSlider3 extends Component {
     };
     return (
       <div>
-        <div>
-          <div  className="slide-title">
+        <div className="slide-title">
+          <div className="slide-title top-content">
             <h4>
               <b>Drink</b>
             </h4>

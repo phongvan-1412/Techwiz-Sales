@@ -33,8 +33,8 @@ class LandingPageSlider2 extends Component {
     };
     return (
       <div>
-        <div>
-          <div  className="slide-title">
+        <div className="slide-title" style={{borderTop:'none'}}>
+          <div  className="slide-title top-content" >
             <h4>
               <b>FRESH FOOD</b>
             </h4>

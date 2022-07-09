@@ -273,8 +273,9 @@
 .slick-list{
     z-index: 2;
 }
-.slide-title{
-    border-bottom: var(--border);
+.slide-title .top-content{
+    display: flex;
+
 }
 .btn-click{
     display: block;
