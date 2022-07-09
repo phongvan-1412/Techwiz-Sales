@@ -26,6 +26,7 @@
     --redPrimaryColor: #DC3545;
     --textHover: rgb(208, 75, 78);
     --iconHover: red;
+    --tableColor: whitesmoke;
     --border: 1px solid rgba(0,0,0,0.25);
     --selectBorder: 1px solid #C4C4C4;
     
@@ -34,7 +35,6 @@
 /* ----------HEADER---------- */
 .header-menu{
     height: 100px;
-    z-index: 0;
 }
 .menu{
     width: 100%;
@@ -46,6 +46,7 @@
     background: var(--headerBackground);
     padding: 0px;
     margin: 0px;
+    z-index: 3;
 }
 .logo{
     width: 55px;
@@ -273,7 +274,37 @@
     z-index: 2;
 }
 .slide-title{
+    border-bottom: none;
+}
+.slide-title .top-content{
+    display: flex;
+    align-items: center;
     border-bottom: var(--border);
+}
+.slide-title .top-content h4{
+    margin-right: 20px;
+}
+.slide-title .top-content .btn-category{
+    margin-right: 10px;
+    padding: 3px 15px;
+    border: 1px solid var(--categoryNameColor);
+    background-color: var(--textColor);
+    color: var(--categoryNameColor);
+    font-size: 13px;
+    font-weight: 700;
+}
+.slide-title .top-content .btn-active-show{
+    border: 1px solid var(--buttonColor);
+    color: var(--buttonColor);
+    font-size: 13px;
+    font-weight: 700;
+}
+.slide-title .top-content .btn-category:hover{
+    border: 1px solid var(--buttonColor);
+    background-color: var(--textColor);
+    color: var(--buttonColor);
+    font-size: 13px;
+    font-weight: 700;
 }
 .btn-click{
     display: block;
@@ -322,7 +353,7 @@
 /* ---------------PRODUCT--------------- */
 /* ----------Wrapcrumb---------- */
 .wrap-breadcrumb{
-    margin: 20px 0px;
+    margin: 50px 0px;
 }
 .wrap-breadcrumb ul{
     display: flex;
@@ -342,7 +373,7 @@
     padding: 7px;
 }
 .item-link span{
-    background-color: var(--iconHover);
+    background-color: var(--buttonColor);
     color: var(--textColor);
     font-size: 20px;
     font-weight: 500;
@@ -544,14 +575,18 @@
 }
 
 /* ----------Display-Product-Detail---------- */
-.product-detail-item-content{
+.product-detail-item-info{
     display: flex;
+}
+.product-detail-info-wrapper{
+    padding: 0px 0px 0px 20px;
 }
 .product-detail-img{
     width: 100%;
     height: auto;
     object-fit: center;
     object-position: center;
+    border: var(--border);
 }
 .product-detail-product-name{
     font-weight: bold;
@@ -633,6 +668,65 @@
 .product-detail-description{
     font-size: 12px;
     line-height: 1.5;
+}
+.product-detail-item-more-info{
+    border: var(--border);
+    background-color: var(--componentBackground);
+}
+.product-detail-item-more-info .card-box .col-sm-3{
+    border-right: var(--border);
+}
+.product-detail-item-more-info .card-box .col-sm-3 a{
+    border-bottom: var(--border);
+    text-align: center;
+}
+.product-detail-item-more-info .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: black;
+    color: var(--buttonColor);
+    font-size: 14.5px;
+    font-weight: 700;
+}
+.product-detail-item-more-info .nav-pills .nav-link{
+    color: black;
+    font-size: 14.5px;
+    font-weight: 700;
+}
+.product-detail-item-more-info .nav-pills .nav-link {
+    border-radius: 0px;
+}
+.product-detail-item-more-info .card-box .col-sm-9{
+    padding: 40px;
+    font-size: 11px;
+    line-height: 1.66;
+}
+/* -----Sidebar-Suggest----- */
+.sidebar-suggest-wrapper{
+    margin: 50px 0px;
+    padding: 0px 15px;
+}
+.sidebar-suggest-img img{
+    width: 100%;
+    object-fit: center;
+    object-position: center;
+}
+.sidebar-suggest-content{
+    margin-top: 50px;
+}
+.sidebar-suggest-content .title h4{
+    font-size: 20px;
+    font-weight: 700;
+}
+.product-detail-item .product-detail-item-name{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+}
+.product-detail-item-slide a>.product-img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* ---------------RESPONSIVE--------------- */

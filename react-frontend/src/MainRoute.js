@@ -42,7 +42,7 @@ class MainRoute extends Component {
             <Route
               key={product.product_SKU}
               path={`/${product.category_name}/${product.product_name}`}
-              element={<ProductDetail product={product} />}
+              element={<ProductDetail product={product} products={products}/>}
             ></Route>
           ))}
           {/* {spotlights.map((spotlight) => (

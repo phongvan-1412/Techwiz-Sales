@@ -8,7 +8,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./user/css/style-mobile.css";
 import "./user/css/style-tablet.css";
-import "./user/css/style-laptop.css";
+import "./user/css/style-laptop.css"
+
 
 import store from "./store";
 import { Provider } from "react-redux";
