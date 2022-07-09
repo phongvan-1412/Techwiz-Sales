@@ -353,7 +353,7 @@
 /* ---------------PRODUCT--------------- */
 /* ----------Wrapcrumb---------- */
 .wrap-breadcrumb{
-    margin: 20px 0px;
+    margin: 50px 0px;
 }
 .wrap-breadcrumb ul{
     display: flex;
@@ -373,7 +373,7 @@
     padding: 7px;
 }
 .item-link span{
-    background-color: var(--iconHover);
+    background-color: var(--buttonColor);
     color: var(--textColor);
     font-size: 20px;
     font-weight: 500;
@@ -698,6 +698,20 @@
     padding: 40px;
     font-size: 11px;
     line-height: 1.66;
+}
+/* -----Sidebar-Suggest----- */
+.sidebar-suggest-wrapper{
+    margin: 50px 0px;
+    padding: 0px 15px;
+}
+.sidebar-suggest-img img{
+    width: 100%;
+    object-fit: center;
+    object-position: center;
+}
+.sidebar-suggest .title{
+    font-size: 15px;
+    font-weight: 700;
 }
 /* ---------------RESPONSIVE--------------- */
 @media screen and (max-width: 2560px){

@@ -1,61 +1,87 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { GiNextButton, GiPreviousButton} from 'react-icons/gi'
+
+import ProductDetailItemSlide from "./ProductDetailItemSlide";
 
 import "../../../css/style-mobile.css";
 import "../../../css/style-tablet.css";
 import "../../../css/style-laptop.css";
 
-class SidebarSuggest extends Component{
-    render(){
-        return(
-            <div className="sidebar-suggest">
-                <div className="">
-                    <div className=""></div>
-                        {/* category-widget */}
-                    <div className="">
-                        <h2 className="suggest-title"></h2>
-                        <div className="suggest-content">
-                            <ul className="">
-                                <li className="list-item">
-                                    <Link className="filter-link active" to="#">Breakfast</Link>
-                                    <span className="coun">(155)</span>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                    </div>
+class SidebarSuggest extends Component {
+  constructor(props) {
+    super(props);
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+  }
+  next() {
+    this.slider.slickNext();
+  }
+  previous() {
+    this.slider.slickPrev();
+  }
+  render(){
+    const { products, product } = this.props;
 
-                        {/* spdiet-widget */}
-                    <div className="">
-                        <h2 className="suggest-title">SPECIAL DIET</h2>
-                        <div className="suggest-content">
-                            <ul className="">
+    const settings = {
+      dots: false,
+      infinite: false,
+      speed: 500,
+      slidesToShow: 3,
+      slidesPerRow: 1,
+      slidesToScroll: 3,
+      arrows: false,
+      vertical: true
+    };
 
-                                <li className="list-item">
-                                    <Link className="" to="#">Non GMO</Link>
-                                    <span className="count">(40)</span>
-                                </li>
+    return (
+      <div className="sidebar-suggest-wrapper">
+        {/* sidebar-suggest-img */}
+        <div className="sidebar-suggest-img">
+          <img
+            src={require("../../../img/Product/ProductDetail/freeship.jpg")}
+          />
+        </div>
 
-                            
-                            </ul>
-                        </div>
-                    </div>
+        {/* sidebar-suggest-product */}
+        <div>
+          <div className="sidebar-suggest">
+            <div className="sidebar-suggest title">
+              <h4>FEATURED PRODUCTS</h4>
+            </div>
 
-                        {/* specification-widget */}
-                    <div className="">
-                        <h2 className="suggest-title">SPECIFICATION</h2>
-                        <div className="suggest-content">
-                            <ul className="">
-                                <li className="list-item">
+            <Slider ref={(c) => (this.slider = c)} {...settings}>
+                {products.map(product=>(
+                    <ProductDetailItemSlide
+                    key={product.product_SKU}
+                    product={product}
+                  ></ProductDetailItemSlide>
+                ))}
+                
+            </Slider>
 
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        )
-    }
+            <div className="btn-click">
+              <button
+                type="button"
+                className="btn-previous"
+                onClick={this.previous}
+              >
+                <GiPreviousButton />
+              </button>
+              <button type="button" className=" btn-next" onClick={this.next}>
+                <GiNextButton />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  } 
 }
 
 export default SidebarSuggest;

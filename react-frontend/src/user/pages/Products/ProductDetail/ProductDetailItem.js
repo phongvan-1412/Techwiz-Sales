@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { BsFillBagCheckFill } from 'react-icons/bs'
 import { FaHeart } from 'react-icons/fa'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 const ProductDetailItem = ( {product}) => {

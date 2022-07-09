@@ -10,7 +10,8 @@ import "../../../css/style-laptop.css";
 
 class ProductDetail extends Component {
     render(){
-        const { product } = this.props;
+        const { product, products } = this.props;
+
         return(
             <div className="row">
                 <div className="col-lg-9 col-md-9 product-detail" style={{padding: '0px', margin: '0px'}}>
@@ -18,7 +19,7 @@ class ProductDetail extends Component {
                     <DisplayProductDetail product={product}/>
                 </div>
                 <div className="col-lg-3 col-md-3 col-sm-12">
-                    <SidebarSuggest product={product}/>
+                    <SidebarSuggest products={products} product={product}/>
                 </div>
             </div>
             
