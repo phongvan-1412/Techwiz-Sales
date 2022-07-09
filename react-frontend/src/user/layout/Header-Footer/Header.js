@@ -13,11 +13,13 @@ import "../../css/style-laptop.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Dropdown from "../DropdownNavBar/Dropdown";
 import axios from "axios";
+import CartItems from "../Cart/CartItems";
 
-function Header() {
+function Header({ cart }) {
   const [drop, setDrop] = useState(false);
   const [categoriesRoot, setCategoriesRoot] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [cartMini, setCartMini] = useState(false);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -55,20 +57,34 @@ function Header() {
             className="product"
             onMouseEnter={() => setDrop(true)}
             onMouseLeave={() => setDrop(false)}
-            style={{ height: "100px"}}
+            style={{ height: "100px" }}
           >
-            <p style={{ marginTop: "30px" }}>Product</p> 
-            {drop && <Dropdown categoriesRoot={categoriesRoot} categories={categories}/>}
+            <p style={{ marginTop: "30px" }}>Product</p>
+            {drop && (
+              <Dropdown
+                categoriesRoot={categoriesRoot}
+                categories={categories}
+              />
+            )}
           </Link>
+          <div
+            className="nav-bag"
+            style={{ height: "100px", marginTop: "50px" }}
+            onMouseEnter={() => setCartMini(true)}
+            onMouseLeave={() => setCartMini(false)}
+          >
+            <AiOutlineShoppingCart />
+            <span>Shoping Cart</span>
+            <br />
+            <span className="bag-quantity">1 items - 999999</span>
+            {cartMini && (
+              <CartItems
+                categoriesRoot={categoriesRoot}
+                categories={categories}
+              />
+            )}
+          </div>
 
-          <Link to="/cart" replace className="cart">
-            <div className="nav-bag">
-              <AiOutlineShoppingCart />
-              <span className="bag-quantity">
-                <span>1</span>
-              </span>
-            </div>
-          </Link>
           <Link to="/shipping" replace className="shipping">
             Shipping
           </Link>

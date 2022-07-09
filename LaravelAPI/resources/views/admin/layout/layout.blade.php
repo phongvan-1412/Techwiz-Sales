@@ -69,6 +69,5 @@
     <!-- App js -->
     <script src="{{asset('js\app.min.js')}}"></script>
 </body>
-<scripts>
     @yield('scripts')
-</scripts>
+

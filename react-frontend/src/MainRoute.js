@@ -19,31 +19,30 @@ import ProductByCategory from "./user/pages/Products/ProductByCategory/ProductBy
 import Cart from "./user/layout/Cart/Cart";
 import ProductDetail from "./user/pages/Products/ProductDetail/ProductDetail";
 
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { getProducts } from "./actions/productsActions";
-
 class MainRoute extends Component {
-  componentDidMount() {
-    this.props.getProducts();
-  }
   render() {
-    const { products } = this.props;
+    const { products, cart } = this.props;
     return (
       <div className="container" style={{ padding: "0px", margin: "0px" }}>
         <Routes>
           <Route path="/" element={<LandingPage products={products} />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/contactus" element={<ContactUs />}></Route>
-          <Route path="/product" element={<ProductByCategory products={products} />}></Route>
-          {/* <Route path="/productdetail/${products.category_name}" element={<ProductDetail products={products} />}></Route> */}
-          <Route path="/cart" element={<Cart />}></Route>
+          <Route
+            path="/product"
+            element={<ProductByCategory products={products} />}
+          ></Route>
+          <Route path="/cart" element={<Cart cart={cart} />}></Route>
+          <Route
+            path="/updatecart"
+            element={<LandingPage cart={cart} />}
+          ></Route>
 
           {products.map((product) => (
             <Route
               key={product.product_SKU}
               path={`/${product.category_name}/${product.product_name}`}
-              element={<ProductDetail product={product}/>}
+              element={<ProductDetail product={product} />}
             ></Route>
           ))}
           {/* {spotlights.map((spotlight) => (
@@ -53,19 +52,10 @@ class MainRoute extends Component {
               element={<Category />}
             ></Route>
           ))} */}
-          {/* <Route path="/login" element={<Login />}></Route>
-          <Route path="/register" element={<Register />}></Route> */}
         </Routes>
       </div>
     );
   }
 }
-MainRoute.propTypes = {
-  getProducts: PropTypes.func.isRequired,
-};
 
-const mapStateToProps = (state) => ({
-  products: state.product.products,
-});
-
-export default connect(mapStateToProps, { getProducts })(MainRoute);
+export default MainRoute;

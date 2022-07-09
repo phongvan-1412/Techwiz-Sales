@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { addProductToCart } from "../../../../actions/cartAction";
 
 class ProductItem extends Component {
+
   render() {
     const { product } = this.props;
     return (
@@ -45,7 +46,7 @@ class ProductItem extends Component {
             <FaShoppingCart
               className="meta-cart"
               style={{ cursor: "pointer" }}
-              onClick={()=> {this.props.addProductToCart(product)}}
+              onClick={()=> {this.props.addProductToCart(product,1)}}
             />
             <FaHeart className="meta-wishlist" style={{ cursor: "pointer" }} />
           </div>

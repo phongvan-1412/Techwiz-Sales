@@ -13,25 +13,14 @@ import "./user/css/style-laptop.css"
 
 import store from "./store";
 import { Provider } from "react-redux";
-import MainRoute from "./MainRoute";
+import Home from "./Home";
 
 class App extends Component {
-  
   render() {
     return (
       <Provider store={store}>
         <Router>
-          <div>
-            <Header />
-            <div className="row">
-              <div className="col-md-2"></div>
-              <div className="col-md-8" style={{padding: '0px', margin: '0px'}}>
-                <MainRoute />
-              </div>
-              <div className="col-md-2"></div>
-            </div>
-            <Footer />
-          </div>
+          <Home />
         </Router>
       </Provider>
     );
@@ -39,7 +28,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-

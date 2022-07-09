@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
-                    <h4 class="page-title"> Admin Information </h4>
+                    <h4 class="page-title"> Customer Information </h4>
                 </div>
             </div>
         </div>    
@@ -28,7 +28,7 @@
                 <div class="card-box">
                     <div class="row">
                         <div class="col-md-11 float-start">
-                           @if (Session::has('succ-msg'))
+                        @if (Session::has('succ-msg'))
                                 <div class="alert alert-success">
                                     {{Session::get('succ-msg')}}
                                 </div>
@@ -41,12 +41,10 @@
                         </div>
                         <div class="col-md-1">
                             <button class="btn btn-success waves-effect waves-light float-right mb-2" data-toggle="modal" data-target="#con-close-modal">
-                                New Admin
+                                New Customer
                             </button>
                         </div>
                     </div>
-
-
                     <div class="table-responsive">
                         <table class="table table-striped mb-0">
 
@@ -63,17 +61,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($admin as $ad)
+                                @foreach ($customer as $cus)
                                     <tr>
                                         <td>{{$i++}}</td>
-                                        <td>{{$ad->emp_img_name}}</td>
-                                        <td>{{$ad->emp_name}}</td>
-                                        <td>{{$ad->emp_email}}</td>
-                                        <td>{{$ad->emp_contact}}</td>
-                                        <td>{{$ad->emp_dob}}</td>
-                                        <td>{{$ad->emp_address}}</td>
+                                        <td>{{$cus->customer_img_name}}</td>
+                                        <td>{{$cus->customer_name}}</td>
+                                        <td>{{$cus->customer_email}}</td>
+                                        <td>{{$cus->customer_contact}}</td>
+                                        <td>{{$cus->customer_dob}}</td>
+                                        <td>{{$cus->customer_address}}</td>
                                         <td>
-                                            <form action="{{route('adminprofile.destroy', $ad->emp_id)}}" method="POST">
+                                            <form action="{{route('customerprofile.destroy', $cus->customer_id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -94,10 +92,10 @@
 <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{route('adminprofile.store')}}" method="POST">
+            <form action="{{route('customerprofile.store')}}" method="POST">
                 {{csrf_field()}}
                 <div class="modal-header">
-                    <h4 class="modal-title">New Admin</h4>
+                    <h4 class="modal-title">New Customer</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body p-4">
@@ -105,13 +103,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Name</label>
-                                <input type="text" class="form-control" name="emp_name" require>
+                                <input type="text" class="form-control" name="customer_name" require>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-2" class="control-label">Email</label>
-                                <input type="email" class="form-control" name="emp_email" require>
+                                <input type="email" class="form-control" name="customer_email" require>
                             </div>
                         </div>
                     </div>
@@ -119,7 +117,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="field-3" class="control-label">Password</label>
-                                <input type="password" class="form-control" id="pwd1" name="emp_pwd" require>
+                                <input type="password" class="form-control" id="pwd1" name="customer_pwd" require>
                             </div>
                         </div>
                     </div>
@@ -134,7 +132,7 @@
                     </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                    <input type="submit" id="createadmin" class="btn btn-info waves-effect waves-light" value="Create" disabled>
+                    <input type="submit" id="createcustomer" class="btn btn-info waves-effect waves-light" value="Create" disabled>
                 </div>
             </form>
         </div>
@@ -144,16 +142,16 @@
 
 @section('scripts')
     <script>
-        function check(){
-            var pwd1 = $('#pwd1').val();
-            var pwd2 = $('#pwd2').val();
-            if(pwd1 == pwd2){
-                $('#alert').html('Passwords match').addClass('text-success').removeClass('text-danger');
-                $("#createadmin").prop('disabled', false); 
+            function check(){
+                var pwd1 = $('#pwd1').val();
+                var pwd2 = $('#pwd2').val();
+                if(pwd1 == pwd2){
+                    $('#alert').html('Passwords match').addClass('text-success').removeClass('text-danger');
+                    $("#createcustomer").prop('disabled', false); 
 
-            }else{
-                $('#alert').html('Passwords not match').addClass('text-danger').removeClass('text-success');
+                }else{
+                    $('#alert').html('Passwords not match').addClass('text-danger').removeClass('text-success');
+                }
             }
-        }
     </script>
 @endsection
