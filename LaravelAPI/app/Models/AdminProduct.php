@@ -14,7 +14,7 @@ class AdminProduct extends Model
     protected $fillable = [
         'product_name',
         'category_id',
-        'product_quatity',
+        'product_quantity',
         'product_information',
         'product_img_name',
         'product_price_per_unit',

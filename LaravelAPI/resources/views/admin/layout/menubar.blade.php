@@ -74,7 +74,7 @@
                 </a>
                 <ul class="nav-second-level" aria-expanded="false">
                     <li>
-                        <a href="extras-profile.html">Add Procduct</a>
+                        <a href="{{route('product.index')}}">Add Procduct</a>
                     </li>
                     <li>
                         <a href="extras-timeline.html">Edit Product</a>

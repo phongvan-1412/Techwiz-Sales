@@ -68,6 +68,7 @@
     <script src="{{asset('js\pages\dashboard-1.init.js')}}"></script>
     <!-- App js -->
     <script src="{{asset('js\app.min.js')}}"></script>
+    @yield('jquery')
 </body>
     @yield('scripts')
 
