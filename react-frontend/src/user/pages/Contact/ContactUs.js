@@ -3,14 +3,16 @@ import { MdLocationOn } from "react-icons/md";
 import { IoMdCall } from "react-icons/io";
 import { BsClockFill } from "react-icons/bs";
 
+import MapContainer from "./MapContainer";
+
 class ContactUs extends Component {
   render() {
     return (
       <div className="container contact-wrapper" style={{padding: '0px', margin: '0px'}}>
 
-        <div className="row contact-map">
-            {/* <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3919.0532559868143!2d106.7077105!3d10.8072332!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529ed00409f09%3A0x11f7708a5c77d777!2zQXB0ZWNoIENvbXB1dGVyIEVkdWNhdGlvbiAtIEjhu4cgVGjhu5FuZyDEkMOgbyB04bqhbyBM4bqtcCBUcsOsbmggVmnDqm4gUXXhu5FjIHThur8gQXB0ZWNo!5e0!3m2!1svi!2s!4v1654063056845!5m2!1svi!2s" width="1000" height="800" style="border:0;" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"/> */}
-        </div>
+        
+        <MapContainer />
+        
 
         <div className="row send-massage">
           <div className="message">SEND US A MESSAGE</div>

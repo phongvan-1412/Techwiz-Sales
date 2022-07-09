@@ -353,9 +353,12 @@
 /* --------------------PAGES-------------------- */
 /* ---------------CONTACT--------------- */
 
-.contact-map{
-    text-align: center;
-    margin: 50px 0px;
+.map-container{
+    position: relative !important;
+    margin-top: 20px !important;
+}
+.send-massage{
+  
 }
 .send-massage .form{
     display: grid;
