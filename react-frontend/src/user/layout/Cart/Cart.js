@@ -11,10 +11,8 @@ const Cart = ({ cart }) => {
     const fetchProducts = () => {
       let tmp = 0;
 
-      cart.forEach((items) => {
-        items.map(item => {
-          tmp += parseInt(item.product_subtotal);
-        })
+      cart.forEach((item) => {
+        tmp += parseInt(item.product_subtotal);
       });
       setSubTotal(tmp);
     };
@@ -37,7 +35,7 @@ const Cart = ({ cart }) => {
           </div>
           <div>{cart.length === 0 && <div>Cart is empty</div>}</div>
           {cart.map((item) => (
-            <CartItem key={item.product_SKU} items={item}></CartItem>
+            <CartItem key={item.product_SKU} item={item}></CartItem>
           ))}
         </div>
         <div className="col-3">
@@ -62,12 +60,5 @@ const Cart = ({ cart }) => {
     </div>
   );
 };
-// Cart.propTypes = {
-//   getCart: PropTypes.func.isRequired,
-// };
-
-// const mapStateToProps = (state) => ({
-//   cart: state.cart.cart,
-// });
 
 export default Cart;
