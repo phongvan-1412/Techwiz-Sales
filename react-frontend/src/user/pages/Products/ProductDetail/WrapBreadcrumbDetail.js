@@ -11,7 +11,7 @@ class WrapBreadcrumbDetail extends Component{
         const {  product } = this.props;
         
         return(
-            <div className="wrap-breadcrumb">
+            <div className="wrap-breadcrumb" >
                 <ul>
                     <li className="item-link"><Link to="#" className="home-link">HOME</Link></li>
                     <li className="item-link"><Link to="#">{product.category_name.replace(/-/g, " ")}</Link></li>
