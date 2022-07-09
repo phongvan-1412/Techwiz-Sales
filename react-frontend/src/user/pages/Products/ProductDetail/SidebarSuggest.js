@@ -32,11 +32,10 @@ class SidebarSuggest extends Component {
       dots: false,
       infinite: false,
       speed: 500,
-      slidesToShow: 3,
-      slidesPerRow: 1,
-      slidesToScroll: 3,
+      slidesToShow: 1,
+      rows: 3,
+      slidesToScroll: 1,
       arrows: false,
-      vertical: true
     };
 
     return (
@@ -50,7 +49,7 @@ class SidebarSuggest extends Component {
 
         {/* sidebar-suggest-product */}
         <div>
-          <div className="sidebar-suggest">
+          <div className="sidebar-suggest-content">
             <div className="sidebar-suggest title">
               <h4>FEATURED PRODUCTS</h4>
             </div>
