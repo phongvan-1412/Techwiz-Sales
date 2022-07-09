@@ -17,40 +17,44 @@ export default function (state = initialState, action) {
       };
     case ADD_PRODUCT_TO_CART:
       let check = true;
+      let temp = "";
+      action.payload.forEach((item) => (temp = item));
+
+      if (state.cart.length === 0) {
+        return {
+          cart: [temp, ...state.cart],
+        };
+      }
+
       state.cart.forEach((items) => {
-        items.forEach((item) => {
-          if (item.product_SKU === getProductId(action.payload)) {
-            check = false;
-            return;
-          }
-        });
+        if (items.product_SKU === getProductId(action.payload)) {
+          check = false;
+          return;
+        }
       });
+
       if (check) {
         return {
-          cart: [action.payload, ...state.cart],
+          cart: [temp, ...state.cart],
         };
       } else {
         return {
-          cart: [...state.cart],
+          ...state,
         };
       }
 
     case DELETE_PRODUCT_FROM_CART:
-      console.log(state.cart);
       return {
-        ...state,
         cart: state.cart.filter((item) => item.product_SKU !== action.payload),
       };
 
     case UPDATE_PRODUCT_FROM_CART: {
-      state.cart.forEach((items) => {
-        items.forEach((item) => {
-          if (item.product_SKU === getProductId(action.payload)) {
-            item.product_quantity = getProductQuantity(action.payload);
-            item.product_subtotal = getProductSubtotal(action.payload);
-            return;
-          }
-        });
+      state.cart.forEach((item) => {
+        if (item.product_SKU === getProductId(action.payload)) {
+          item.product_quantity = getProductQuantity(action.payload);
+          item.product_subtotal = getProductSubtotal(action.payload);
+          return;
+        }
       });
       return {
         ...state,
