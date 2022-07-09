@@ -16,7 +16,7 @@ class ProductDetailItemSlide extends Component {
             className="product-name-item"
           >
             <img
-              className="product-item-content product-img"
+              className="product-detail-item-slide product-img"
               src={require(`../../../layout/LandingPageSlider/tempImg/${product.product_thumbnail_name}`)}
             />
           </Link>
@@ -27,7 +27,7 @@ class ProductDetailItemSlide extends Component {
             <Link
               to={`/${product.category_name}/${product.product_name}`}
               replace
-              className="product-name-item"
+              className="product-detail-item-name"
             >
               {product.product_name.replace(/-/g, " ")}
             </Link>

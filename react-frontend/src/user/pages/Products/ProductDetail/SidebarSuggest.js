@@ -28,15 +28,25 @@ class SidebarSuggest extends Component {
   render(){
     const { products, product } = this.props;
 
+    const categoryname = product.category_name;
+    let suggestProduct = [];
+
+    products.forEach(
+      product => {
+        if(product.category_name === categoryname){
+          suggestProduct = [product, ...suggestProduct]
+        }
+      }
+    )
+    console.log(suggestProduct)
     const settings = {
       dots: false,
       infinite: false,
       speed: 500,
-      slidesToShow: 3,
-      slidesPerRow: 1,
-      slidesToScroll: 3,
+      slidesToShow: 1,
+      rows: 3,
+      slidesToScroll: 1,
       arrows: false,
-      vertical: true
     };
 
     return (
@@ -50,13 +60,13 @@ class SidebarSuggest extends Component {
 
         {/* sidebar-suggest-product */}
         <div>
-          <div className="sidebar-suggest">
+          <div className="sidebar-suggest-content">
             <div className="sidebar-suggest title">
               <h4>FEATURED PRODUCTS</h4>
             </div>
 
             <Slider ref={(c) => (this.slider = c)} {...settings}>
-                {products.map(product=>(
+                {suggestProduct.map(product=>(
                     <ProductDetailItemSlide
                     key={product.product_SKU}
                     product={product}
