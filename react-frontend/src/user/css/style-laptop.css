@@ -273,9 +273,38 @@
 .slick-list{
     z-index: 2;
 }
+.slide-title{
+    border-bottom: none;
+}
 .slide-title .top-content{
     display: flex;
-
+    align-items: center;
+    border-bottom: var(--border);
+}
+.slide-title .top-content h4{
+    margin-right: 20px;
+}
+.slide-title .top-content .btn-category{
+    margin-right: 10px;
+    padding: 3px 15px;
+    border: 1px solid var(--categoryNameColor);
+    background-color: var(--textColor);
+    color: var(--categoryNameColor);
+    font-size: 13px;
+    font-weight: 700;
+}
+.slide-title .top-content .btn-active-show{
+    border: 1px solid var(--buttonColor);
+    color: var(--buttonColor);
+    font-size: 13px;
+    font-weight: 700;
+}
+.slide-title .top-content .btn-category:hover{
+    border: 1px solid var(--buttonColor);
+    background-color: var(--textColor);
+    color: var(--buttonColor);
+    font-size: 13px;
+    font-weight: 700;
 }
 .btn-click{
     display: block;

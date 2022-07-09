@@ -38,8 +38,8 @@ class LandingPageSlider1 extends Component {
             <h4>
               <b>FEATURED PRODUCTS</b>
             </h4>
-            <button>Breakfast</button>
-            <button>Chocolate</button>
+            <button className="btn-category mb-2 btn-active-show">Breakfast</button>
+            <button className="btn-category mb-2 btn-show">Chocolate</button>
           </div>
 
           <Slider ref={(c) => (this.slider = c)} {...settings}>
