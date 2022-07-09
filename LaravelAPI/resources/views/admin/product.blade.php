@@ -1,16 +1,19 @@
 @extends('admin.layout.layout')
+<!-- TOP BAR -->
 @section('topbar')
     @include('admin.layout.topbar')
 @endsection
+<!-- MENU BAR -->
 @section('menubar')
     @include('admin.layout.menubar')
 @endsection
-
+<!-- CSS -->
 @section('css')
     <link href="{{ asset('libs\datatables\dataTables.bootstrap4.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('libs\datatables\responsive.bootstrap4.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('libs\datatables\buttons.bootstrap4.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('libs\datatables\select.bootstrap4.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/category.css')}}">
 @endsection
 @section('jquery')
     <script src="{{ asset('libs\datatables\jquery.dataTables.min.js') }}"></script>
@@ -33,10 +36,16 @@
         <div class="container-fluid">
 
             <div class="row">
-                <div class="col-12">
+                <div class="col-md-6">
                     <div class="page-title-box">
                         <h4 class="page-title">Product Datatable</h4>
                     </div>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <button class="btn btn-success waves-effect waves-light float-right"
+                        data-toggle="modal" data-target="#con-close-modal">
+                        New Product
+                    </button>
                 </div>
             </div>
 
@@ -45,7 +54,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-11 float-start">
+                                <div class="col-md-12 float-start">
                                     @if (Session::has('succ-msg'))
                                         <div class="alert alert-success">
                                             {{ Session::get('succ-msg') }}
@@ -57,18 +66,12 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="col-md-1">
-                                    <button class="btn btn-success waves-effect waves-light float-right mb-2"
-                                        data-toggle="modal" data-target="#con-close-modal">
-                                        New Product
-                                    </button>
-                                </div>
                             </div>
 
                             <table id="basic-datatable" class="table dt-responsive nowrap">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th class="text-center"></th>
                                         <th>Image</th>
                                         <th>Name</th>
                                         <th>Category</th>
@@ -84,22 +87,22 @@
                                 <tbody>
                                     @foreach ($products as $pro)
                                         <tr>
-                                            <td>{{ $i++ }}</td>
-                                            <td>{{ $pro->product_img_name }}</td>
+                                            <td class="text-center">{{ $i++ }}</td>
+                                            <td><img id="imgproduct" src="{{asset('ProductImage')}}/{{$pro->product_img_name}}"></td>
                                             <td>{{ $pro->product_name }}</td>
-                                            <td>{{ $pro->category_id }}</td>
-                                            <td>{{ $pro->product_quatity }}</td>
+                                            <td>{{ $pro->category_name }}</td>
+                                            <td>{{ $pro->product_quantity }}</td>
                                             <td>{{ $pro->product_price_per_unit }}</td>
 
-                                            @if ($cate->category_status == 1)
-                                                <td class="text-center">
+                                            @if ($pro->product_status == 1)
+                                                <td>
                                                     <label class="switch">
                                                         <input name="category_status" type="checkbox" checked>
                                                         <span class="slider round"></span>
                                                     </label>
                                                 </td>
                                             @else
-                                                <td class="text-center">
+                                                <td>
                                                     <label class="switch">
                                                         <input name="category_status" type="checkbox">
                                                         <span class="slider round"></span>
@@ -108,8 +111,8 @@
                                             @endif
 
                                             <td>
-                                                <form action="{{route('product.destroy', $cate->category_id)}}" method="POST">
-                                                    <a href="{{route('product.edit', $cate->category_id)}}" class="btn btn-info">Edit</a>
+                                                <form action="{{route('product.destroy', $pro->product_id)}}" method="POST">
+                                                    <a href="{{route('product.edit', $pro->product_id)}}" class="btn btn-info">Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger">Delete</button>
@@ -131,7 +134,7 @@
     <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="{{route('product.store')}}" method="POST">
+                <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="modal-header">
                         <h4 class="modal-title">New Product</h4>
@@ -148,7 +151,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label">Category</label>
-                                    <select class="form-control" name="category_id" id="category_id">
+                                    <select class="form-control" name="category_name" id="category_name">
                                         @foreach ($categories as $category)
                                             <option value="{{$category->category_name}}">
                                                 {{$category->category_name}}
@@ -162,24 +165,24 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="field-1" class="control-label">Price</label>
-                                    <input type="text" class="form-control" name="product_name" require>
+                                    <input type="text" class="form-control" name="product_price_per_unit" require>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="field-1" class="control-label">Image</label>
-                                    <input type="file" class="form-control" name="product_img_name" require>
+                                    <input type="file" class="form-control-file" name="product_img_name" require>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="information" class="control-label">Information</label>
-                                    <textarea name="information" class="form-control" id="information" cols="30" rows="10"></textarea>
+                                    <label for="product_information" class="control-label">Information</label>
+                                    <textarea name="product_information" class="form-control" id="product_information" cols="30" rows="10"></textarea>
+                                </div>
                             </div>
                         </div>
-
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
                         <input type="submit" id="createadmin" class="btn btn-info waves-effect waves-light" value="Create">
@@ -188,4 +191,9 @@
             </div>
         </div>
     </div>
+    <style>
+        #file-upload-button{
+            margin-bottom: 2px;
+        }
+    </style>
 @endsection

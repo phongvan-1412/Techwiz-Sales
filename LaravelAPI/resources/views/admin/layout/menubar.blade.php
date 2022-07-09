@@ -77,10 +77,7 @@
                         <a href="{{route('product.index')}}">Add Procduct</a>
                     </li>
                     <li>
-                        <a href="extras-timeline.html">Edit Product</a>
-                    </li>
-                    <li>
-                        <a href="extras-invoice.html">Import Product</a>
+                        <a href="{{route('import.index')}}">Import Product</a>
                     </li>
                 </ul>
             </li>

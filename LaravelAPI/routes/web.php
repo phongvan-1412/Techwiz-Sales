@@ -6,6 +6,7 @@ use App\Http\Controllers\CustomerController as Customer;
 use App\Http\Controllers\PaymentController as Payment;
 use App\Http\Controllers\CategoryController as Category;
 use App\Http\Controllers\ProductController as Product;
+use App\Http\Controllers\ImportProductController as Import;
 
 
 /*
@@ -28,5 +29,7 @@ Route::resource('/customerprofile', Customer::class);
 Route::resource('/payment', Payment::class);
 Route::resource('/category', Category::class);
 Route::resource('/product', Product::class);
+Route::resource('/import', Import::class);
+
 
 
