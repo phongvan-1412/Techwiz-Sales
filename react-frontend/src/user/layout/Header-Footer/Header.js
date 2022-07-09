@@ -15,7 +15,7 @@ import Dropdown from "../DropdownNavBar/Dropdown";
 import axios from "axios";
 import CartItems from "../Cart/CartItems";
 
-function Header({cart}) {
+function Header({ cart }) {
   const [drop, setDrop] = useState(false);
   const [categoriesRoot, setCategoriesRoot] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -67,28 +67,24 @@ function Header({cart}) {
               />
             )}
           </Link>
-
-          <Link
-            to="/cart"
-            replace
-            className="cart"
-            style={{ height: "100px",marginTop: "50px" }}
+          <div
+            className="nav-bag"
+            style={{ height: "100px", marginTop: "50px" }}
             onMouseEnter={() => setCartMini(true)}
             onMouseLeave={() => setCartMini(false)}
           >
-            <div className="nav-bag">
-              <AiOutlineShoppingCart />
-              <span>Shoping Cart</span>
-              <br />
-              <span className="bag-quantity">1 items - 999999</span>
-            </div>
+            <AiOutlineShoppingCart />
+            <span>Shoping Cart</span>
+            <br />
+            <span className="bag-quantity">1 items - 999999</span>
             {cartMini && (
               <CartItems
                 categoriesRoot={categoriesRoot}
                 categories={categories}
               />
             )}
-          </Link>
+          </div>
+
           <Link to="/shipping" replace className="shipping">
             Shipping
           </Link>

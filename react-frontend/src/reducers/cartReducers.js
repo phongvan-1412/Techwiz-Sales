@@ -17,7 +17,6 @@ export default function (state = initialState, action) {
       };
     case ADD_PRODUCT_TO_CART:
       let check = true;
-
       state.cart.forEach((items) => {
         items.forEach((item) => {
           if (item.product_SKU === getProductId(action.payload)) {
@@ -32,19 +31,16 @@ export default function (state = initialState, action) {
         };
       } else {
         return {
-          ...state,
+          cart: [...state.cart],
         };
       }
 
     case DELETE_PRODUCT_FROM_CART:
+      console.log(state.cart);
       return {
         ...state,
-        cart: state.cart.filter((item) => item.product_id !== item.payload),
+        cart: state.cart.filter((item) => item.product_SKU !== action.payload),
       };
-    //   case RESET_LIST:
-    //     return {
-    //       item: [...state, []],
-    //     };
 
     case UPDATE_PRODUCT_FROM_CART: {
       state.cart.forEach((items) => {

@@ -33,10 +33,10 @@ export const getCart = () => {
   };
 };
 
-export const deleteProductFromCart = (product_id) => {
+export const deleteProductFromCart = (product_SKU) => {
   return {
     type: DELETE_PRODUCT_FROM_CART,
-    payload: product_id,
+    payload: product_SKU,
   };
 };
 export const submitCart = (products) => {

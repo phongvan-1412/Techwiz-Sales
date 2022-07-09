@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
 import { connect } from "react-redux";
-import { updateProductFromCart } from "../../../actions/cartAction";
+import { Link } from "react-router-dom";
+import {
+  updateProductFromCart,
+  deleteProductFromCart,
+  getCart,
+} from "../../../actions/cartAction";
 
 class CartItem extends Component {
   state = {
-    product_quantity : '',
+    product_quantity: "",
   };
 
   render() {
@@ -15,6 +19,9 @@ class CartItem extends Component {
       this.props.updateProductFromCart(item, this.state.product_quantity);
     };
     const onClick = (event) => {
+      this.setState({ product_quantity: event.target.value });
+    };
+    const onSubmit = (event) => {
       this.setState({ product_quantity: event.target.value });
     };
     return (
@@ -55,11 +62,21 @@ class CartItem extends Component {
                   className="input-text-qty"
                   onChange={onChange.bind(this, item)}
                   onClick={onClick}
-                  onBlur={onChange.bind(this, item)}
                   defaultValue={item.product_quantity}
                 />
               </div>
-              <div className="col-2">{item.product_subtotal}</div>
+              <div className="col-2">
+                <div>
+                  <button
+                    onClick={() =>
+                      this.props.deleteProductFromCart(item.product_SKU)
+                    }
+                  >
+                    Remove item
+                  </button>
+                </div>
+                <div>{item.product_subtotal}</div>
+              </div>
             </div>
           </div>
         ))}
@@ -71,9 +88,15 @@ class CartItem extends Component {
 CartItem.propTypes = {
   items: PropTypes.array.isRequired,
   updateProductFromCart: PropTypes.func.isRequired,
+  deleteProductFromCart: PropTypes.func.isRequired,
+  getCart: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   cart: state.cart.cart,
 });
-export default connect(mapStateToProps, { updateProductFromCart })(CartItem);
+export default connect(mapStateToProps, {
+  updateProductFromCart,
+  deleteProductFromCart,
+  getCart,
+})(CartItem);

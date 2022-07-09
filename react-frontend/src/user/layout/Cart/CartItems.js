@@ -1,48 +1,46 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React from "react";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";;
+import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { getProducts } from "../../../actions/productsActions";
-import CartItem from "./CartItem";
-
-class CartItems extends Component {
-//   componentDidMount() {
-//     this.props.getProducts();
-//   }
-
-  render() {
-    // const { products } = this.props;
-    return (
-      <div className="container">
+const CartItems = () => {
+  return (
+    <div
+      className="container"
+      style={{
+        marginLeft: "0px",
+        marginTop: "25px",
+        background: "gray",
+        position: "absolute",
+        width: "300px",
+      }}
+    >
+      <div>
         <div>
-          <div>
-            <h3>
-              <b>YOUR PRODUCT</b>
-            </h3>
-          </div>
-          <div>
-            {/* {products.map((product) => ( */}
-              <CartItem key={product.product_SKU} content={product}></CartItem>
-            {/* ))} */}
-          </div>
-          <hr />
-          <div>
-            <h3>
-              <b>CART SUBTOTAL :</b>
-            </h3>
-            <h4>subtotal price</h4>
-          </div>
-          <div>
-            <button>Check Out</button>
-          </div>
+          <h3>
+            <b>YOUR PRODUCT</b>
+          </h3>
+        </div>
+        <div>sdfadfasdf</div>
+        <hr />
+        <div>
+          <h5>
+            <b>CART SUBTOTAL :</b>
+          </h5>
+          <h5>subtotal price</h5>
+        </div>
+        <div>
+          <button>
+            <Link to="/cart" replace>
+              Shipping
+            </Link>
+          </button>
+
+          <button>Check Out</button>
         </div>
       </div>
-    );
-  }
-}
-
+    </div>
+  );
+};
 
 export default CartItems;
