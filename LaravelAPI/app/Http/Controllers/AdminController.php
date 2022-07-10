@@ -35,5 +35,7 @@ class AdminController extends Controller
         $admin->delete();
         return redirect()->route('adminprofile.index')->with('msg', 'Deleted Successfully');
     }
+
+
 }
 
