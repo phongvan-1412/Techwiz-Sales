@@ -10,9 +10,8 @@ const PayPal = () => {
                     intent: "CAPTURE",
                     purchase_units: [
                         {
-                            description: "Cool looking table",
                             amount: {
-                                currency_code: "VND",
+                                currency_code: "USD",
                                 value: 650.00
                             }
                         }
