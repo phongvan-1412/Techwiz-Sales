@@ -21,23 +21,44 @@ import ProductDetail from "./user/pages/Products/ProductDetail/ProductDetail";
 
 class MainRoute extends Component {
   render() {
-    const { products, cart } = this.props;
+    const { products, cart, categories, categoriesRoot } = this.props;
     return (
       <div className="container" style={{ padding: "0px", margin: "0px" }}>
         <Routes>
           <Route path="/" element={<LandingPage products={products} />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/contactus" element={<ContactUs />}></Route>
-          <Route
-            path="/product"
-            element={<ProductByCategory products={products} />}
-          ></Route>
+
+          {/* Cart */}
           <Route path="/cart" element={<Cart cart={cart} />}></Route>
           <Route
             path="/updatecart"
             element={<LandingPage cart={cart} />}
           ></Route>
 
+          {/* Product */}
+          <Route
+            path="/product"
+            element={<ProductByCategory products={products} />}
+          ></Route>
+          
+          {categories.map((category) => (
+            <Route
+              key={category.category_id}
+              path={`/${category.category_root_name}/${category.category_name}`}
+              element={<ProductByCategory categories={categories} products={products}/>}
+            ></Route>
+          ))}
+
+          {categoriesRoot.map((categoryRoot) => (
+            <Route
+              key={categoryRoot.category_id}
+              path={`/${categoryRoot.category_name}`}
+              element={<ProductByCategory products={products} categories={categories} categoriesRoot={categoriesRoot}/>}
+            ></Route>
+          ))}
+
+            {/* Product Detail   */}
           {products.map((product) => (
             <Route
               key={product.product_SKU}
@@ -45,13 +66,9 @@ class MainRoute extends Component {
               element={<ProductDetail product={product} products={products}/>}
             ></Route>
           ))}
-          {/* {spotlights.map((spotlight) => (
-            <Route
-              key={spotlight.blog_id}
-              path={`/${spotlight.category_name}/${spotlight.blog_title}/:spotlight.blog_id`}
-              element={<Category />}
-            ></Route>
-          ))} */}
+
+
+          
         </Routes>
       </div>
     );

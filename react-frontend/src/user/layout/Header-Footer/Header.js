@@ -15,25 +15,14 @@ import Dropdown from "../DropdownNavBar/Dropdown";
 import axios from "axios";
 import QuickViewCartItems from "../Cart/QuickViewCartItems";
 
-function Header({ cart }) {
+function Header({ cart, categories, categoriesRoot }) {
   const [drop, setDrop] = useState(false);
-  const [categoriesRoot, setCategoriesRoot] = useState([]);
-  const [categories, setCategories] = useState([]);
   const [cartMini, setCartMini] = useState(false);
   const [itemsCount, setItemsCount] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const resRoot = await axios.get(
-        "http://127.0.0.1:8000/api/selectcategoryroot"
-      );
-      const resCate = await axios.get(
-        "http://127.0.0.1:8000/api/selectallcategory"
-      );
-      setCategoriesRoot(resRoot.data);
-      setCategories(resCate.data);
-
       let tmp = 0;
       let count = 0;
       cart.forEach((item) => {

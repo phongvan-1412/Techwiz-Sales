@@ -11,7 +11,7 @@ class WrapBreadcrumb extends Component{
             <div className="wrap-breadcrumb">
                 <ul>
                     <li className="item-link"><Link to="#" className="home-link">HOME</Link></li>
-                    <li className="item-link"><span>SWEET GROCERY</span></li> {/* {$category_root_name} */}
+                    {/* <li className="item-link"><span>SWEET GROCERY</span></li> {$category_root_name} */}
                 </ul>
             </div>
  

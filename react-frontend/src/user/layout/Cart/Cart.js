@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
 
 // import { connect } from "react-redux";
 // import PropTypes from "prop-types";
@@ -21,7 +22,7 @@ const Cart = ({ cart }) => {
 
     fetchProducts();
   }, []);
-
+  console.log(checkout)
   return (
     <div className="container">
       <div className="row">
@@ -53,7 +54,7 @@ const Cart = ({ cart }) => {
                 <div className="col-4">{subTotal}</div>
               </div>
               <div className="container">
-                {checkout ? (<PayPal  subtotal={subTotal}/>) : (<button onClick={()=> {setCheckOut(true);}}>PROCEED TO CHECKOUT</button>)} 
+                {checkout ? (<PayPal  subtotal={subTotal}/>) : (<button onMouseDown={()=> {setCheckOut(true);}}><Link to='/checkout'>PROCEED TO PAYMENT </Link></button>)} 
               </div>
             </form>
           </div>

@@ -11,7 +11,7 @@ function DropdownItem({ category_name, categories }) {
       <ul>
         {cates.map((cate) => {
           return (
-            <Link key={cate.category_id} to={cate.category_name}>
+            <Link key={cate.category_id} to={`/${cate.category_root_name}/${cate.category_name}`}>
               <li>{cate.category_name}</li>
             </Link>
           );
