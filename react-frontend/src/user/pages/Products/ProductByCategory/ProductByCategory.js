@@ -10,24 +10,51 @@ import "../../../css/style-mobile.css";
 import "../../../css/style-tablet.css";
 import "../../../css/style-laptop.css";
 
-class ProductByCategory extends Component{
-    render(){
-        const { products } = this.props;
-        return(
-            <div className="row">
-                <div className="col-lg-3 col-md-3 col-sm-12">
-                    <WrapBreadcrumb products={products}/>
-                    <SidebarFilter products={products}/>
-                </div>
-                <div className="col-lg-9 col-md-9 product-by-category-display" style={{padding: '0px', margin: '0px'}}>
-                    <SortProductNav />
-                    <DisplayProduct products={products}/>
-                </div>
-            </div>
-            
-        )
+class ProductByCategory extends Component {
+  render() {
+    const { products, category, categoryRoot } = this.props;
+
+    let currentProducts = [];
+    if (category == null) {
+      products.forEach((product) => {
+        if (
+          product.category_name.replace("-", " ") ===
+          categoryRoot.category_name.replace("-", " ")
+        ) {
+          currentProducts = [product, ...currentProducts];
+        }
+      });
+    } else {
+      products.forEach((product) => {
+        if (
+          product.category_name.replace("-", " ") ===
+          category.category_name.replace("-", " ")
+        ) {
+          currentProducts = [product, ...currentProducts];
+        }
+      });
     }
 
+    return (
+      <div className="row">
+        <div className="col-lg-3 col-md-3 col-sm-12">
+          <WrapBreadcrumb
+            products={currentProducts}
+            category={category}
+            categoryRoot={categoryRoot}
+          />
+          <SidebarFilter products={currentProducts} />
+        </div>
+        <div
+          className="col-lg-9 col-md-9 product-by-category-display"
+          style={{ padding: "0px", margin: "0px" }}
+        >
+          <SortProductNav />
+          <DisplayProduct products={currentProducts} />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default ProductByCategory;

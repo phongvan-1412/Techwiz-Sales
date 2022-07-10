@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 const PayPal = ({subtotal}) => {
     const paypal = useRef();
     const value = (subtotal/1000).toFixed(2);
-    console.log(value);
     useEffect(()=>{
         window.paypal.Buttons({
+            
             createOrder: (data, actions, err) => {
                 return actions.order.create({
                     intent: "CAPTURE",
@@ -31,9 +31,7 @@ const PayPal = ({subtotal}) => {
     }, [])
 
     return (
-    <div>
-        <div ref={paypal}></div>
-    </div>
+    <div ref={paypal}></div>
     )
 }
 

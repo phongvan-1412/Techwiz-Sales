@@ -28,7 +28,7 @@ const Dropdown = ({ categoriesRoot, categories }) => {
                           to={category.category_name}
                           style={{ cursor: "pointer" }}
                         >
-                          {category.category_name}
+                          {category.category_name.replace('-',' ')}
                         </Link>
 
                         <div>
