@@ -90,7 +90,7 @@
                 </a>
                 <ul class="nav-second-level" aria-expanded="false">
                     <li>
-                        <a href="extras-profile.html"> Bill Detail </a>
+                        <a href="/bill"> Bill Detail </a>
                     </li>
 
                 </ul>
