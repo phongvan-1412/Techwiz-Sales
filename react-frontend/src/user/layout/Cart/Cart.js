@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 // import { connect } from "react-redux";
 // import PropTypes from "prop-types";
 import CartItem from "./CartItem";
+import PayPal from "../../pages/Payment/PayPal";
 
 const Cart = ({ cart }) => {
   const [subTotal, setSubTotal] = useState([]);
+  const [ checkout, setCheckOut ] = useState(false);
 
   useEffect(() => {
     const fetchProducts = () => {
@@ -51,7 +53,7 @@ const Cart = ({ cart }) => {
                 <div className="col-4">{subTotal}</div>
               </div>
               <div className="container">
-                <button>PROCEED TO CHECKOUT</button>
+                {checkout ? (<PayPal />) : (<button onClick={()=> {setCheckOut(true);}}>PROCEED TO CHECKOUT</button>)} 
               </div>
             </form>
           </div>

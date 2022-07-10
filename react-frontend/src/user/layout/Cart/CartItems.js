@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-
-import PayPal from "../../pages/Payment/PayPal";
 
 const CartItems = () => {
   return (
@@ -38,7 +36,7 @@ const CartItems = () => {
             </Link>
           </button>
 
-          {checkout ? (<PayPal />) : (<button onClick={()=> {setCheckOut(true);}}>Check Out</button>)} 
+          <button>Check Out</button>
         </div>
       </div>
     </div>
