@@ -10,7 +10,9 @@ class ProductItem extends Component {
 
   render() {
     const { product } = this.props;
+    
     return (
+      
       <div className="col-lg-3 col-md-4 col-sm-6">
         <form onSubmit={this.onSubmit}>
           <div>
