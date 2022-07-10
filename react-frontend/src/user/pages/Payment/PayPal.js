@@ -1,8 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const PayPal = () => {
+const PayPal = ({subtotal}) => {
     const paypal = useRef();
+    const value = (subtotal/1000).toFixed(2);
+    console.log(value);
     useEffect(()=>{
         window.paypal.Buttons({
             createOrder: (data, actions, err) => {
@@ -12,7 +14,7 @@ const PayPal = () => {
                         {
                             amount: {
                                 currency_code: "USD",
-                                value: 650.00
+                                value: value
                             }
                         }
                     ]

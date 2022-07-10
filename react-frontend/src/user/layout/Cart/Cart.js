@@ -6,7 +6,7 @@ import CartItem from "./CartItem";
 import PayPal from "../../pages/Payment/PayPal";
 
 const Cart = ({ cart }) => {
-  const [subTotal, setSubTotal] = useState([]);
+  const [subTotal, setSubTotal] = useState(0);
   const [ checkout, setCheckOut ] = useState(false);
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const Cart = ({ cart }) => {
                 <div className="col-4">{subTotal}</div>
               </div>
               <div className="container">
-                {checkout ? (<PayPal />) : (<button onClick={()=> {setCheckOut(true);}}>PROCEED TO CHECKOUT</button>)} 
+                {checkout ? (<PayPal  subtotal={subTotal}/>) : (<button onClick={()=> {setCheckOut(true);}}>PROCEED TO CHECKOUT</button>)} 
               </div>
             </form>
           </div>

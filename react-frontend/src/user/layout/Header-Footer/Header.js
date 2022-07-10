@@ -40,8 +40,8 @@ function Header({ cart }) {
         tmp += parseInt(item.product_subtotal);
         count++;
       });
-      setItemsCount(count);
-      setCartTotal(tmp);
+      // setItemsCount(count);
+      // setCartTotal(tmp);
     };
 
     fetchCategories();
