@@ -52,7 +52,7 @@ function Header({ cart, categories, categoriesRoot }) {
             Contact
           </Link>
           <Link
-            to="/product"
+            to="#"
             replace
             className="product"
             onMouseEnter={() => setDrop(true)}

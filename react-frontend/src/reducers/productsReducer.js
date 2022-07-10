@@ -62,7 +62,7 @@ const initialState = {
     },
     {
       product_SKU: "7",
-      category_name: "FRESH FOOD",
+      category_name: "Fresh Food",
       emp_name: "Phuong",
       product_price: "185000",
       product_name: "Harry's-Dark-Chocolate-DooWap-(320g)",
@@ -71,7 +71,7 @@ const initialState = {
     },
     {
       product_SKU: "8",
-      category_name: "FRESH FOOD",
+      category_name: "Fresh Food",
       emp_name: "Phuong",
       product_price: "252000",
       product_name: "Harry's-Brioche-Bread-Nature-(500g)",
@@ -80,7 +80,7 @@ const initialState = {
     },
     {
       product_SKU: "9",
-      category_name: "FRESH FOOD",
+      category_name: "Fresh Food",
       emp_name: "Phuong",
       product_price: "268000",
       product_name: "Harry's-Nature-Brioche-Bread-Slides-(485g)",
@@ -89,7 +89,7 @@ const initialState = {
     },
     {
       product_SKU: "10",
-      category_name: "FRESH FOOD",
+      category_name: "Fresh Food",
       emp_name: "Phuong",
       product_price: "328000",
       product_name: "Harry's-Chocolate-chips-Brioche-Bread-(500g)",
@@ -98,7 +98,7 @@ const initialState = {
     },
     {
       product_SKU: "11",
-      category_name: "FRESH FOOD",
+      category_name: "Fresh Food",
       emp_name: "Phuong",
       product_price: "63000",
       product_name: "Harry's-Chocolate-chips-Brioche-Bread-(500g)",
@@ -107,7 +107,7 @@ const initialState = {
     },
     {
       product_SKU: "12",
-      category_name: "FRESH FOOD",
+      category_name: "Fresh Food",
       emp_name: "Phuong",
       product_price: "180000",
       product_name: "Harry's-Dark-Chocolate-DooWap-(320g)",
@@ -116,7 +116,7 @@ const initialState = {
     },
     {
       product_SKU: "13",
-      category_name: "DRINKS",
+      category_name: "Drinks",
       emp_name: "Phuong",
       product_price: "127000",
       product_name: "Mort-Subite-Cherry-Flavor-Beer-(330ml)",
@@ -125,7 +125,7 @@ const initialState = {
     },
     {
       product_SKU: "14",
-      category_name: "DRINKS",
+      category_name: "Drinks",
       emp_name: "Phuong",
       product_price: "184000",
       product_name: "Val-De-Rance-Cru-Breton-Dry-Cider (750ml)",
@@ -134,7 +134,7 @@ const initialState = {
     },
     {
       product_SKU: "15",
-      category_name: "DRINKS",
+      category_name: "Drinks",
       emp_name: "Phuong",
       product_price: "195000",
       product_name: "Old-Jamaica-Ginger-Beer-Can-(330ml)",
@@ -143,7 +143,7 @@ const initialState = {
     },
     {
       product_SKU: "16",
-      category_name: "DRINKS",
+      category_name: "Drinks",
       emp_name: "Phuong",
       product_price: "156000",
       product_name: "BrewDog-Dead-Pony-Ale-Beer-Bottle-(330ml)",
@@ -152,7 +152,7 @@ const initialState = {
     },
     {
       product_SKU: "17",
-      category_name: "DRINKS",
+      category_name: "Drinks",
       emp_name: "Phuong",
       product_price: "163000",
       product_name: "Val-De-France-L'Authentique-French-Pear-Cider-(330ml)",
@@ -161,7 +161,7 @@ const initialState = {
     },
     {
       product_SKU: "18",
-      category_name: "DRINKS",
+      category_name: "Drinks",
       emp_name: "Phuong",
       product_price: "199.000",
       product_name: "Val-De-France-L'Authentique-French-Pear-Cider-(330ml)",
