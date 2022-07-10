@@ -13,13 +13,15 @@ import "../../css/style-laptop.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Dropdown from "../DropdownNavBar/Dropdown";
 import axios from "axios";
-import CartItems from "../Cart/CartItems";
+import QuickViewCartItems from "../Cart/QuickViewCartItems";
 
 function Header({ cart }) {
   const [drop, setDrop] = useState(false);
   const [categoriesRoot, setCategoriesRoot] = useState([]);
   const [categories, setCategories] = useState([]);
   const [cartMini, setCartMini] = useState(false);
+  const [itemsCount, setItemsCount] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -31,6 +33,15 @@ function Header({ cart }) {
       );
       setCategoriesRoot(resRoot.data);
       setCategories(resCate.data);
+
+      let tmp = 0;
+      let count = 0;
+      cart.forEach((item) => {
+        tmp += parseInt(item.product_subtotal);
+        count++;
+      });
+      setItemsCount(count);
+      setCartTotal(tmp);
     };
 
     fetchCategories();
@@ -76,13 +87,10 @@ function Header({ cart }) {
             <AiOutlineShoppingCart />
             <span>Shoping Cart</span>
             <br />
-            <span className="bag-quantity">1 items - 999999</span>
-            {cartMini && (
-              <CartItems
-                categoriesRoot={categoriesRoot}
-                categories={categories}
-              />
-            )}
+            <span className="bag-quantity">
+              {itemsCount} items - {cartTotal}
+            </span>
+            {cartMini && <QuickViewCartItems cart={cart} />}
           </div>
 
           <Link to="/shipping" replace className="shipping">

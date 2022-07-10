@@ -13,7 +13,7 @@ export const addProductToCart = (product, quantity) => {
     {
       ...product,
       product_quantity,
-      product_subtotal
+      product_subtotal,
     },
   ];
 
@@ -42,17 +42,13 @@ export const submitCart = (products) => {
   };
 };
 export const updateProductFromCart = (product, quantity) => {
+  const product_quantity = quantity;
+  const product_subtotal = product_quantity * product.product_price;
   const newProduct = [
     {
-      product_SKU: product.product_SKU,
-      category_name: product.category_name,
-      emp_name: product.emp_name,
-      product_price: product.product_price,
-      product_name: product.product_name,
-      product_quantity: quantity,
-      product_detail: product.product_detail,
-      product_subtotal: parseInt(product.product_price) * parseInt(quantity),
-      product_thumbnail_name: product.product_thumbnail_name,
+      ...product,
+      product_quantity,
+      product_subtotal,
     },
   ];
   return {

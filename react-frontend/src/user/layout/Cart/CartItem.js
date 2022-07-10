@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import {
   updateProductFromCart,
   deleteProductFromCart,
@@ -10,20 +9,16 @@ import {
 
 class CartItem extends Component {
   state = {
-    product_quantity: "",
+    product_quantity: 1,
   };
 
   render() {
     const { item } = this.props;
-    const onChange = (item) => {
-      this.props.updateProductFromCart(item, this.state.product_quantity);
-    };
-    const onClick = (event) => {
+    const onChange = (event) => {
       this.setState({ product_quantity: event.target.value });
+      this.props.updateProductFromCart(item, event.target.value);
     };
-    const onSubmit = (event) => {
-      this.setState({ product_quantity: event.target.value });
-    };
+
     return (
       <div>
         <div className="container" key={item.product_SKU}>
@@ -59,8 +54,7 @@ class CartItem extends Component {
                 min="1"
                 step="1"
                 className="input-text-qty"
-                onChange={onChange.bind(this, item)}
-                onClick={onClick}
+                onChange={onChange}
                 defaultValue={item.product_quantity}
               />
             </div>
