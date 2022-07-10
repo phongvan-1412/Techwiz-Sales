@@ -11,13 +11,13 @@
 
     <!-- plugin css -->
     <link href="{{asset('libs/jquery-vectormap/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css">
+    @yield('css')
     
     <!-- App css -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/icons.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/app.min.css')}}" rel="stylesheet" type="text/css">
 
-    @yield('css')
 </head>
 
 <body>

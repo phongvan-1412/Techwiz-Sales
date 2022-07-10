@@ -62,23 +62,12 @@ class CategoryController extends Controller
         $category->save();
         return redirect()->route('category.index')->with('succ-msg', 'Update category successfully');
     
-
     }
-
 
     public function destroy($category_id){
         $category = AdminCategory::find($category_id);
         $category->delete();
         return redirect()->route('category.index')->with('succ-msg', 'Deleted Successfully');
-    }
-
-    public function updatestatus(Request $request){
-        $status = $request->category_status;
-        $st=0;
-        if($status == "on"){$st=1;}else{$st=0;} 
-        $category = new AdminCategory;
-        $category->category_status = $st;
-        $category->save();
     }
 
     function GetCategoryId($categories,$category_name)

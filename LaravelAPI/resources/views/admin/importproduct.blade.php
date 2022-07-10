@@ -10,7 +10,9 @@
     @include('admin.layout.menubar')
 @endsection
 <!-- CSS -->
-
+@section('css')
+    <link href="{{asset('libs/rwd-table/rwd-table.min.css')}}" rel="stylesheet" type="text/css">
+@endsection
 <!-- JQUERY -->
 @section('jquery')
     <script src="{{asset('libs/rwd-table/rwd-table.min.js')}}"></script>
@@ -39,6 +41,20 @@
     <div class="row">
         <div class="col-12">
             <div class="card-box">
+                <div class="row">
+                    <div class="col-md-12 float-start">
+                        @if (Session::has('succ-msg'))
+                            <div class="alert alert-success">
+                                {{ Session::get('succ-msg') }}
+                            </div>
+                        @endif
+                        @if (Session::has('fail-msg'))
+                            <div class="alert alert-danger">
+                                {{ Session::get('fail-msg') }}
+                            </div>
+                        @endif
+                    </div>
+                </div>
                 <div class="responsive-table-plugin">
                     <div class="table-rep-plugin">
                         <div class="table-responsive" data-pattern="priority-columns">
@@ -50,6 +66,7 @@
                                         <th data-priority="3">Cost input</th>
                                         <th data-priority="1">Date import</th>
                                         <th data-priority="3">Total</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -60,6 +77,13 @@
                                         <td>{{$imp->import_product_price_per_unit}}</td>
                                         <td>{{$imp->import_product_date}}</td>
                                         <td>{{$imp->import_product_total_payment}}</td>
+                                        <td>
+                                            <form action="{{route('import.destroy', $imp->import_product_id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
