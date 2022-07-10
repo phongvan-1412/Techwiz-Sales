@@ -6,8 +6,10 @@ function ProductView({ product }) {
   const [productQV, setProductQV] = useState(false);
   const [productShow, setProductShow] = useState(false);
 
-  console.log(productQV);
-
+  const onCLick = () => {
+    setProductShow(false);
+    setProductQV(false);
+  };
   return (
     <div
       style={{ width: "160px" }}
@@ -55,7 +57,7 @@ function ProductView({ product }) {
               marginLeft: "550px",
             }}
           >
-            <button onClick={() => setProductShow(false)}>close</button>
+            <button onClick={onCLick}>close</button>
           </div>
         </div>
       ) : null}
