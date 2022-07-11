@@ -26,7 +26,7 @@ class WrapBreadcrumb extends Component {
                 </Link>
               </li>
               <li className="item-link">
-                <span>{categoryRoot.category_name}</span>
+                <span className="categoryRoot-link">{categoryRoot.category_name.replace("-", " ")}</span>
               </li>
             </ul>
           </div>
@@ -39,10 +39,10 @@ class WrapBreadcrumb extends Component {
                 </Link>
               </li>
               <li className="item-link">
-                <span>{category.category_root_name}</span>
+                <Link to="#" className="categoryRoot-link">{category.category_root_name.replace("-", " ")}</Link>
               </li>
               <li className="item-link">
-                <span>{category.category_name}</span>
+                <span className="categoryName">{category.category_name.replace("-", " ")}</span>
               </li>
             </ul>
           </div>

@@ -35,14 +35,17 @@ class ProductByCategory extends Component {
       });
     }
 
+    const getProducts = () =>{
+      
+    }
     return (
       <div className="row">
-        <div className="col-lg-3 col-md-3 col-sm-12">
-          <WrapBreadcrumb
+        <WrapBreadcrumb
             products={currentProducts}
             category={category}
             categoryRoot={categoryRoot}
           />
+        <div className="col-lg-3 col-md-3 col-sm-12">
           <SidebarFilter products={currentProducts} />
         </div>
         <div

@@ -440,19 +440,22 @@
 .item-link a{
     background-color: var(--componentBackground);
     color: black;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 7px;
+    font-size: 15px;
+    font-weight: 530;
+    padding: 15px;
 }
 .item-link span{
     background-color: var(--buttonColor);
     color: var(--textColor);
-    font-size: 20px;
-    font-weight: 500;
-    padding: 7px;
+    font-size: 15px;
+    font-weight: 530;
+    padding: 15px;
 }
 .wrap-breadcrumb ul li a{
     text-decoration: none;
+}
+.categoryRoot-link, .categoryName{
+    text-transform: uppercase;
 }
 /* ----------Filter-sidebar---------- */
 .sidebar-filter{
