@@ -8,14 +8,14 @@ import {
 } from "../../../actions/cartAction";
 
 class CartItem extends Component {
-  state = {
-    product_quantity: 1,
-  };
+  // state = {
+  //   product_quantity: 1,
+  // };
 
   render() {
-    const { item } = this.props;
+    const { item, updateCart } = this.props;
     const onChange = (event) => {
-      this.setState({ product_quantity: event.target.value });
+      // this.setState({ product_quantity: event.target.value });
       this.props.updateProductFromCart(item, event.target.value);
     };
 
@@ -60,13 +60,7 @@ class CartItem extends Component {
             </div>
             <div className="col-2">
               <div>
-                <button
-                  onClick={() =>
-                    this.props.getCart()
-                  }
-                >
-                  Update items
-                </button>
+                <button onClick={updateCart}>Update items</button>
               </div>
               <div>
                 <button

@@ -15,14 +15,14 @@ import Dropdown from "../DropdownNavBar/Dropdown";
 import axios from "axios";
 import QuickViewCartItems from "../Cart/QuickViewCartItems";
 
-function Header({ cart, categories, categoriesRoot }) {
+function Header({ cart, categories, categoriesRoot, updateCart }) {
   const [drop, setDrop] = useState(false);
   const [cartMini, setCartMini] = useState(false);
   const [itemsCount, setItemsCount] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
 
   useEffect(() => {
-    const fetchCategories =  () => {
+    const fetchCategories = () => {
       let tmp = 0;
       let count = 0;
       cart.forEach((item) => {
@@ -34,7 +34,7 @@ function Header({ cart, categories, categoriesRoot }) {
     };
 
     fetchCategories();
-  }, );
+  });
   return (
     <div>
       <div className="header-menu">
@@ -79,7 +79,9 @@ function Header({ cart, categories, categoriesRoot }) {
             <span className="bag-quantity">
               {itemsCount} items - {cartTotal}
             </span>
-            {cartMini && <QuickViewCartItems cart={cart} />}
+            {cartMini && (
+              <QuickViewCartItems cart={cart} updateCart={updateCart} />
+            )}
           </div>
 
           <Link to="/shipping" replace className="shipping">

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import CartItem from "./CartItem";
 import PayPal from "../../pages/Payment/PayPal";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart,updateCart }) => {
   const [subTotal, setSubTotal] = useState(0);
   const [ checkout, setCheckOut ] = useState(false);
 
@@ -38,7 +38,7 @@ const Cart = ({ cart }) => {
           </div>
           <div>{cart.length === 0 && <div>Cart is empty</div>}</div>
           {cart.map((item) => (
-            <CartItem key={item.product_SKU} item={item}></CartItem>
+            <CartItem key={item.product_SKU} item={item} updateCart={updateCart}></CartItem>
           ))}
         </div>
         <div className="col-3">

@@ -21,7 +21,7 @@ Route::get('/selectcategoryroot',[CategoryAPI::class, 'SelectCategoryRoot']);
 Route::get('/selectallcategory',[CategoryAPI::class, 'SelectCategories']);
 
 
-// Route::get('/selectactiveblog',[BlogApi::class, 'SelectActiveBlog']);
+Route::get('/selectactiveblog',[ProductAPI::class, 'SelectProducts']);
 // Route::get('/selectactiveblog',[BlogApi::class, 'SelectActiveBlog']);
 // Route::get('/selectactiveblog',[BlogApi::class, 'SelectActiveBlog']);
 // Route::get('/selectactiveblog',[BlogApi::class, 'SelectActiveBlog']);

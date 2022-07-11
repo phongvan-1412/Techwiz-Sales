@@ -21,7 +21,7 @@ import ProductDetail from "./user/pages/Products/ProductDetail/ProductDetail";
 
 class MainRoute extends Component {
   render() {
-    const { products, cart, categories, categoriesRoot } = this.props;
+    const { products, cart, categories, categoriesRoot,updateCart } = this.props;
     return (
       <div className="container" style={{ padding: "0px", margin: "0px" }}>
         <Routes>
@@ -30,10 +30,10 @@ class MainRoute extends Component {
           <Route path="/contactus" element={<ContactUs />}></Route>
 
           {/* Cart */}
-          <Route path="/cart" element={<Cart cart={cart} />}></Route>
+          <Route path="/cart" element={<Cart cart={cart} updateCart={updateCart}/>}></Route>
           <Route
             path="/updatecart"
-            element={<LandingPage />}
+            element={<LandingPage updateCart={updateCart}/>}
           ></Route>
 
           {/* Product */}
