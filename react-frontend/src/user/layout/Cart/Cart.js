@@ -21,8 +21,8 @@ const Cart = ({ cart }) => {
     };
 
     fetchProducts();
-  }, []);
-  console.log(checkout)
+  }, );
+
   return (
     <div className="container">
       <div className="row">

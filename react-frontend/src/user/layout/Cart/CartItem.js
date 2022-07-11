@@ -62,6 +62,15 @@ class CartItem extends Component {
               <div>
                 <button
                   onClick={() =>
+                    this.props.getCart()
+                  }
+                >
+                  Update items
+                </button>
+              </div>
+              <div>
+                <button
+                  onClick={() =>
                     this.props.deleteProductFromCart(item.product_SKU)
                   }
                 >

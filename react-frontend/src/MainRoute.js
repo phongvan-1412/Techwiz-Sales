@@ -25,7 +25,7 @@ class MainRoute extends Component {
     return (
       <div className="container" style={{ padding: "0px", margin: "0px" }}>
         <Routes>
-          <Route path="/" element={<LandingPage products={products} />}></Route>
+          <Route path="/" element={<LandingPage products={products} cart={cart} />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/contactus" element={<ContactUs />}></Route>
 
@@ -33,7 +33,7 @@ class MainRoute extends Component {
           <Route path="/cart" element={<Cart cart={cart} />}></Route>
           <Route
             path="/updatecart"
-            element={<LandingPage cart={cart} />}
+            element={<LandingPage />}
           ></Route>
 
           {/* Product */}

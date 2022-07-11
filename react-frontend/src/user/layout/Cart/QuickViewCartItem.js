@@ -58,6 +58,9 @@ class QuickViewCartItem extends Component {
                         />
                       </div>
                       <div className="col-6">
+                        <button onClick={() => this.props.getCart()}>
+                          Update items
+                        </button>
                         <button
                           onClick={() =>
                             this.props.deleteProductFromCart(

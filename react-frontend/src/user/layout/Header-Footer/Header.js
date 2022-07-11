@@ -22,19 +22,19 @@ function Header({ cart, categories, categoriesRoot }) {
   const [cartTotal, setCartTotal] = useState(0);
 
   useEffect(() => {
-    const fetchCategories = async () => {
+    const fetchCategories =  () => {
       let tmp = 0;
       let count = 0;
       cart.forEach((item) => {
         tmp += parseInt(item.product_subtotal);
         count++;
       });
-      // setItemsCount(count);
-      // setCartTotal(tmp);
+      setItemsCount(count);
+      setCartTotal(tmp);
     };
 
     fetchCategories();
-  }, []);
+  }, );
   return (
     <div>
       <div className="header-menu">

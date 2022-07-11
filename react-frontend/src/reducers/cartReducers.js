@@ -42,7 +42,7 @@ export default function (state = initialState, action) {
           ...state,
         };
       }
-
+    
     case DELETE_PRODUCT_FROM_CART:
       return {
         cart: state.cart.filter((item) => item.product_SKU !== action.payload),
