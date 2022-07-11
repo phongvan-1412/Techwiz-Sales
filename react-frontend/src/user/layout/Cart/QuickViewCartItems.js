@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import QuickViewCartItem from "./QuickViewCartItem";
+
 const QuickViewCartItems = ({ cart,updateCart }) => {
   const [subTotal, setSubTotal] = useState([]);
 
@@ -17,7 +18,7 @@ const QuickViewCartItems = ({ cart,updateCart }) => {
     };
 
     fetchProducts();
-  }, []);
+  }, );
   return (
     <div style={{ background: "gray", width: "500px" }}>
       <div>

@@ -35,6 +35,8 @@ function Header({ cart, categories, categoriesRoot, updateCart }) {
 
     fetchCategories();
   });
+
+  
   return (
     <div>
       <div className="header-menu">
