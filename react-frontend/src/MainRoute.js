@@ -35,11 +35,11 @@ class MainRoute extends Component {
 
           {/* Product */}
           {categories.map((category) => (
-            <Route key={category.category_id} path={`/${category.category_root_name}/${category.category_name}`} element={<ProductByCategory category={category} products={products}/>}></Route>
+            <Route key={category.category_id} path={`/${category.category_root_name}/${category.category_name}`} element={<ProductByCategory category={category} categories={categories} categoriesRoot={categoriesRoot} products={products}/>}></Route>
           ))}
 
           {categoriesRoot.map((categoryRoot) => (
-            <Route key={categoryRoot.category_id} path={`/${categoryRoot.category_name}`} element={<ProductByCategory products={products} categoryRoot={categoryRoot}/>}></Route>
+            <Route key={categoryRoot.category_id} path={`/${categoryRoot.category_name}`} element={<ProductByCategory products={products} categoriesRoot={categoriesRoot} categoryRoot={categoryRoot} categories={categories}/>}></Route>
           ))}
 
             {/* Product Detail   */}
