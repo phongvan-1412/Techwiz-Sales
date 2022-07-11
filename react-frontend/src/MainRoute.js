@@ -31,39 +31,21 @@ class MainRoute extends Component {
 
           {/* Cart */}
           <Route path="/cart" element={<Cart cart={cart} updateCart={updateCart}/>}></Route>
-          <Route
-            path="/updatecart"
-            element={<LandingPage updateCart={updateCart}/>}
-          ></Route>
+          <Route path="/updatecart" element={<LandingPage updateCart={updateCart}/>}></Route>
 
           {/* Product */}
           {categories.map((category) => (
-            <Route
-              key={category.category_id}
-              path={`/${category.category_root_name}/${category.category_name}`}
-              element={<ProductByCategory category={category} products={products}/>}
-            ></Route>
+            <Route key={category.category_id} path={`/${category.category_root_name}/${category.category_name}`} element={<ProductByCategory category={category} products={products}/>}></Route>
           ))}
 
           {categoriesRoot.map((categoryRoot) => (
-            <Route
-              key={categoryRoot.category_id}
-              path={`/${categoryRoot.category_name}`}
-              element={<ProductByCategory products={products} categoryRoot={categoryRoot}/>}
-            ></Route>
+            <Route key={categoryRoot.category_id} path={`/${categoryRoot.category_name}`} element={<ProductByCategory products={products} categoryRoot={categoryRoot}/>}></Route>
           ))}
 
             {/* Product Detail   */}
           {products.map((product) => (
-            <Route
-              key={product.product_SKU}
-              path={`/${product.category_name}/${product.product_name}`}
-              element={<ProductDetail product={product} products={products}/>}
-            ></Route>
-          ))}
-
-
-          
+            <Route key={product.product_SKU} path={`/${product.category_name}/${product.product_name}`} element={<ProductDetail product={product} products={products}/>}></Route>
+          ))} 
         </Routes>
       </div>
     );
