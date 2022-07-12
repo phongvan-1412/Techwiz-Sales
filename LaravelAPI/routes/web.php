@@ -24,19 +24,14 @@ use App\Http\Middleware\CheckLoginMiddleware;
 |
 */
 Route::prefix('/')->middleware('checklogin')->group(function(){
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('dasboard');
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dasboard');
     Route::resource('/adminprofile', Admin::class);
-    // Route::get('/adminprofile', [Admin::class, 'index'])->name('adminprofile.index');
-    // Route::post('/adminprofile', [Admin::class,'store'])->name('adminprofile.store');
-    // Route::delete('/adminprofile/{id}', [Admin::class,'destroy'])->name('adminprofile.destroy');
-
     Route::resource('/customerprofile', Customer::class);
-    // Route::get('/customerprofile', [Customer::class, 'index'])->name('customerprofile.index');
-    // Route::post('/customerprofile', [Customer::class, 'store'])->name('customerprofile.store');
-    // Route::delete('/customerprofile/{emp_id}', [Customer::class, 'destroy'])->name('customerprofile.destroy');
-
     Route::resource('/payment', Payment::class);
     Route::resource('/category', Category::class);
     Route::resource('/product', Product::class);
@@ -45,8 +40,7 @@ Route::prefix('/')->middleware('checklogin')->group(function(){
     Route::resource('/profile', Profile::class);
 
 });
-// Route::middleware([CheckLoginMiddleware::class])->group(function(){
-// });
+
 
 
 Route::get('/login', [Signupin::class, 'getLoginForm']);
