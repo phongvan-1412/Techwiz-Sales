@@ -15,7 +15,6 @@ class CartItem extends Component {
   render() {
     const { item, updateCart } = this.props;
     const onChange = (event) => {
-      // this.setState({ product_quantity: event.target.value });
       this.props.updateProductFromCart(item, event.target.value);
     };
 
