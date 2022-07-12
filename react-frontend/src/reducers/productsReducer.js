@@ -5,6 +5,10 @@ import {
 } from "../actions/type";
 
 const initialState = {
+  filter: {
+    category_name: "",
+  },
+
   products: [
     {
       product_SKU: "1",
@@ -203,9 +207,7 @@ export default function (state = initialState, action) {
     case GET_PRODUCTS_BY_CATEGORY:
       return {
         ...state,
-        products: state.products.filter(
-          (product) => product.category_name == action.payload
-        ),
+        category_name: state.filter.category_name = action.payload,
       };
 
     default:
