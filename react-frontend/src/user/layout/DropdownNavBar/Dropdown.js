@@ -6,10 +6,11 @@ import { connect } from "react-redux";
 
 class Dropdown extends Component {
   render() {
-    const { categoriesRoot, categories } = this.props;
+    const { categoriesRoot, categories, solfProduct } = this.props;
     const onClick = (event) => {
       this.props.getProductsByCategory(event.target.name);
     };
+
     return (
       <div>
         <div style={{ height: "100px", position: "absolute" }}></div>
@@ -30,7 +31,7 @@ class Dropdown extends Component {
                   return (
                     <div className="col-3" key={category.category_id}>
                       <div className="row">
-                        <div className="col-12">
+                        <div className="col-12" key={category.category_id}>
                           <Link
                             to={category.category_name}
                             style={{ cursor: "pointer" }}
@@ -44,6 +45,7 @@ class Dropdown extends Component {
                           <DropdownItem
                             categories={categories}
                             category_name={category.category_name}
+                            solfProduct={solfProduct}
                           />
                         </div>
                       </div>
@@ -59,9 +61,6 @@ class Dropdown extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  products: state.product.products,
-});
-export default connect(mapStateToProps, {
+export default connect(null, {
   getProductsByCategory,
 })(Dropdown);

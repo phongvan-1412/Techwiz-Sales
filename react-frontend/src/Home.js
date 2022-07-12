@@ -6,6 +6,7 @@ import { getProducts } from "./actions/productsActions";
 import { getCart } from "./actions/cartAction";
 import { getCategories } from './actions/categoriesActions';
 import { getCategoriesRoot } from "./actions/categoryRootActions";
+
 import HomePage from "./HomePage";
 class Home extends Component {
   componentDidMount() {

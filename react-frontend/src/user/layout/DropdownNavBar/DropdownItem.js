@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { getProductsByCategory } from "../../../actions/productsActions";
-import { connect } from "react-redux";
-import { render } from "react-dom";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 class DropdownItem extends Component {
   render() {
@@ -10,33 +9,34 @@ class DropdownItem extends Component {
     const cates = categories.filter(
       (cat) => cat.category_root_name === category_name
     );
+
     const onClick = (event) => {
       this.props.getProductsByCategory(event.target.name);
     };
     return (
       <div>
         <div style={{ height: "100px", position: "absolute" }}></div>
-        <ul>
+        <div className="row">
           {cates.map((cate) => {
             return (
-              <Link
-                key={cate.category_id}
-                to={`/${cate.category_root_name}/${cate.category_name}`}
-                name={cate.category_name}
-                onClick={onClick}
-              >
-                <li>{cate.category_name}</li>
-              </Link>
+              <div className="col-12" key={cate.category_id}>
+                <Link
+                  key={cate.category_id}
+                  to={`/${cate.category_root_name}/${cate.category_name}`}
+                  name={cate.category_name}
+                  onClick={onClick}
+                >
+                  {cate.category_name}
+                </Link>
+              </div>
             );
           })}
-        </ul>
+        </div>
       </div>
     );
   }
 }
-const mapStateToProps = (state) => ({
-  products: state.product.products,
-});
-export default connect(mapStateToProps, {
+
+export default connect(null, {
   getProductsByCategory,
 })(DropdownItem);
