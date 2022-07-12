@@ -23,19 +23,30 @@ use App\Http\Middleware\CheckLoginMiddleware;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::middleware([CheckLoginMiddleware::class])->group(function(){
+Route::prefix('/')->middleware('checklogin')->group(function(){
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dasboard');
     Route::resource('/adminprofile', Admin::class);
+    // Route::get('/adminprofile', [Admin::class, 'index'])->name('adminprofile.index');
+    // Route::post('/adminprofile', [Admin::class,'store'])->name('adminprofile.store');
+    // Route::delete('/adminprofile/{id}', [Admin::class,'destroy'])->name('adminprofile.destroy');
+
     Route::resource('/customerprofile', Customer::class);
+    // Route::get('/customerprofile', [Customer::class, 'index'])->name('customerprofile.index');
+    // Route::post('/customerprofile', [Customer::class, 'store'])->name('customerprofile.store');
+    // Route::delete('/customerprofile/{emp_id}', [Customer::class, 'destroy'])->name('customerprofile.destroy');
+
     Route::resource('/payment', Payment::class);
     Route::resource('/category', Category::class);
     Route::resource('/product', Product::class);
     Route::resource('/import', Import::class);
     Route::get('/bill', [Bill::class, 'index']);
     Route::resource('/profile', Profile::class);
+
 });
+// Route::middleware([CheckLoginMiddleware::class])->group(function(){
+// });
 
 
 Route::get('/login', [Signupin::class, 'getLoginForm']);
