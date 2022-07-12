@@ -4,21 +4,12 @@ import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import QuickViewCartItem from "./QuickViewCartItem";
 
-const QuickViewCartItems = ({ cart,updateCart }) => {
-  const [subTotal, setSubTotal] = useState([]);
-
-  useEffect(() => {
-    const fetchProducts = () => {
-      let tmp = 0;
-
-      cart.forEach((item) => {
-        tmp += parseInt(item.product_subtotal);
-      });
-      setSubTotal(tmp);
-    };
-
-    fetchProducts();
-  }, );
+const QuickViewCartItems = ({ cart, updateCart }) => {
+  let totalPayment = 0;
+  cart.forEach((item) => {
+    totalPayment += parseInt(item.product_subtotal);
+  });
+  
   return (
     <div style={{ background: "gray", width: "500px" }}>
       <div>
@@ -40,7 +31,7 @@ const QuickViewCartItems = ({ cart,updateCart }) => {
       <hr />
       <div>
         <h5>
-          <b>CART SUBTOTAL : {subTotal}</b>
+          <b>CART SUBTOTAL : {totalPayment}</b>
         </h5>
       </div>
       <div>

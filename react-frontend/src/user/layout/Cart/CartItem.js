@@ -8,10 +8,6 @@ import {
 } from "../../../actions/cartAction";
 
 class CartItem extends Component {
-  // state = {
-  //   product_quantity: 1,
-  // };
-
   render() {
     const { item, updateCart } = this.props;
     const onChange = (event) => {

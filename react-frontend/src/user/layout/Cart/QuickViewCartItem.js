@@ -8,14 +8,9 @@ import {
 } from "../../../actions/cartAction";
 
 class QuickViewCartItem extends Component {
-  state = {
-    product_quantity: 1,
-  };
-
   render() {
-    const { product,updateCart } = this.props;
+    const { product, updateCart } = this.props;
     const onChange = (event) => {
-      this.setState({ product_quantity: event.target.value });
       this.props.updateProductFromCart(product, event.target.value);
     };
 
@@ -58,9 +53,7 @@ class QuickViewCartItem extends Component {
                         />
                       </div>
                       <div className="col-6">
-                        <button onClick={updateCart}>
-                          Update items
-                        </button>
+                        <button onClick={updateCart}>Update items</button>
                         <button
                           onClick={() =>
                             this.props.deleteProductFromCart(
