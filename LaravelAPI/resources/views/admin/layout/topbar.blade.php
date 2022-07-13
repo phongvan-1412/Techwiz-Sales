@@ -115,7 +115,7 @@
 
     <!-- LOGO -->
     <div class="logo-box">
-        <a href="index.html" class="logo text-center">
+        <a href="/" class="logo text-center">
             <span class="logo-lg">
                 <!-- <img src="assets\images\logo-light.png" alt="" height="24"> -->
                 <span class="logo-lg-text-light">VNHP Admin</span>

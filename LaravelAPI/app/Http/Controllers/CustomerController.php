@@ -8,7 +8,7 @@ use App\Models\Customer;
 class CustomerController extends Controller
 {
     public function index(){
-        $customer = Customer::paginate(6);
+        $customer = Customer::paginate(100);
         return view('admin.customerinformation', compact('customer'))->with('i', (request()->input('page',1)-1)*5);
     }
 
