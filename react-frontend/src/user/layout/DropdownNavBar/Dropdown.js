@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
-import React, { Component } from "react";
+import React from "react";
 import DropdownItem from "./DropdownItem";
+import { getCategoriesByRoot } from "../../../actions/categoriesActions";
 import { getProductsByCategory } from "../../../actions/productsActions";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { productSelector } from "../../../Selector/selectors";
+
+import { useDispatch } from "react-redux";
 
 const Dropdown = ({ categoriesRoot, categories }) => {
-  
-  
   const dispatch = useDispatch();
   const onClick = (event) => {
     dispatch(getProductsByCategory(event.target.name));
+    dispatch(getCategoriesByRoot(event.target.name));
   };
 
   return (

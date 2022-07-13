@@ -1,18 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
 import { getProductsByCategory } from "../../../actions/productsActions";
-import { useDispatch, useSelector } from "react-redux";
-import { productSelector } from "../../../Selector/selectors";
+import { getCategoriesByRoot } from "../../../actions/categoriesActions";
+import { useDispatch } from "react-redux";
 
 const DropdownItem = ({ category_name, categories }) => {
   const cates = categories.filter(
     (cat) => cat.category_root_name === category_name
   );
-  const products = useSelector(productSelector);
   const dispatch = useDispatch();
   const onClick = (event) => {
     dispatch(getProductsByCategory(event.target.name));
+    dispatch(getCategoriesByRoot(event.target.name));
   };
   return (
     <div>

@@ -1,4 +1,4 @@
-import { GET_CATEGORY} from "./type";
+import { GET_CATEGORY, GET_PRODUCTS_BY_CATEGORY } from "./type";
 import axios from "axios";
 
 export const getCategories = () => async (dispatch) => {
@@ -9,4 +9,9 @@ export const getCategories = () => async (dispatch) => {
   });
 };
 
-
+export const getCategoriesByRoot = (category_name) => {
+  return {
+    type: GET_PRODUCTS_BY_CATEGORY,
+    payload: category_name,
+  };
+};

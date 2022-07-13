@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import ProductItem from "./ProductItem";
 import DetailItem from "../ProductDetail/DetailItem";
 
-function ProductView({ product }) {
-  console.log(product);
+const ProductView = ({ product }) => {
+  console.log(product)
   const [productQV, setProductQV] = useState(false);
   const [productShow, setProductShow] = useState(false);
 
@@ -65,6 +65,6 @@ function ProductView({ product }) {
       <ProductItem product={product} />
     </div>
   );
-}
+};
 
 export default ProductView;

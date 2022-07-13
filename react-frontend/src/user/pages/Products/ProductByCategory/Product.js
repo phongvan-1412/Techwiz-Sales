@@ -1,6 +1,4 @@
 import React from "react";
-import ProductItem from "./ProductItem";
-import { Link } from "react-router-dom";
 import ProductView from "./ProductView";
 
 const Products = ({ products, loading }) => {
