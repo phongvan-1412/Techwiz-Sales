@@ -33,6 +33,8 @@ class SignupSigninController extends Controller
         $pwd = md5($request->pwd);
          
         $admin = Admin::select()->where('emp_email', $email)->where('emp_pwd', $pwd)->first();
+        $user = Customer::select()->where('customer_email',$email)->where('customer_pwd',$pwd)->first();
+
         if($admin){
             Session::put('emp_id', $admin->emp_id);
             Session::put('emp_name', $admin->emp_name);
@@ -43,6 +45,18 @@ class SignupSigninController extends Controller
             Session::put('emp_img_name', $admin->emp_img_name);//
             Session::put('emp_address', $admin->emp_address);  
             return redirect('/dashboard');
+        }elseif($user){
+            Session::put('customer_id',$user->customer_id);
+            Session::put('customer_name',$user->customer_name);
+            Session::put('customer_email',$user->customer_email);
+            Session::put('customer_pwd',$user->customer_pwd);
+            Session::put('customer_contact',$user->customer_contact);
+            Session::put('customer_dob',$user->customer_dob);
+            Session::put('customer_img_name',$user->customer_img_name);
+            Session::put('customer_address',$user->customer_address);
+            Session::put('status',$user->status);
+            Session::put('token',$user->token);
+            return redirect('/userprofile');
         }else{
             return redirect()->back()->withInput()->with('msg','Incorrect email or password !');
         }

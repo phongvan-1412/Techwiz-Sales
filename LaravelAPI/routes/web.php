@@ -51,3 +51,6 @@ Route::get('/register',[Signupin::class, 'getSignupform']);
 Route::post('/register/check',[Signupin::class, 'Register']);
 
 Route::get('/actived/{customer}/{token}',[Signupin::class, 'actived'])->name('customer.actived');
+Route::get('/userprofile', function(){
+    return view('user.userprofile');
+});
