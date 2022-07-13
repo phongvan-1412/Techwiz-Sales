@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
 
     public function index(){   
-        $admin = Admin::paginate(6);
+        $admin = Admin::paginate(100);
         return view('admin.admininformation', compact('admin'))->with('i', (request()->input('page',1)-1)*5);
     }
 

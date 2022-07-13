@@ -36,7 +36,12 @@
                         {{session('succ-msg')}}
                     </div>
                 @endif
-                
+                @if(session('warn-msg'))
+                    <div class="alert alert-warning mb-0 mt-0">
+                        {{session('warn-msg')}}
+                    </div>
+                @endif
+
                 <div class="form-login">
                     <h2 class="text-center">Login</h2>
                     <form method="POST" action="/login/check" class="login-form">

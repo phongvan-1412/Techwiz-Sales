@@ -8,6 +8,8 @@ use App\Http\Controllers\SignupSigninController as Signupin;
 use App\Models\Admin;
 use App\Models\Customer;
 use Session;
+use Mail;
+use Str;
 
 
 class SignupSigninController extends Controller
@@ -75,19 +77,34 @@ class SignupSigninController extends Controller
             'phonenumber.max'=>'Invalid Phonenumber'
         ]);
 
-        $isExist = Customer::select()->where('customer_email', $request->email)->Exists();
+        $isExist = Customer::select()->where('customer_email', $request->email)->exists();
 
         if($isExist){ 
+            return redirect()->back()->withInput()->with('msg','Email already exist'); 
+        }else{
             $register = new Customer;
             $register->customer_name = $request->firstname.' '.$request->lastname;
             $register->customer_email = $request->email;
             $register->customer_pwd = md5($request->password);
             $register->customer_contact = $request->phonenumber;
+            $register->status = 0;
+            $register->token = strtoupper(Str::random(10));
             $register->save();
-            return redirect('/login')->with('succ-msg', 'Successfully Registered');
+            if($register){
+                Mail::send('emails.test', compact('register'), function($email) use($register){
+                    $email->subject('VNHP - Xác nhận tài khoản');
+                    $email->to($register->customer_email, $register->customer_name);
+                });
+                return redirect('/login')->with('warn-msg', 'Please verify your email!');
+            }
+            return redirect()->back();
+        }
+    }
 
-        }else{
-            return redirect()->back()->withInput()->with('msg','Email already exist'); 
+    public function actived(Customer $customer, $token){
+        if($customer->token == $token){
+            $customer->update(['status'=>1]);
+            return redirect('/login')->with('succ-msg','Verify successfully');
         }
     }
 
