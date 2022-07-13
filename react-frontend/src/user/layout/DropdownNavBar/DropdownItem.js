@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getProductsByCategory } from "../../../actions/productsActions";
 import { useDispatch, useSelector } from "react-redux";
-import { productSelector } from "../Selector/selectors";
+import { productSelector } from "../../../Selector/selectors";
 
 const DropdownItem = ({ category_name, categories }) => {
   const cates = categories.filter(

@@ -3,18 +3,17 @@ import React, { Component } from "react";
 import DropdownItem from "./DropdownItem";
 import { getProductsByCategory } from "../../../actions/productsActions";
 import { useDispatch, useSelector } from "react-redux";
-import { productSelector } from "../Selector/selectors";
 import { useState } from "react";
+import { productSelector } from "../../../Selector/selectors";
 
 const Dropdown = ({ categoriesRoot, categories }) => {
-  // const [products,setProducts] = useState([]);
-
-  const products = useSelector(productSelector);
-  console.log(products);
+  
+  
   const dispatch = useDispatch();
   const onClick = (event) => {
     dispatch(getProductsByCategory(event.target.name));
   };
+
   return (
     <div>
       <div style={{ height: "100px", position: "absolute" }}></div>
