@@ -16,7 +16,6 @@ import LandingPage from "./user/layout/LandingPageSlider/LandingPage";
 import About from "./user/pages/About";
 import ContactUs from "./user/pages/Contact/ContactUs";
 
-import Categories from './user/pages/Products/ProductByCategory/Categories'
 import ProductByCategory from "./user/pages/Products/ProductByCategory/ProductByCategory";
 import Cart from "./user/layout/Cart/Cart";
 import ProductDetail from "./user/pages/Products/ProductDetail/ProductDetail";
@@ -34,9 +33,6 @@ class MainRoute extends Component {
           {/* Cart */}
           <Route path="/cart" element={<Cart cart={cart} updateCart={updateCart}/>}></Route>
           <Route path="/updatecart" element={<LandingPage updateCart={updateCart}/>}></Route>
-
-          {/* Category  */}
-          <Route path="/category" element={<Categories />}></Route>
 
           {/* Product */}
           {categories.map((category) => (
