@@ -4,6 +4,7 @@
 @section('body')
 <div class="container-xl px-4 mt-4">
     <hr class="mt-0 mb-4">
+        <a class="btn btn-danger mb-3" href="/logout">Log Out</a>
     <div class="row">
         <div class="col-xl-4">
             <form action="" method="POST" enctype="multipart/form-data">
@@ -139,7 +140,6 @@
                         <td></td>
                         <td></td>
                         <td></td>
-
                     </tr>
                 </tbody>
             </table>
