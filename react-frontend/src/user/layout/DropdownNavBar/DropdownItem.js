@@ -1,42 +1,39 @@
 import React, { Component } from "react";
-import { getProductsByCategory } from "../../../actions/productsActions";
-import { connect } from "react-redux";
-import { render } from "react-dom";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { getProductsByCategory } from "../../../actions/productsActions";
+import { useDispatch, useSelector } from "react-redux";
+import { productSelector } from "../Selector/selectors";
 
-class DropdownItem extends Component {
-  render() {
-    const { category_name, categories } = this.props;
-    const cates = categories.filter(
-      (cat) => cat.category_root_name === category_name
-    );
-    const onClick = (event) => {
-      this.props.getProductsByCategory(event.target.name);
-    };
-    return (
-      <div>
-        <div style={{ height: "100px", position: "absolute" }}></div>
-        <ul>
-          {cates.map((cate) => {
-            return (
+const DropdownItem = ({ category_name, categories }) => {
+  const cates = categories.filter(
+    (cat) => cat.category_root_name === category_name
+  );
+  const products = useSelector(productSelector);
+  const dispatch = useDispatch();
+  const onClick = (event) => {
+    dispatch(getProductsByCategory(event.target.name));
+  };
+  return (
+    <div>
+      <div style={{ height: "100px", position: "absolute" }}></div>
+      <div className="row">
+        {cates.map((cate) => {
+          return (
+            <div className="col-12" key={cate.category_id}>
               <Link
                 key={cate.category_id}
                 to={`/${cate.category_root_name}/${cate.category_name}`}
                 name={cate.category_name}
                 onClick={onClick}
               >
-                <li>{cate.category_name}</li>
+                {cate.category_name}
               </Link>
-            );
-          })}
-        </ul>
+            </div>
+          );
+        })}
       </div>
-    );
-  }
-}
-const mapStateToProps = (state) => ({
-  products: state.product.products,
-});
-export default connect(mapStateToProps, {
-  getProductsByCategory,
-})(DropdownItem);
+    </div>
+  );
+};
+export default DropdownItem;

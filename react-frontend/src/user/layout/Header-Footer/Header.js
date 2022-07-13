@@ -12,31 +12,29 @@ import "../../css/style-tablet.css";
 import "../../css/style-laptop.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Dropdown from "../DropdownNavBar/Dropdown";
-import axios from "axios";
 import QuickViewCartItems from "../Cart/QuickViewCartItems";
 
 function Header({ cart, categories, categoriesRoot, updateCart }) {
   const [drop, setDrop] = useState(false);
   const [cartMini, setCartMini] = useState(false);
   const [itemsCount, setItemsCount] = useState(0);
-  const [cartTotal, setCartTotal] = useState(0);
+  const [cartTotalPayment, setCartTotal] = useState(0);
 
   useEffect(() => {
     const fetchCategories = () => {
-      let tmp = 0;
+      let totalPayment = 0;
       let count = 0;
       cart.forEach((item) => {
-        tmp += parseInt(item.product_subtotal);
-        count++;
+        totalPayment += parseInt(item.product_subtotal);
+        count += parseInt(item.product_quantity);
       });
       setItemsCount(count);
-      setCartTotal(tmp);
+      setCartTotal(totalPayment);
     };
 
     fetchCategories();
   });
 
-  
   return (
     <div>
       <div className="header-menu">
@@ -79,7 +77,7 @@ function Header({ cart, categories, categoriesRoot, updateCart }) {
             <span>Shoping Cart</span>
             <br />
             <span className="bag-quantity">
-              {itemsCount} items - {cartTotal}
+              {itemsCount} items - {cartTotalPayment}
             </span>
             {cartMini && (
               <QuickViewCartItems cart={cart} updateCart={updateCart} />

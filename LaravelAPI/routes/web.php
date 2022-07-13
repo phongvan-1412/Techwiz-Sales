@@ -23,7 +23,10 @@ use App\Http\Middleware\CheckLoginMiddleware;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::middleware([CheckLoginMiddleware::class])->group(function(){
+Route::prefix('/')->middleware('checklogin')->group(function(){
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('dasboard');
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dasboard');
@@ -35,7 +38,9 @@ Route::middleware([CheckLoginMiddleware::class])->group(function(){
     Route::resource('/import', Import::class);
     Route::get('/bill', [Bill::class, 'index']);
     Route::resource('/profile', Profile::class);
+
 });
+
 
 
 Route::get('/login', [Signupin::class, 'getLoginForm']);

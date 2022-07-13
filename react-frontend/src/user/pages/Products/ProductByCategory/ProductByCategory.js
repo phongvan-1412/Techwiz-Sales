@@ -10,7 +10,6 @@ import "../../../css/style-laptop.css";
 class ProductByCategory extends Component {
   render() {
     const { products, categories, category, categoriesRoot, categoryRoot } = this.props;
-    
     let currentProducts = [];
     if (category == null) {
       products.forEach((product) => {

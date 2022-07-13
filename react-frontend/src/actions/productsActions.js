@@ -19,6 +19,7 @@ export const getProductsByCategory = (category_name) => {
     payload: category_name,
   };
 };
+
 export const getProductsById = (blog_id) => {
   return {
     type: GET_PRODUCTS_BY_ID,
