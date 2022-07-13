@@ -7,20 +7,21 @@ import "../../../css/style-mobile.css";
 import "../../../css/style-tablet.css";
 import "../../../css/style-laptop.css";
 import { render } from "react-dom";
+import ProductView from "./ProductView";
+import { useSelector } from "react-redux";
+import { productSelector } from "../../../../Selector/selectors";
+const Products = ({ categories, categoriesRoot, category, categoryRoot }) => {
+  // const [products, setProducts] = useState([]);
+  const localProducts = useSelector(productSelector);
 
-const Products = ({
-  products,
-  categories,
-  categoriesRoot,
-  category,
-  categoryRoot,
-}) => {
-  const [localProducts, setLocalProducts] = useState([]);
-  const [localCategories, setLocalCategories] = useState();
-  const [localCategoriesRoot, setLocalCategoriesRoot] = useState();
+  // useEffect(() => {
+  //   const fetchCategories = () => {
+  //     setProducts(localProducts);
+  //   };
 
-  let filterProducts = [];
-
+  //   fetchCategories();
+  // });
+ 
   let filterCategories = [];
   if (categoryRoot != null) {
     categories.forEach((category) => {
@@ -29,11 +30,11 @@ const Products = ({
       }
     });
   }
-
   let check = false;
   if (category == null) {
     check = true;
   }
+
   return (
     <div>
       {check ? (
@@ -80,8 +81,8 @@ const Products = ({
             </div>
 
             <div className="col-md-9 ">
-              {filterProducts.map((product) => {
-                <Product key={product.product_SKU} product={product} />;
+              {localProducts.map((product) => {
+                <ProductView key={product.product_SKU} product={product} />;
               })}
             </div>
           </div>
@@ -115,9 +116,9 @@ const Products = ({
               </div>
             </div>
 
-            <div className="col-md-9 ">
-              {filterProducts.map((product) => {
-                <Product key={product.product_SKU} product={product} />;
+            <div className="col-md-9">
+              {localProducts.map((product) => {
+                <ProductView key={product.product_SKU} product={product} />;
               })}
             </div>
           </div>

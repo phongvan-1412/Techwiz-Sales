@@ -8,3 +8,5 @@ export const getCategoriesRoot = () => async (dispatch) => {
     payload: res.data,
   });
 };
+
+

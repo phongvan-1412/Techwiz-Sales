@@ -3,6 +3,7 @@ import ProductItem from "./ProductItem";
 import DetailItem from "../ProductDetail/DetailItem";
 
 function ProductView({ product }) {
+  console.log(product);
   const [productQV, setProductQV] = useState(false);
   const [productShow, setProductShow] = useState(false);
 
