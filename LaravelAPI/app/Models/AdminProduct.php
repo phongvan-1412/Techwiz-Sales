@@ -12,6 +12,7 @@ class AdminProduct extends Model
     protected $primaryKey = 'product_id';
     public $timestamps = false;
     protected $fillable = [
+        'product_SKU',
         'product_name',
         'category_id',
         'product_quantity',

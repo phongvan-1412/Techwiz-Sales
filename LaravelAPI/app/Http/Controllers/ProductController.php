@@ -21,6 +21,12 @@ class ProductController extends Controller
         $category_name          = $request->category_name;
         $category_names = AdminCategory::select()->where('category_name', $category_name)->get();
         $category_id = self::GetCategoryId($category_names,$category_name);
+
+        $products = DB::table('product')->where('category_name',$category_name)->get();
+        $countProduct = count($products) + 1;
+        $tmp1 = substr($category_name,0,2);
+        $product_SKU = "SKU".$tmp1.$countProduct;
+
         $product_price          = $request->product_price_per_unit;
         $product_information    = $request->product_information;
         $product_img            = $request->file('product_img_name');
@@ -33,6 +39,7 @@ class ProductController extends Controller
             return redirect()->route('product.index')->with('fail-msg','Product already Exists');
         }else{
             $product = new AdminProduct;
+            $product->product_SKU = $product_SKU;
             $product->product_name  = $product_name;
             $product->category_id   = $category_id;
             $product->product_price_per_unit = $product_price;
