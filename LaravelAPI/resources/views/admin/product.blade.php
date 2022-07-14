@@ -183,6 +183,30 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="product_ingredients" class="control-label">Ingredients</label>
+                                    <textarea name="product_ingredients" class="form-control" id="product_ingredients" cols="30" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="product_instruction_use" class="control-label">Instruction Use</label>
+                                    <textarea name="product_instruction_use" class="form-control" id="product_instruction_use" cols="30" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="product_instruction_store" class="control-label">Instruction Store</label>
+                                    <textarea name="product_instruction_store" class="form-control" id="product_instruction_store" cols="30" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
                         <input type="submit" id="createadmin" class="btn btn-info waves-effect waves-light" value="Create">

@@ -44,6 +44,9 @@ class ProductController extends Controller
             $product->category_id   = $category_id;
             $product->product_price_per_unit = $product_price;
             $product->product_information = $product_information;
+            $product->product_ingredients = $product_ingredients;
+            $product->product_instruction_use = $product_instruction_use;
+            $product->product_instruction_store = $product_instruction_store;
             $product->product_img_name  = $product_img_name;
             $product->product_status = 1;
             $product->save();
