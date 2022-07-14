@@ -18,6 +18,8 @@ class ProductController extends Controller
 
     public function store(Request $request){
         $product_name           = $request->product_name;
+        $product_name = str_replace(" ","-",trim($product_name));
+
         $category_name          = $request->category_name;
         $category_names = AdminCategory::select()->where('category_name', $category_name)->get();
         $category_id = self::GetCategoryId($category_names,$category_name);
@@ -26,7 +28,9 @@ class ProductController extends Controller
         $countProduct = count($products) + 1;
         $tmp1 = substr($category_name,0,2);
         $product_SKU = "SKU".$tmp1.$countProduct;
-
+        $product_ingredients = $request->product_ingredients;
+        $product_instruction_use = $request->product_instruction_use;
+        $product_instruction_store = $request->product_instruction_store;
         $product_price          = $request->product_price_per_unit;
         $product_information    = $request->product_information;
         $product_img            = $request->file('product_img_name');
