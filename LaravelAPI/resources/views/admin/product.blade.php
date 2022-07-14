@@ -191,9 +191,5 @@
             </div>
         </div>
     </div>
-    <style>
-        #file-upload-button{
-            margin-bottom: 2px;
-        }
-    </style>
+
 @endsection

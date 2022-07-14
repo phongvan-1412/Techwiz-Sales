@@ -22,7 +22,7 @@ class ProductController extends Controller
         $category_names = AdminCategory::select()->where('category_name', $category_name)->get();
         $category_id = self::GetCategoryId($category_names,$category_name);
 
-        $products = DB::table('product')->where('category_name',$category_name)->get();
+        $products = AdminProduct::select()->where('category_id',$category_id)->get();
         $countProduct = count($products) + 1;
         $tmp1 = substr($category_name,0,2);
         $product_SKU = "SKU".$tmp1.$countProduct;
