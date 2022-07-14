@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getProductsByCategory } from "../../../actions/productsActions";
-import { getCategoriesByRoot } from "../../../actions/categoriesActions";
+import { getProductsByCategory } from "../../../redux/actions/productsActions";
+import { getCategoriesByRoot } from "../../../redux/actions/categoriesActions";
 import { useDispatch } from "react-redux";
 
 const DropdownItem = ({ category_name, categories }) => {

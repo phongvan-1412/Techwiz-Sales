@@ -2,10 +2,10 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getProducts } from "./actions/productsActions";
+import { getProducts } from "./redux/actions/productsActions";
 import { getCart } from "./actions/cartAction";
 import { getCategories } from './actions/categoriesActions';
-import { getCategoriesRoot } from "./actions/categoryRootActions";
+import { getCategoriesRoot } from "./redux/actions/categoryRootActions";
 
 import HomePage from "./HomePage";
 class Home extends Component {
