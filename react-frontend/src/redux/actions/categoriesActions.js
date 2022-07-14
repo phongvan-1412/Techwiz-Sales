@@ -15,3 +15,4 @@ export const getCategoriesByRoot = (category_name) => {
     payload: category_name,
   };
 };
+

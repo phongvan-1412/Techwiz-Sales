@@ -1,4 +1,4 @@
-import { GET_CATEGORY, GET_PRODUCTS_BY_CATEGORY } from "../actions/type";
+import { GET_CATEGORY, GET_PRODUCTS_BY_CATEGORY, GET_PRODUCTS_BY_CATEGORY_SLIDE } from "../actions/type";
 
 const initialState = {
   filter: {
@@ -19,6 +19,11 @@ export default function (state = initialState, action) {
         ...state,
         category_name: (state.filter.category_name = action.payload),
       };
+    case GET_PRODUCTS_BY_CATEGORY_SLIDE:
+    return {
+      ...state,
+      category_name: (state.filter.category_name = action.payload),
+    };
     default:
       return state;
   }

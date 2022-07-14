@@ -2,6 +2,7 @@ import {
   GET_PRODUCTS,
   GET_PRODUCTS_BY_CATEGORY,
   GET_PRODUCTS_BY_ID,
+  GET_PRODUCTS_BY_CATEGORY_SLIDE
 } from "../actions/type";
 
 const initialState = {
@@ -205,7 +206,12 @@ export default function (state = initialState, action) {
       };
 
     case GET_PRODUCTS_BY_CATEGORY:
-      
+      return {
+        ...state,
+        category_name: state.filter.category_name = action.payload,
+      };
+
+    case GET_PRODUCTS_BY_CATEGORY_SLIDE:
       return {
         ...state,
         category_name: state.filter.category_name = action.payload,

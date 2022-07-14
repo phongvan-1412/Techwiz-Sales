@@ -9,10 +9,7 @@ import "../../../css/style-laptop.css";
 import { render } from "react-dom";
 import ProductView from "./ProductView";
 import { useSelector } from "react-redux";
-import {
-  productSelector,
-  categorySelector,
-} from "../../../../redux/selector/selectors";
+import { productSelector, categorySelector } from "../../../../redux/selector/selectors";
 
 const Products = ({ category }) => {
   const localProducts = useSelector(productSelector);

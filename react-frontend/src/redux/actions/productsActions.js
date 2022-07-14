@@ -2,6 +2,7 @@ import {
   GET_PRODUCTS,
   GET_PRODUCTS_BY_CATEGORY,
   GET_PRODUCTS_BY_ID,
+  GET_PRODUCTS_BY_CATEGORY_SLIDE
 } from "./type";
 import axios from "axios";
 
@@ -26,3 +27,11 @@ export const getProductsById = (blog_id) => {
     payload: blog_id,
   };
 };
+
+export const productSlideCategorySelector1 = (category_name) => {
+  return{
+    type: GET_PRODUCTS_BY_CATEGORY_SLIDE,
+    payload: category_name
+  }
+}
+

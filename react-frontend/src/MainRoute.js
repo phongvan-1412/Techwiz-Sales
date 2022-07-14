@@ -26,7 +26,9 @@ class MainRoute extends Component {
     return (
       <div className="container" style={{ padding: "0px", margin: "0px" }}>
         <Routes>
-          <Route path="/" element={<LandingPage products={products} cart={cart} />}></Route>
+          {/* Landingpage  */}
+          <Route path="/" element={<LandingPage products={products} cart={cart} categories={categories} categoriesRoot={categoriesRoot} />}></Route>
+
           <Route path="/about" element={<About />}></Route>
           <Route path="/contactus" element={<ContactUs />}></Route>
 
