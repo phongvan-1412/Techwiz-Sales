@@ -5,6 +5,7 @@ import {
   GET_CART,
   UPDATE_PRODUCT_FROM_CART,
 } from "./type";
+import axios from "axios";
 
 export const addProductToCart = (product, quantity) => {
   const product_quantity = quantity;
@@ -35,12 +36,7 @@ export const deleteProductFromCart = (product_SKU) => {
     payload: product_SKU,
   };
 };
-export const submitCart = (products) => {
-  return {
-    type: SUBMIT_CART,
-    payload: products,
-  };
-};
+
 export const updateProductFromCart = (product, quantity) => {
   const product_quantity = quantity;
   const product_subtotal = product_quantity * product.product_price;
@@ -54,5 +50,15 @@ export const updateProductFromCart = (product, quantity) => {
   return {
     type: UPDATE_PRODUCT_FROM_CART,
     payload: newProduct,
+  };
+};
+
+export const submitCart = (cart) => {
+  const tmp = JSON.stringify(cart);
+  console.log(tmp);
+
+  axios.post(`http://127.0.0.1:8000/api/submitcart`, tmp);
+  return {
+    type: SUBMIT_CART,
   };
 };

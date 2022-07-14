@@ -2,6 +2,7 @@ import {
   ADD_PRODUCT_TO_CART,
   DELETE_PRODUCT_FROM_CART,
   GET_CART,
+  SUBMIT_CART,
   UPDATE_PRODUCT_FROM_CART,
 } from "../actions/type";
 
@@ -14,6 +15,11 @@ export default function (state = initialState, action) {
     case GET_CART:
       return {
         ...state,
+      };
+    case SUBMIT_CART:
+      return {
+        ...state,
+        cart: [],
       };
     case ADD_PRODUCT_TO_CART:
       let check = true;
@@ -42,7 +48,7 @@ export default function (state = initialState, action) {
           ...state,
         };
       }
-    
+
     case DELETE_PRODUCT_FROM_CART:
       return {
         cart: state.cart.filter((item) => item.product_SKU !== action.payload),
