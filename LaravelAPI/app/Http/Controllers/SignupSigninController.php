@@ -106,7 +106,7 @@ class SignupSigninController extends Controller
             $register->save();
             if($register){
                 Mail::send('emails.test', compact('register'), function($email) use($register){
-                    $email->subject('VNHP - Xác nhận tài khoản');
+                    $email->subject('VNHP Grocery - Verify account');
                     $email->to($register->customer_email, $register->customer_name);
                 });
                 return redirect('/login')->with('warn-msg', 'Please verify your email!');
@@ -122,5 +122,39 @@ class SignupSigninController extends Controller
         }
     }
 
+    public function forgetPass(){
+        return view('forgetPass');
+    }
+
+    public function postForgetPass(Request $request){
+        
+        $isExist = Customer::where('customer_email', $request->email)->exists();
+        $customer = Customer::where('customer_email', $request->email)->first();        
+
+        if($isExist){
+            Mail::send('emails.check_email_forget', compact('customer'), function($email) use($customer) {
+                $email->subject('VNHP Grocery - Reset password');
+                $email->to($customer->customer_email, $customer->customer_name);
+                $token = strtoupper(Str::random(10));
+                $customer->update(['token'=>$token]);
+            });
+            return redirect('/login')->with('warn-msg','Please check your email');
+        }else{
+            return redirect()->back()->with('fail-msg','Email does not exist');
+        }
+    }
+
+    public function getPass(Customer $customer, $token){
+        if ($customer->token === $token){
+            return view('getPass');
+        }
+        return abort(404);
+    }
+    public function postGetPass(Customer $customer, Request $request){
+        $password = md5($request->password);
+        $customer->update(['customer_pwd'=>$password, 'token'=>null, 'status'=>1]);
+        return redirect('/login')->with('succ-msg', 'Reset password successfully');
+
+    }
 
 }

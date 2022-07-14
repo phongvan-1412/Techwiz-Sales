@@ -11,9 +11,15 @@ width:100%;
 padding : 50px 0;
 height: 920px;
 }
+#login-block{
+    padding : 220px 0;
+
+}
 /* .banner-sec{background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom; background-size:cover; min-height:500px; border-radius: 0 10px 10px 0; padding:0;} */
 
 .container{background:#fff; border-radius: 10px; box-shadow:40px 20px 0px rgba(0,0,0,0.3); margin: 100px 0px;}
+.form-reset{background:#fff; border-radius: 10px; width: 30%; box-shadow:30px 20px 0px rgba(0,0,0,0.5);}
+.container-fluid-i{padding: 0px 24px}
 .carousel-inner{border-radius:0 10px 10px 0;}
 .carousel-caption{text-align:left; left:5%;}
 .carousel-item{transition: 500ms ease-in-out left; transition: 500ms ease-in-out all;}
