@@ -16,7 +16,7 @@ const ProductView = ({ product }) => {
       onMouseEnter={() => setProductQV(true)}
       onMouseLeave={() => setProductQV(false)}
     >
-      {productQV ? (
+      {/* {productQV ? (
         <div style={{ position: "absolute", marginTop: "160px" }}>
           <div
             style={{ background: "red", textAlign: "center", width: "160px" }}
@@ -24,7 +24,7 @@ const ProductView = ({ product }) => {
             <button onClick={() => setProductShow(true)}>Quick View</button>
           </div>
         </div>
-      ) : null}
+      ) : null} */}
       {productShow ? (
         <div>
           <div
