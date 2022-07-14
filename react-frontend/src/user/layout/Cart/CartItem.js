@@ -5,7 +5,7 @@ import {
   updateProductFromCart,
   deleteProductFromCart,
   getCart,
-} from "../../../actions/cartAction";
+} from "../../../redux/actions/cartAction";
 
 class CartItem extends Component {
   render() {

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // import PropTypes from "prop-types";
 import CartItem from "./CartItem";
 import PayPal from "../../pages/Payment/PayPal";
-import { submitCart } from "../../../actions/cartAction";
+import { submitCart } from "../../../redux/actions/cartAction";
 import { useDispatch } from "react-redux";
 
 const Cart = ({ cart, updateCart }) => {

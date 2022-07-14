@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getProducts } from "./redux/actions/productsActions";
-import { getCart } from "./actions/cartAction";
-import { getCategories } from './actions/categoriesActions';
+import { getCart } from "./redux/actions/cartAction";
+import { getCategories } from './redux/actions/categoriesActions';
 import { getCategoriesRoot } from "./redux/actions/categoryRootActions";
 
 import HomePage from "./HomePage";
