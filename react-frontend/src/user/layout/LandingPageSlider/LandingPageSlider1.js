@@ -24,18 +24,9 @@ const LandingPageSlider1 = () => {
   const settings = { dots: false, infinite: false, speed: 500, slidesToShow: 5, slidesToScroll: 1};
   
   const localProducts = useSelector(productSlideCategorySelector1);
-  // console.log(localProducts)
+
   const dispatch = useDispatch();
   const [horizontalState, setHorizontalState] = useState(1);
-
-  // const localCategories = useSelector(categorySelector);
-
-  // let subCate = [];
-  // let currentCate = "";
-  // localCategories.forEach((cate) => {
-  //   subCate = [cate.category_name, ...subCate];
-  //   currentCate = cate.category_root_name;
-  // });
 
   const horizontalTab = (index) => { 
     setHorizontalState(index.target.value);
@@ -49,8 +40,8 @@ const LandingPageSlider1 = () => {
             <h4>
               <b>SWEET GROCERY</b>
             </h4>
-            <button value={1} name="Breakfast"className={ horizontalState == 1 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={horizontalTab}>Breakfast</button>
-            <button value={2} name="Chocolate"className={ horizontalState == 2 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={horizontalTab}>Chocolate</button>
+            <button value={1} name="Breakfast" className={ horizontalState == 1 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={horizontalTab}>Breakfast</button>
+            <button value={2} name="Chocolate" className={ horizontalState == 2 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={horizontalTab}>Chocolate</button>
           </div>
 
           <Slider ref={ref} {...settings}>

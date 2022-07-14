@@ -2,7 +2,10 @@ import {
   GET_PRODUCTS,
   GET_PRODUCTS_BY_CATEGORY,
   GET_PRODUCTS_BY_ID,
-  GET_PRODUCTS_BY_CATEGORY_SLIDE
+  GET_PRODUCTS_BY_CATEGORY_SLIDE1,
+  GET_PRODUCTS_BY_CATEGORY_SLIDE2,
+  GET_PRODUCTS_BY_CATEGORY_SLIDE3
+
 } from "./type";
 import axios from "axios";
 
@@ -30,7 +33,21 @@ export const getProductsById = (blog_id) => {
 
 export const productSlideCategory1 = (category_name) => {
   return{
-    type: GET_PRODUCTS_BY_CATEGORY_SLIDE,
+    type: GET_PRODUCTS_BY_CATEGORY_SLIDE1,
+    payload: category_name
+  }
+}
+
+export const productSlideCategory2 = (category_name) => {
+  return{
+    type: GET_PRODUCTS_BY_CATEGORY_SLIDE2,
+    payload: category_name
+  }
+}
+
+export const productSlideCategory3 = (category_name) => {
+  return{
+    type: GET_PRODUCTS_BY_CATEGORY_SLIDE3,
     payload: category_name
   }
 }

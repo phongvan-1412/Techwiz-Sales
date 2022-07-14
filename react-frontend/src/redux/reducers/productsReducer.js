@@ -2,7 +2,9 @@ import {
   GET_PRODUCTS,
   GET_PRODUCTS_BY_CATEGORY,
   GET_PRODUCTS_BY_ID,
-  GET_PRODUCTS_BY_CATEGORY_SLIDE
+  GET_PRODUCTS_BY_CATEGORY_SLIDE1,
+  GET_PRODUCTS_BY_CATEGORY_SLIDE2,
+  GET_PRODUCTS_BY_CATEGORY_SLIDE3
 } from "../actions/type";
 
 const initialState = {
@@ -10,10 +12,19 @@ const initialState = {
     category_name: "",
   },
 
+  filter1: {
+    category_name: "Breakfast",
+  },
+  filter2: {
+    category_name: "Fruit",
+  },
+  filter3: {
+    category_name: "Beer",
+  },
   products: [
     {
       product_SKU: "1",
-      category_name: "Chocolate",
+      category_name: "Breakfast",
       emp_name: "Phuong",
       product_price: "65000",
       product_name: "Cadbury-Flake-(32g)",
@@ -185,7 +196,7 @@ const initialState = {
     },
     {
       product_SKU: "18",
-      category_name: "Beer",
+      category_name: "Soft",
       emp_name: "Phuong",
       product_price: "199.000",
       product_name: "Val-De-France-L'Authentique-French-Pear-Cider-(330ml)",
@@ -211,10 +222,22 @@ export default function (state = initialState, action) {
         category_name: state.filter.category_name = action.payload,
       };
 
-    case GET_PRODUCTS_BY_CATEGORY_SLIDE:
+    case GET_PRODUCTS_BY_CATEGORY_SLIDE1:
       return {
         ...state,
-        category_name: state.filter.category_name = action.payload,
+        category_name: state.filter1.category_name = action.payload
+      };
+
+    case GET_PRODUCTS_BY_CATEGORY_SLIDE2:
+      return {
+        ...state,
+        category_name: state.filter2.category_name = action.payload
+      };
+
+    case GET_PRODUCTS_BY_CATEGORY_SLIDE3:
+      return {
+        ...state,
+        category_name: state.filter3.category_name = action.payload
       };
 
     default:
