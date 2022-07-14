@@ -17,6 +17,9 @@ class AdminProduct extends Model
         'category_id',
         'product_quantity',
         'product_information',
+        'product_ingredients',
+        'product_instruction_use',
+        'product_instruction_store',
         'product_img_name',
         'product_price_per_unit',
         'product_status'
