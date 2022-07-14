@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,43 +6,34 @@ import { GiNextButton, GiPreviousButton} from 'react-icons/gi'
 
 import ProductItem from "../../pages/Products/ProductByCategory/ProductItem";
 
-class LandingPageSlider2 extends Component {
+const LandingPageSlider2 = ({products}) => {
+  const ref = useRef({})
 
-  constructor(props) {
-    super(props);
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
-  }
-  next() {
-    this.slider.slickNext();
-  }
-  previous() {
-    this.slider.slickPrev();
-  }
+  const next = () =>{
+    ref.current.slickNext();
+  };
 
-  render() {
-    const { products } = this.props;
+  const previous = () => {
+    ref.current.slickPrev();
+  };
 
-    const settings = {
-      dots: false,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      arrows: false,
-    };
+  const settings = { dots: false, infinite: false, speed: 500, slidesToShow: 5, slidesToScroll: 1};
+  
+  const [horizontalState, setHorizontalState] = useState(1);
+  const horizontalTab = (index) => { setHorizontalState(index) };
+    
     return (
       <div>
-        <div className="slide-title" style={{borderTop:'none'}}>
-          <div  className="slide-title top-content" >
+        <div className="slide-title">
+          <div className="slide-title top-content">
             <h4>
               <b>FRESH FOOD</b>
             </h4>
-            <button className="btn-category mb-2 btn-active-show">Fruit</button>
-            <button className="btn-category mb-2 btn-show">Meat</button>
+            <button className={ horizontalState === 1 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={() => horizontalTab(1)}>Fruit</button>
+            <button className={ horizontalState === 2 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={() => horizontalTab(2)}>Meat</button>
           </div>
 
-          <Slider ref={(c) => (this.slider = c)} {...settings}>
+          <Slider ref={ref} {...settings}>
             {products.map((product) => (
                <ProductItem 
                key={product.product_SKU}
@@ -50,11 +41,12 @@ class LandingPageSlider2 extends Component {
              ></ProductItem>
             ))}
           </Slider>
+          
           <div className="btn-click">
-            <button type="button" className="btn-previous" onClick={this.previous}>
+            <button type="button" className="btn-previous" onClick={previous}>
               <GiPreviousButton />
             </button>
-            <button type="button" className=" btn-next" onClick={this.next}>
+            <button type="button" className=" btn-next" onClick={next}>
               <GiNextButton />
             </button>
           </div>
@@ -62,6 +54,6 @@ class LandingPageSlider2 extends Component {
       </div>
     );
   }
-}
+
 
 export default LandingPageSlider2;

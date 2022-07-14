@@ -309,6 +309,7 @@
 .btn-click{
     display: block;
     text-align: center; 
+    margin-top: 20px;
     margin-bottom: 50px; 
 }
 .btn-previous, .btn-next{
