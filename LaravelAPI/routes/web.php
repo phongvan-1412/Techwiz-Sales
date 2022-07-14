@@ -42,15 +42,20 @@ Route::prefix('/')->middleware('checklogin')->group(function(){
 });
 
 
-
+// LOGIN
 Route::get('/login', [Signupin::class, 'getLoginForm']);
 Route::post('/login/check', [Signupin::class, 'Login']);
 Route::get('/logout', [Signupin::class, 'Logout']);
-
+// FORGET PASSWORD
+Route::get('/forget-password', [Signupin::class, 'forgetPass'])->name('forgetpass');
+Route::post('/forget-password', [Signupin::class, 'postForgetPass']);
+Route::get('/get-password/{customer}/{token}', [Signupin::class, 'getPass'])->name('getPass');
+Route::post('/get-password', [Signupin::class, 'postGetPass'])->name('postGetPass');
+// REGISTER
 Route::get('/register',[Signupin::class, 'getSignupform']);
 Route::post('/register/check',[Signupin::class, 'Register']);
-
 Route::get('/actived/{customer}/{token}',[Signupin::class, 'actived'])->name('customer.actived');
+
 Route::get('/userprofile', function(){
     return view('user.userprofile');
 });

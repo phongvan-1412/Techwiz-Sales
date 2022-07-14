@@ -55,10 +55,14 @@
                             <input type="password" class="form-control" name="pwd">
                         </div>
 
-
-                        <div class="get-form-signup">
-                            <span>Don't have an account? <a href="/register">Sign up.</a> </span>
-                            <button type="submit" class="btn btn-primary float-right">Submit</button>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span><a href="{{route('forgetpass')}}">Forgot password</a></span> <br>
+                                <span>Don't have an account? <a href="/register">Sign up.</a> </span>
+                            </div>
+                            <div class="col-md-4 pt-1">
+                                <button type="submit" class="btn btn-primary float-right ">Login</button>
+                            </div>
                         </div>
 
                     </form>
