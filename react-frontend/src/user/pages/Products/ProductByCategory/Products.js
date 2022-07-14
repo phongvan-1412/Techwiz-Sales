@@ -33,21 +33,21 @@ const Products = ({ category }) => {
       {check ? (
         <div className="container">
           <div className="row">
+            <div className="wrap-breadcrumb">
+              <ul>
+                <li className="item-link">
+                  <Link to="#" className="home-link">
+                    HOME
+                  </Link>
+                </li>
+                <li className="item-link">
+                  <span className="categoryRoot-link">
+                    {currentCate.replace("-", " ")}
+                  </span>
+                </li>
+              </ul>
+            </div>
             <div className="col-3">
-              <div className="wrap-breadcrumb">
-                <ul>
-                  <li className="item-link">
-                    <Link to="#" className="home-link">
-                      HOME
-                    </Link>
-                  </li>
-                  <li className="item-link">
-                    <span className="categoryRoot-link">
-                      {currentCate.replace("-", " ")}
-                    </span>
-                  </li>
-                </ul>
-              </div>
               <div>
                 <ul>
                   <li className="">
@@ -74,27 +74,26 @@ const Products = ({ category }) => {
       ) : (
         <div className="container">
           <div className="row">
-            <div className="col-3">
-              <div className="wrap-breadcrumb">
-                <ul>
-                  <li className="item-link">
-                    <Link to="#" className="home-link">
-                      HOME
-                    </Link>
-                  </li>
-                  <li className="item-link">
-                    <span className="categoryRoot-link">
-                      {category.category_root_name.replace("-", " ")}
-                    </span>
-                  </li>
-                  <li className="item-link">
-                    <span className="categoryRoot-link">
-                      {category.category_name.replace("-", " ")}
-                    </span>
-                  </li>
-                </ul>
-              </div>
+            <div className="wrap-breadcrumb">
+              <ul>
+                <li className="item-link">
+                  <Link to="#" className="home-link">
+                    HOME
+                  </Link>
+                </li>
+                <li className="item-link">
+                  <span className="categoryRoot-link">
+                    {category.category_root_name.replace("-", " ")}
+                  </span>
+                </li>
+                <li className="item-link">
+                  <span className="categoryRoot-link">
+                    {category.category_name.replace("-", " ")}
+                  </span>
+                </li>
+              </ul>
             </div>
+            <div className="col-3"></div>
             <div className="col-9">
               {localProducts.map((product) => {
                 return (

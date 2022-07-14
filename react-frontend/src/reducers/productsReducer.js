@@ -205,6 +205,7 @@ export default function (state = initialState, action) {
       };
 
     case GET_PRODUCTS_BY_CATEGORY:
+      
       return {
         ...state,
         category_name: state.filter.category_name = action.payload,

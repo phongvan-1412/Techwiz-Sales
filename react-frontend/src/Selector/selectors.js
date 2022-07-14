@@ -2,6 +2,7 @@ export const productSelector = (state) => {
   const products = state.product.products.filter((product) => {
     return product.category_name.includes(state.product.filter.category_name);
   });
+  
   return products;
 };
 

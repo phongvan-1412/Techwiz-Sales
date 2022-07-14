@@ -10,6 +10,7 @@ const DropdownItem = ({ category_name, categories }) => {
   );
   const dispatch = useDispatch();
   const onClick = (event) => {
+    
     dispatch(getProductsByCategory(event.target.name));
     dispatch(getCategoriesByRoot(event.target.name));
   };

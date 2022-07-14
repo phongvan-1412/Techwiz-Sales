@@ -10,7 +10,9 @@ class ProductController extends Controller
 {
     public function index(){
         $categories = AdminCategory::select('category_name')->get();
-        $products = DB::table('product')->join('category','product.category_id','=','category.category_id')->select()->get();
+
+        $products = DB::table('product')->join('category','product.category_id','=','category.category_id')->select()->orderBy("product_id","desc")->get();
+
         return view('admin.product', compact('products','categories'))->with('i', (request()->input('page',1)-1)*5);
     }
 
