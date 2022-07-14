@@ -38,9 +38,8 @@ const LandingPageSlider1 = () => {
   // });
 
   const horizontalTab = (index) => { 
-    setHorizontalState(index);
-    dispatch(productSlideCategory1())
-   console.log(dispatch(productSlideCategory1()))
+    setHorizontalState(index.target.value);
+    dispatch(productSlideCategory1(index.target.name))
   };
   
     return (
@@ -50,8 +49,8 @@ const LandingPageSlider1 = () => {
             <h4>
               <b>SWEET GROCERY</b>
             </h4>
-            <button className={ horizontalState === 1 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={() => horizontalTab(1)}>Breakfast</button>
-            <button className={ horizontalState === 2 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={() => horizontalTab(2)}>Chocolate</button>
+            <button value={1} name="Breakfast"className={ horizontalState == 1 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={horizontalTab}>Breakfast</button>
+            <button value={2} name="Chocolate"className={ horizontalState == 2 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={horizontalTab}>Chocolate</button>
           </div>
 
           <Slider ref={ref} {...settings}>
