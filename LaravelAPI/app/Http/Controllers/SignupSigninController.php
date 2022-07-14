@@ -16,7 +16,7 @@ class SignupSigninController extends Controller
 {
 
     public function getLoginForm(){
-        return view('loginform');    
+        return view('loginform');
     }
 
     public function Login(Request $request){
@@ -31,7 +31,7 @@ class SignupSigninController extends Controller
         ]);
         $email = $request->email;
         $pwd = md5($request->pwd);
-         
+
         $admin = Admin::select()->where('emp_email', $email)->where('emp_pwd', $pwd)->first();
         $user = Customer::select()->where('customer_email',$email)->where('customer_pwd',$pwd)->first();
 
@@ -43,7 +43,7 @@ class SignupSigninController extends Controller
             Session::put('emp_contact', $admin->emp_contact);//
             Session::put('emp_dob', $admin->emp_dob);//
             Session::put('emp_img_name', $admin->emp_img_name);//
-            Session::put('emp_address', $admin->emp_address);  
+            Session::put('emp_address', $admin->emp_address);
             return redirect('/dashboard');
         }elseif($user){
             Session::put('customer_id',$user->customer_id);
@@ -93,8 +93,8 @@ class SignupSigninController extends Controller
 
         $isExist = Customer::select()->where('customer_email', $request->email)->exists();
 
-        if($isExist){ 
-            return redirect()->back()->withInput()->with('msg','Email already exist'); 
+        if($isExist){
+            return redirect()->back()->withInput()->with('msg','Email already exist');
         }else{
             $register = new Customer;
             $register->customer_name = $request->firstname.' '.$request->lastname;
@@ -127,9 +127,9 @@ class SignupSigninController extends Controller
     }
 
     public function postForgetPass(Request $request){
-        
+
         $isExist = Customer::where('customer_email', $request->email)->exists();
-        $customer = Customer::where('customer_email', $request->email)->first();        
+        $customer = Customer::where('customer_email', $request->email)->first();
 
         if($isExist){
             Mail::send('emails.check_email_forget', compact('customer'), function($email) use($customer) {
@@ -146,15 +146,17 @@ class SignupSigninController extends Controller
 
     public function getPass(Customer $customer, $token){
         if ($customer->token === $token){
-            return view('getPass');
+            return view('getPass', compact('customer'));
         }
         return abort(404);
     }
-    public function postGetPass(Customer $customer, Request $request){
-        $password = md5($request->password);
-        $customer->update(['customer_pwd'=>$password, 'token'=>null, 'status'=>1]);
-        return redirect('/login')->with('succ-msg', 'Reset password successfully');
+    public function postGetPass( Request $request){
 
+        $customer = Customer::find($request->customer_id);
+        $customer->customer_pwd = md5($request->password);
+        $customer->status = 1;
+        $customer->update();
+        return redirect('/login')->with('succ-msg', 'Reset password successfully');
     }
 
 }

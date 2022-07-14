@@ -18,14 +18,15 @@
             <div class="col-md-12 login-sec">
                 <div class="form-login">
                     <h2 class="text-center">Reset Password</h2>
-                    <form method="POST" 
-                        action="{{route('postGetPass')}}" 
+                    <form method="POST"
+                        action="{{route('postGetPass')}}"
                         class="resetpwd-form">
-                        {{csrf_field()}}  
-                        <div class="container-fluid-i">             
+                        {{csrf_field()}}
+                        <div class="container-fluid-i">
                             <div class="col-md-12 form-group">
                                 <label for="exampleInputEmail1" class="text-uppercase">Password</label>
                                 <input type="password" id="pwd1" class="form-control" name="password">
+                                <input type="text" name="customer_id" value={{$customer->customer_id}} hidden>
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="exampleInputEmail1" class="text-uppercase">Confirm password</label>
@@ -34,8 +35,8 @@
                             </div>
                             <div class="col-md-12 form-submit">
                                 <button type="submit" class="btn btn-primary float-right" id="resetpwd" disabled>Reset</button>
-                            </div> 
-                        </div> 
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div class="copy-text">Created with <i class="fa fa-heart"></i> by BuffDog</div>
