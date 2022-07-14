@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 
 import { connect } from "react-redux";
-import { addProductToCart } from "../../../../actions/cartAction";
+import { addProductToCart } from "../../../../redux/actions/cartAction";
 
 class ProductItem extends Component {
 

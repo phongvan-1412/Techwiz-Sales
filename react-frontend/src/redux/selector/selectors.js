@@ -8,9 +8,7 @@ export const productSelector = (state) => {
 
 export const categorySelector = (state) => {
   const tmpCategories = state.categories.categories.filter((category) => {
-    return category.category_root_name.includes(
-      state.categories.filter.category_name
-    );
+    return category.category_root_name.includes(state.categories.filter.category_name);
   });
   return tmpCategories;
 };

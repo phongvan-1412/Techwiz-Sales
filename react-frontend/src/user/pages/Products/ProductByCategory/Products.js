@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import {
   productSelector,
   categorySelector,
-} from "../../../../Selector/selectors";
+} from "../../../../redux/selector/selectors";
 
 const Products = ({ category }) => {
   const localProducts = useSelector(productSelector);
