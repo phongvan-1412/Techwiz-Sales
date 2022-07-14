@@ -7,9 +7,10 @@ import "slick-carousel/slick/slick-theme.css";
 import { GiNextButton, GiPreviousButton} from 'react-icons/gi'
 
 import { productSlideCategorySelector1 } from "../../../redux/selector/selectors";
+import { productSlideCategory1 } from "../../../redux/actions/productsActions";
 import ProductItem from "../../pages/Products/ProductByCategory/ProductItem";
 
-const LandingPageSlider1 = ({ products }) => {
+const LandingPageSlider1 = () => {
   const ref = useRef({})
 
   const next = () =>{
@@ -23,6 +24,7 @@ const LandingPageSlider1 = ({ products }) => {
   const settings = { dots: false, infinite: false, speed: 500, slidesToShow: 5, slidesToScroll: 1};
   
   const localProducts = useSelector(productSlideCategorySelector1);
+  // console.log(localProducts)
   const dispatch = useDispatch();
   const [horizontalState, setHorizontalState] = useState(1);
 
@@ -36,9 +38,9 @@ const LandingPageSlider1 = ({ products }) => {
   // });
 
   const horizontalTab = (index) => { 
-    setHorizontalState(index) = (dispatch) => {
-      dispatch(productSlideCategorySelector1(index.target.value))
-    }; // console.log(index.target.value)
+    setHorizontalState(index);
+    dispatch(productSlideCategory1())
+   console.log(dispatch(productSlideCategory1()))
   };
   
     return (
@@ -48,8 +50,8 @@ const LandingPageSlider1 = ({ products }) => {
             <h4>
               <b>SWEET GROCERY</b>
             </h4>
-            <button value="Breakfast" className={ horizontalState === 1 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={() => horizontalTab(1)}>Breakfast</button>
-            <button value="Chocolate" className={ horizontalState === 2 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={() => horizontalTab(2)}>Chocolate</button>
+            <button className={ horizontalState === 1 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={() => horizontalTab(1)}>Breakfast</button>
+            <button className={ horizontalState === 2 ? "btn-category mb-2 btn-active-show" : "btn-category mb-2 btn-show"} onClick={() => horizontalTab(2)}>Chocolate</button>
           </div>
 
           <Slider ref={ref} {...settings}>

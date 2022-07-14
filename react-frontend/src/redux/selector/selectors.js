@@ -25,5 +25,6 @@ export const productSlideCategorySelector1 = (state) => {
   const productSlideCates = state.product.products.filter((products) => {
     return products.category_name.includes("Sweet Grocery")
   });
+  console.log(productSlideCates)
   return productSlideCates;
 }

@@ -28,7 +28,7 @@ export const getProductsById = (blog_id) => {
   };
 };
 
-export const productSlideCategorySelector1 = (category_name) => {
+export const productSlideCategory1 = (category_name) => {
   return{
     type: GET_PRODUCTS_BY_CATEGORY_SLIDE,
     payload: category_name
