@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryAPI;
+use App\Http\Controllers\ProductAPI;
 use App\Http\Controllers\BillApi;
 
 /*
@@ -23,7 +24,7 @@ Route::get('/selectcategoryroot',[CategoryAPI::class, 'SelectCategoryRoot']);
 Route::get('/selectallcategory',[CategoryAPI::class, 'SelectCategories']);
 
 
-Route::get('/selectactiveblog',[ProductAPI::class, 'SelectProducts']);
+Route::get('/selectallproducts',[ProductAPI::class, 'SelectProducts']);
 
 Route::post('/submitcart',[BillApi::class, 'InsertBill']);
 // Route::get('/selectactiveblog',[BlogApi::class, 'SelectActiveBlog']);

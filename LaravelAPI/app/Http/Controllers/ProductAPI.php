@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\NameSetting as Name;
 use App\Models\Product;
-
+use Illuminate\Support\Facades\DB;
 class ProductAPI extends Controller
 {
 
@@ -13,7 +13,7 @@ class ProductAPI extends Controller
     {
         $tmp_products = DB::select("exec sp_select_products");
         $products = self::AddCollection($tmp_products);
-        return $products;
+        return $tmp_products;
     }
 
     public function AddCollection($arr)

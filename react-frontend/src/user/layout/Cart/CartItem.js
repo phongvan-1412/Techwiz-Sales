@@ -21,7 +21,7 @@ class CartItem extends Component {
             <div className="col-2">
               <img
                 className="page-content row-panel-img"
-                src={require(`../../layout/LandingPageSlider/tempImg/${item.product_thumbnail_name}`)}
+                src={require(`../../../../../LaravelAPI/public/ProductImage/${item.product_thumbnail_name}`)}
                 style={{
                   width: "50%",
                   height: "auto",
@@ -39,7 +39,7 @@ class CartItem extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-2">{item.product_price}</div>
+            <div className="col-2">{item.product_price_per_unit}</div>
             <div className="col-2">
               <input
                 type="number"

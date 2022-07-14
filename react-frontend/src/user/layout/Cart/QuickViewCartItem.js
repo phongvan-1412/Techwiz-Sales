@@ -21,7 +21,7 @@ class QuickViewCartItem extends Component {
             <div className="col-2">
               <img
                 className="page-content row-panel-img"
-                src={require(`../../layout/LandingPageSlider/tempImg/${product.product_thumbnail_name}`)}
+                src={require(`../../../../../LaravelAPI/public/ProductImage/${product.product_thumbnail_name}`)}
                 style={{
                   width: "150%",
                   height: "auto",

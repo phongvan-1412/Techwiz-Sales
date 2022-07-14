@@ -12,7 +12,7 @@ class Product extends Model
     public $product_id;
     public $product_SKU;
     public $product_name;
-    public $category_id;
+    public $category_name;
     public $product_quatity;
     public $product_information;
     public $product_ingredients;

@@ -17,7 +17,7 @@ class ProductDetailItemSlide extends Component {
           >
             <img
               className="product-detail-item-slide product-img"
-              src={require(`../../../layout/LandingPageSlider/tempImg/${product.product_thumbnail_name}`)}
+              src={require(`../../../../../../LaravelAPI/public/ProductImage/${product.product_img_name}`)}
             />
           </Link>
         </div>
@@ -33,7 +33,7 @@ class ProductDetailItemSlide extends Component {
             </Link>
           </div>
 
-          <div className="product-price">{product.product_price}đ</div>
+          <div className="product-price">{product.product_price_per_unit}đ</div>
         </div>
       </div>
     );

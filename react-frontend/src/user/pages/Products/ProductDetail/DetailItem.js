@@ -9,7 +9,7 @@ function DetailItem({ product }) {
       <div className="col-md-6 product-detail-img-wrapper">
         <img
           className="product-detail-img"
-          src={require(`../../../layout/LandingPageSlider/tempImg/${product.product_thumbnail_name}`)}
+          src={require(`../.././../../../../LaravelAPI/public/ProductImage/${product.product_img_name}`)}
         />
       </div>
 
@@ -34,7 +34,7 @@ function DetailItem({ product }) {
             </div>
           </div>
           <div className="product-detail-product-price">
-            {product.product_price}đ
+            {product.product_price_per_unit}đ
           </div>
         </div>
 
@@ -68,7 +68,7 @@ function DetailItem({ product }) {
         </div>
 
         <div className="product-detail-description mt-5">
-          <span className="description">{product.product_detail}</span>
+          <span className="description">{product.product_information}</span>
         </div>
       </div>
     </div>
