@@ -1,12 +1,9 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-import Product from "./Product";
 
 import "../../../css/style-mobile.css";
 import "../../../css/style-tablet.css";
 import "../../../css/style-laptop.css";
-import { render } from "react-dom";
 
 import { useSelector } from "react-redux";
 import {
@@ -15,7 +12,6 @@ import {
 } from "../../../../redux/selector/selectors";
 
 import ProductView from "./ProductView";
-import Pagination from "./Pagination";
 
 const Products = ({ category }) => {
   const localProducts = useSelector(productSelector);
