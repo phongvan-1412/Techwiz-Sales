@@ -42,14 +42,14 @@ class Footer extends Component{
                     </div>
 
                     <div className="footer-container1-col2">
-                        <h4>LATEST BLOG</h4>
+                        <h4>ABOUT US</h4>
                         <div className="latest-blog1">
                             <span>
-                                <Link to="#" className="meta-facebook"><FaFacebook />@VNHP</Link>
+                                <Link to="/about" className="meta-facebook"><FaFacebook />about us</Link>
                                 <br />
                                 <span id="blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, est labore deleniti eligendi officiis facere.</span> 
                                 <br />
-                                <Link to="#" id="link">https://buff.ly/2zaSfAQ</Link>
+                                <Link to="/about" id="link">https://buff.ly/2zaSfAQ</Link>
                                 <br />
                                 <span id="date">12 May 2022</span>
                             </span>
@@ -58,11 +58,11 @@ class Footer extends Component{
 
                         <div className="latest-blog2">
                             <span>
-                                <Link to="#" className="meta-facebook"><FaFacebook />@VNHP</Link>
+                                <Link to="/term-and-policy" className="meta-facebook"><FaFacebook />Term and Policy</Link>
                                 <br />
                                 <span id="blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, est labore deleniti eligendi officiis facere.</span> 
                                 <br />
-                                <Link to="#" id="link">https://buff.ly/2zaSfAQ</Link>
+                                <Link to="/term-and-policy" id="link">https://buff.ly/2zaSfAQ</Link>
                                 <br />
                                 <span id="date">12 May 2022</span> 
                             </span>
