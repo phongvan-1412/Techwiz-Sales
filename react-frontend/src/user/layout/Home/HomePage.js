@@ -1,9 +1,9 @@
 import React from "react";
-import MainRoute from "./MainRoute";
-import Header from "./user/layout/Header-Footer/Header";
-import Footer from "./user/layout/Header-Footer/Footer";
+import MainRoute from "../../../MainRoute";
+import Header from "../Header-Footer/Header";
+import Footer from "../Header-Footer/Footer";
 import useForceUpdate from "use-force-update";
-import { getCart } from "./redux/actions/cartAction";
+import { getCart } from "../../../redux/actions/cartAction";
 
 function HomePage({ products, cart, categories, categoriesRoot }) {
   const forceUpdate = useForceUpdate();

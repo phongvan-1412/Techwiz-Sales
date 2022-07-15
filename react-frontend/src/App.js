@@ -13,7 +13,7 @@ import "./user/css/style-laptop.css"
 
 import store from "./redux/store";
 import { Provider } from "react-redux";
-import Home from "./Home";
+import Home from "./user/layout/Home/Home";
 
 class App extends Component {
   render() {

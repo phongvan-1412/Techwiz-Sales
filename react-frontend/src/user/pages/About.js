@@ -11,7 +11,7 @@ class About extends Component {
                 <div className="col-6">
                   <img
                     className="page-content row-panel-img"
-                    src={require(`../layout/LandingPageSlider/tempImg/lounge.jpg`)}
+                    src={require(`../img/LandingPage/lounge.jpg`)}
                     style={{ width: "100%" }}
                   />
                 </div>
@@ -64,7 +64,7 @@ class About extends Component {
                 <div className="col-6">
                   <img
                     className="page-content row-panel-img"
-                    src={require(`../layout/LandingPageSlider/tempImg/lounge.jpg`)}
+                    src={require(`../img/LandingPage/lounge.jpg`)}
                     style={{ width: "100%" }}
                   />
                   <h3>THE LARGE RANGE OF PRODUCTS</h3>
@@ -81,7 +81,7 @@ class About extends Component {
                 <div className="col-6">
                   <img
                     className="page-content row-panel-img"
-                    src={require(`../layout/LandingPageSlider/tempImg/lounge.jpg`)}
+                    src={require(`../img/LandingPage/lounge.jpg`)}
                     style={{ width: "100%" }}
                   />
                   <h3>THE LARGE RANGE OF PRODUCTS</h3>
@@ -104,7 +104,7 @@ class About extends Component {
                 <div className="col-6">
                   <img
                     className="page-content row-panel-img"
-                    src={require(`../layout/LandingPageSlider/tempImg/lounge.jpg`)}
+                    src={require(`../img/LandingPage/lounge.jpg`)}
                     style={{ width: "100%" }}
                   />
                   <h3>THE LARGE RANGE OF PRODUCTS</h3>
@@ -121,7 +121,7 @@ class About extends Component {
                 <div className="col-6">
                   <img
                     className="page-content row-panel-img"
-                    src={require(`../layout/LandingPageSlider/tempImg/lounge.jpg`)}
+                    src={require(`../img/LandingPage/lounge.jpg`)}
                     style={{ width: "100%" }}
                   />
                   <h3>THE LARGE RANGE OF PRODUCTS</h3>

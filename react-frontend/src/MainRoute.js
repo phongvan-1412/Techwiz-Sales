@@ -12,12 +12,12 @@ import {
 // import Login from "../src/user/pages/Login-Register/Login";
 // import Register from "../src/user/pages/Login-Register/Register";
 
-import LandingPage from "./user/layout/LandingPageSlider/LandingPage";
+import LandingPage from "./user/pages/LandingPageSlider/LandingPage";
 import About from "./user/pages/About";
 import ContactUs from "./user/pages/Contact/ContactUs";
 
 import ProductByCategory from "./user/pages/Products/ProductByCategory/ProductByCategory";
-import Cart from "./user/layout/Cart/Cart";
+import Cart from "./user/pages/Cart/Cart";
 import ProductDetail from "./user/pages/Products/ProductDetail/ProductDetail";
 
 class MainRoute extends Component {

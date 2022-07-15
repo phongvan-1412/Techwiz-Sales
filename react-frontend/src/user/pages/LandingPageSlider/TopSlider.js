@@ -42,11 +42,11 @@ class TopSlider extends Component {
           <Slider ref={(c) => (this.slider = c)}{...settings}>
             <img
               className="page-content row-panel-img"
-              src={require(`./tempImg/banner-ecom-1920x900-loyalty-app.jpg`)}
+              src={require(`../../img/LandingPage/banner-ecom-1920x900-loyalty-app.jpg`)}
               />
             <img
               className="page-content row-panel-img"
-              src={require(`./tempImg/EN-grab-agm-ecom-1920x900.jpg`)}
+              src={require(`../../img/LandingPage/EN-grab-agm-ecom-1920x900.jpg`)}
               />
           </Slider>
         </div>

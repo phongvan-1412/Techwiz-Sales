@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import Products from './Product';
+import Product from './Product';
 import Pagination from "./Pagination";
 
 
@@ -37,7 +37,7 @@ const DisplayProduct = ({products}) => {
     const paginate = pageNumber => setCurrentPage(pageNumber);
         return(
         <div className="container product-by-category-display">
-            <Products products={currentProducts} loading={loading} />
+            <Product products={currentProducts} loading={loading} />
             <Pagination productsPerPage={productsPerPage} totalProducts={product.length} paginate={paginate}/>
         </div>
     )

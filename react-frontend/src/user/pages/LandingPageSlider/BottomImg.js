@@ -9,7 +9,7 @@ class BottomImg extends Component {
             <div className="col-md-4 bottom-col-1">
               <Link to="/"><img
                   className="page-content row-panel-bottom-img"
-                  src={require(`./tempImg/1.jpg`)}/>
+                  src={require(`../../img/LandingPage/1.jpg`)}/>
               </Link>
             </div>
 
@@ -19,13 +19,13 @@ class BottomImg extends Component {
                 <div className="col-md-12">
                   <Link to="/"><img
                     className="page-content row-panel-bottom-img-col2 img1"
-                    src={require(`./tempImg/2.jpg`)}/>
+                    src={require(`../../img/LandingPage/2.jpg`)}/>
                   </Link>
                 </div>
                 <div className="col-md-12" style={{marginBottom:'0px',paddingBottom:'0px'}}>
                   <Link to="/"><img
                     className="page-content row-panel-bottom-img-col2 img2"
-                    src={require(`./tempImg/3.png`)}/>
+                    src={require(`../../img/LandingPage/3.png`)}/>
                   </Link>
                 </div>
               </div>
@@ -34,7 +34,7 @@ class BottomImg extends Component {
             <div className="col-md-4 bottom-col-3">
               <Link to="/"><img
                 className="page-content row-panel-bottom-img img4"
-                src={require(`./tempImg/4.png`)}/>
+                src={require(`../../img/LandingPage/4.png`)}/>
               </Link>
             </div>
           </div>
