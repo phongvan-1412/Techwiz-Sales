@@ -7,13 +7,20 @@ import "../../../css/style-mobile.css";
 import "../../../css/style-tablet.css";
 import "../../../css/style-laptop.css";
 import { render } from "react-dom";
-import ProductView from "./ProductView";
+
 import { useSelector } from "react-redux";
 import { productSelector, categorySelector } from "../../../../redux/selector/selectors";
+
+import ProductView from "./ProductView";
+import Pagination from "./Pagination";
 
 const Products = ({ category }) => {
   const localProducts = useSelector(productSelector);
   const localCategories = useSelector(categorySelector);
+
+  const [currentPage, setCurrentPage] = useState (1);
+  const [productsPerPage] = useState(5);
+
   let check = false;
   if (localCategories.length > 0) {
     check = true;
@@ -25,6 +32,13 @@ const Products = ({ category }) => {
     currentCate = cate.category_root_name;
   });
 
+  //Get current products
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = localProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  //Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
   return (
     <div>
       {check ? (
@@ -34,7 +48,7 @@ const Products = ({ category }) => {
             <div className="wrap-breadcrumb">
               <ul>
                 <li className="item-link">
-                  <Link to="#" className="home-link">
+                  <Link to="/" className="home-link">
                     HOME
                   </Link>
                 </li>
@@ -45,29 +59,40 @@ const Products = ({ category }) => {
                 </li>
               </ul>
             </div>
+          </div>
 
+          <div className="row">
             {/* sidebar-filter  */}
-            <div className="col-md-3">
-              <div>
-                <ul className="list-style vertical-list list-limited">
-                  <li >
-                    <span className="categoryRoot-link">
+            <div className="col-md-3 sidebar-filter">
+              <div className="product-filter-container">
+                <div className="filter-title">Filter Products By</div>
+                  <div className="widget mercado-widget filter-widget brand-widget">
+                    <h2 className="widget-title">CATEGORY</h2>
+                    <div className="widget-content">
                       {localCategories.map((cate) => {
                         return (
-                          <div>{cate.category_name.replace("-", " ")}</div>
+                        <ul className="list-style vertical-list list-limited" data-show="6">
+                          <li className="list-item">
+                            <Link to="#">
+                              <span className="categoryRoot-link">{cate.category_name.replace("-", " ")}</span>
+                            </Link>
+                          </li>
+                        </ul>
                         );
                       })}
-                    </span>
-                  </li>
-                </ul>
+                    </div>
+                  </div>
               </div>
-            </div>
-
+            </div>        
             {/* display-products  */}
+          
             <div className="col-md-9">
-              {localProducts.map((product) => {
+              {currentProducts.map((product) => {
                 return (
-                  <ProductView key={product.product_SKU} product={product} />
+                  <div className="container product-by-category-display">
+                    <ProductView key={product.product_SKU} product={product} />
+                    <Pagination productsPerPage={productsPerPage} totalProducts={product.length} paginate={paginate}/>
+                  </div>
                 );
               })}
             </div>
@@ -76,10 +101,12 @@ const Products = ({ category }) => {
       ) : (
         <div className="container">
           <div className="row">
+
+            {/* wrap-breadcrumb */}
             <div className="wrap-breadcrumb">
               <ul>
                 <li className="item-link">
-                  <Link to="#" className="home-link">
+                  <Link to="/" className="home-link">
                     HOME
                   </Link>
                 </li>
@@ -95,11 +122,40 @@ const Products = ({ category }) => {
                 </li>
               </ul>
             </div>
-            <div className="col-3"></div>
-            <div className="col-9">
-              {localProducts.map((product) => {
+          </div>
+
+          <div className="row">
+            {/* sidebar-filter  */}
+            <div className="col-md-3 sidebar-filter">
+              <div className="product-filter-container">
+                <div className="filter-title">Filter Products By</div>
+                <div className="widget mercado-widget filter-widget brand-widget">
+                  <h2 className="widget-title">SPECIAL DIET</h2>
+                  <div className="widget-content">
+                    {localCategories.map((cate) => {
+                      return (
+                      <ul className="list-style vertical-list list-limited" data-show="6">
+                        <li className="list-item">
+                          <Link to="#">
+                            <span className="categoryRoot-link"></span>
+                          </Link>
+                        </li>
+                      </ul>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* display-products  */}
+            <div className="col-md-9">
+              {currentProducts.map((product) => {
                 return (
-                  <ProductView key={product.product_SKU} product={product} />
+                  <div className="container product-by-category-display">
+                    <ProductView key={product.product_SKU} product={product} />
+                    <Pagination productsPerPage={productsPerPage} totalProducts={product.length} paginate={paginate}/>
+                  </div>
                 );
               })}
             </div>
