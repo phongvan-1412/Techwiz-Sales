@@ -1,5 +1,9 @@
 @extends('admin.layout.loginoutlayout')
 
+<!-- CSS -->
+@section('css')
+<link rel="stylesheet" href="{{asset('css/profile.css')}}">
+@endsection
 
 @section('body')
 <div class="container-xl px-4 mt-4">
@@ -7,15 +11,20 @@
         <a class="btn btn-danger mb-3" href="/logout">Log Out</a>
     <div class="row">
         <div class="col-xl-4">
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="{{route('userprofile.store')}}" method="POST" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <!-- Profile picture card-->
                 <div class="card mb-2 mb-xl-0">
                     <div class="card-header">Profile Picture</div>
                     <div class="card-body text-center">
                         <!-- Profile picture image-->
-                        <img class="img-account-profile rounded-circle mb-2"
-                            src="" alt="">
+                        @if (Session::get('customer_img_name') == null)
+                            <img class="img-account-profile rounded-circle mb-2"
+                            src="{{asset('avatar/1.jpg')}}" alt="">
+                        @else
+                            <img class="img-account-profile rounded-circle mb-2"
+                                src="{{asset('avatar')}}/{{Session::get('customer_img_name')}}" alt="">
+                        @endif
                         <!-- Profile picture help block-->
                         <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                         <!-- Profile picture upload button-->
@@ -39,11 +48,11 @@
                     <div class="row gx-3 mb-3">
                         <div class="col-md-6">
                             <label class="small mb-1" for="position">Rank</label>
-                            <input class="form-control" name="position" id="position" type="text" value="" disabled>
+                            <input class="form-control" name="position" id="position" type="text" value="Member" disabled>
                         </div>
                         <div class="col-md-6">
                             <label class="small mb-1" for="position">Point</label>
-                            <input class="form-control" name="point" id="point" type="text" value="" disabled>
+                            <input class="form-control" name="point" id="point" type="text" value="0" disabled>
                         </div>
                     </div>
 
@@ -96,7 +105,7 @@
                         {{session('fail-msg')}}
                     </div>
                     @endif
-                    <form action="" method="POST">
+                    <form action="{{route('userprofile.update', Session::get('customer_id'))}}" method="POST">
                         @method('PUT')
                         {{csrf_field()}}
                         <div class="mb-3">
@@ -129,8 +138,8 @@
                         <th>#</th>
                         <th>Shipping Code</th>
                         <th>Total Payment</th>
-                        <th> Status</th>
-                        <th> Order date</th>
+                        <th>Status</th>
+                        <th>Order date</th>
                     </tr>
                 </thead>
                 <tbody>

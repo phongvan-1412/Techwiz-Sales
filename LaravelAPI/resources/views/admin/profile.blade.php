@@ -26,7 +26,7 @@
                     <div class="card-body text-center">
                         <!-- Profile picture image-->
                         <img class="img-account-profile rounded-circle mb-2"
-                            src="{{asset('avatar')}}/{{Session::get('emp_img_name') }}" alt="">
+                            src="{{asset('avatar')}}/{{Session::get('emp_img_name')}}" alt="">
                         <!-- Profile picture help block-->
                         <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                         <!-- Profile picture upload button-->

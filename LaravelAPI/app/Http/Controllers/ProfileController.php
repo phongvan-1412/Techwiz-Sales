@@ -40,7 +40,7 @@ class ProfileController extends Controller
         $currentpwd = $request->currentpwd;
         if($currentpwd = Session::get('emp_pwd')){
             $changepwd = Admin::find($emp_id);
-            $changepwd->emp_pwd = $request->newpwd;
+            $changepwd->emp_pwd = md5($request->newpwd);
             $changepwd->save();
             return redirect()->route('profile.index');
         }else{

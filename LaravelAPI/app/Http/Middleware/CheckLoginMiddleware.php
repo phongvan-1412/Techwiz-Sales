@@ -22,7 +22,6 @@ class CheckLoginMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-
         $admin = Admin::select()->where('emp_email', Session::get('emp_email'))
         ->where('emp_pwd', Session::get('emp_pwd'))->first();
 

@@ -10,6 +10,7 @@ use App\Http\Controllers\ImportProductController as Import;
 use App\Http\Controllers\BillController as Bill;
 use App\Http\Controllers\SignupSigninController as Signupin;
 use App\Http\Controllers\ProfileController as Profile;
+use App\Http\Controllers\UserProfileController as UserProfile;
 
 use App\Http\Middleware\CheckLoginMiddleware;
 
@@ -58,6 +59,4 @@ Route::get('/register',[Signupin::class, 'getSignupform']);
 Route::post('/register/check',[Signupin::class, 'Register']);
 Route::get('/actived/{customer}/{token}',[Signupin::class, 'actived'])->name('customer.actived');
 
-Route::get('/userprofile', function(){
-    return view('user.userprofile');
-});
+Route::resource('/userprofile', UserProfile::class);
