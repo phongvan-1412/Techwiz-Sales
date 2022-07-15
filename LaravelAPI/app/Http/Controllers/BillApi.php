@@ -6,13 +6,17 @@ use Illuminate\Http\Request;
 use App\Models\NameSetting as Name;
 use App\Models\Bill;
 use App\Models\BillDetail;
+use App\Models\Product;
 use Carbon\Carbon;
 use DateTime;
+use Illuminate\Support\Facades\DB;
 
 class BillApi extends Controller
 {
-    public function InsertBill(Request $request)
+    public function InsertBill(Request $cart)
     {
+        // tạo bill mới
+
         $current_date = Carbon::now()->toDateTimeString();
         DB::table('bill')->insert([
             'bill_date' => $current_date,
@@ -23,15 +27,25 @@ class BillApi extends Controller
         {
             $bill_id = $bill->bill_id;
         }
-
         // duyệt mảng bill_detail
+        $currentProduct = self::ProductCollection($cart->input());
 
-        // foreach($request as $bill_detail)
-        // {
-        //     $data = new BillDetail();
-        //     $data = $bill_detail;
-        //     DB::table('bill_detail')->insert($data);
-        // }
+        foreach($currentProduct as $product)
+        {
+            $newBill = new BillDetail();
+            $newProduct = new Product();
+            $newProduct = $product;
+
+            $newBill->bill_id = $bill_id;
+            $newBill->product_id =  $newProduct['product_id'];
+            $newBill->bill_detail_quantity = $newProduct['product_quantity'];
+            $newBill->price_per_unit = $newProduct['product_price_per_unit'];
+            $newBill->bill_detail_total_payment = $newProduct['product_price_per_unit'] * $newProduct['product_quantity'];
+
+            DB::insert('insert into bill_detail (bill_id, product_id,bill_detail_quantity,price_per_unit,bill_detail_total_payment) 
+                        values (?, ?,?,?,?)', 
+                        [$newBill->bill_id, $newBill->product_id,$newBill->bill_detail_quantity,$newBill->price_per_unit,$newBill->bill_detail_total_payment]);
+        }
     }
     
     public function SelectBill()
@@ -45,5 +59,18 @@ class BillApi extends Controller
         $bill_details = DB::table('bill_detail')->get();
         return $bill_details;
     }
-    
+
+    public function ProductCollection($arr)
+    {
+        $collection = collect();
+
+        foreach($arr as $category)
+        {
+            $newCategory = new Product();
+            $newCategory = $category;
+            $collection->add($newCategory);
+            }
+
+        return $collection;
+    }
 }

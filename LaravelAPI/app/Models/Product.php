@@ -12,7 +12,7 @@ class Product extends Model
     public $product_id;
     public $product_SKU;
     public $product_name;
-    public $category_name;
+    public $category_id;
     public $product_quatity;
     public $product_information;
     public $product_ingredients;
@@ -21,4 +21,7 @@ class Product extends Model
     public $product_img_name;
     public $product_price_per_unit;
     public $product_status;
+    public $category_name;
+    public $category_root;
+    public $category_status;
 }

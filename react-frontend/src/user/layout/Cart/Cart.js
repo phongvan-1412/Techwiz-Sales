@@ -15,11 +15,12 @@ const Cart = ({ cart, updateCart }) => {
   cart.forEach((item) => {
     totalPayment += parseInt(item.product_subtotal);
   });
-  
+
   const dispatch = useDispatch();
   const onClick = () => {
     dispatch(submitCart(cart));
   };
+  
   return (
     <div className="container">
       <div className="row">
@@ -55,7 +56,7 @@ const Cart = ({ cart, updateCart }) => {
                 <div className="col-4">{totalPayment}</div>
               </div>
               <div className="container">
-                {checkout ? (
+                {/* {checkout ? (
                   <PayPal subtotal={totalPayment} />
                 ) : (
                   <button
@@ -65,8 +66,12 @@ const Cart = ({ cart, updateCart }) => {
                     onClick={onClick}
                   >
                     <Link to="/checkout">PROCEED TO PAYMENT </Link>
+                    <p>Check out</p>
                   </button>
-                )}
+                )} */}
+                <button onClick={onClick}>
+                  <p>Check out</p>
+                </button>
               </div>
             </form>
           </div>

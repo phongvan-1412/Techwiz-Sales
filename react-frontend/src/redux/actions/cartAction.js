@@ -50,10 +50,7 @@ export const updateProductFromCart = (product, quantity) => {
 };
 
 export const submitCart = (cart) => {
-  const tmp = JSON.stringify(cart);
-  console.log(tmp);
-
-  axios.post(`http://127.0.0.1:8000/api/submitcart`, tmp);
+  axios.post(`http://127.0.0.1:8000/api/submitcart`, cart);
   return {
     type: SUBMIT_CART,
   };
