@@ -25,7 +25,7 @@ const ProductView = ({ product }) => {
           </div>
         </div>
       ) : null} */}
-      {productShow ? (
+      {/* {productShow ? (
         <div>
           <div
             style={{
@@ -60,7 +60,7 @@ const ProductView = ({ product }) => {
             <button onClick={onCLick}>close</button>
           </div>
         </div>
-      ) : null}
+      ) : null} */}
       <ProductItem product={product} />
     </div>
   );

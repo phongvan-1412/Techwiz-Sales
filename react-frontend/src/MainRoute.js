@@ -15,6 +15,7 @@ import {
 import LandingPage from "./user/pages/LandingPageSlider/LandingPage";
 import About from "./user/pages/About";
 import ContactUs from "./user/pages/Contact/ContactUs";
+import TermAndPolicy from "./user/pages/TermAndPolicy";
 
 import ProductByCategory from "./user/pages/Products/ProductByCategory/ProductByCategory";
 import Cart from "./user/pages/Cart/Cart";
@@ -26,11 +27,12 @@ class MainRoute extends Component {
     return (
       <div className="container" style={{ padding: "0px", margin: "0px" }}>
         <Routes>
-          {/* Landingpage  */}
+          {/* Home  */}
           <Route path="/" element={<LandingPage products={products} cart={cart} categories={categories} categoriesRoot={categoriesRoot} />}></Route>
-
           <Route path="/about" element={<About />}></Route>
           <Route path="/contactus" element={<ContactUs />}></Route>
+          <Route path="/term-and-policy" element={<TermAndPolicy />}></Route>
+
 
           {/* Cart */}
           <Route path="/cart" element={<Cart cart={cart} updateCart={updateCart}/>}></Route>
