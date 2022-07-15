@@ -32,6 +32,7 @@ class QuickViewCartItem extends Component {
               />
               <FaTimesCircle
                 style={{
+                  position: "relative",
                   cursor: "pointer",
                   marginLeft: "75px",
                   marginTop: "-30px",

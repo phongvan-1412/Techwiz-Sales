@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+
+import { GrUpdate } from 'react-icons/gr'
+import { FaTrash } from 'react-icons/fa'
+
 import {
   updateProductFromCart,
   deleteProductFromCart,
@@ -15,59 +19,42 @@ class CartItem extends Component {
     };
 
     return (
-      <div>
-        <div className="container" key={item.product_SKU}>
-          <div className="row">
-            <div className="col-2">
-              <img
-                className="page-content row-panel-img"
-                src={require(`../../../../../LaravelAPI/public/ProductImage/${item.product_img_name}`)}
-                style={{
-                  width: "50%",
-                  height: "auto",
-                  objectFit: "center",
-                  objectPosition: "center",
-                }}
-              />
+      <div className="container" key={item.product_SKU}>
+        <div className="row product-item-wrapper">
+          <div className="col-md-2 cart-img-wrapper">
+            <img
+              className="cart-img"
+              src={require(`../../../../../LaravelAPI/public/ProductImage/${item.product_img_name}`)}
+            />
+          </div>
+
+          <div className="col-md-4" style={{alignSelf:"center"}}>
+            <h3 className="cart-product-name">{item.product_name.replace(/-/g, " ")}</h3>
+          </div>
+
+          <div className="col-md-2" style={{alignSelf:"center"}}>
+            <span className="cart-product-price">{(parseInt(item.product_price_per_unit)).toLocaleString()}đ</span>
+          </div>
+
+          <div className="col-md-2" style={{alignSelf:"center"}}>
+            <input
+              type="number"
+              name="product_quantity"
+              id="qty"
+              max="12"
+              min="1"
+              step="1"
+              className="input-text-qty"
+              onChange={onChange}
+              defaultValue={item.product_quantity}
+            />
+          </div>
+          <div className="col-md-2" style={{alignSelf:"center"}}>
+            <div className="cart-icons">
+              <GrUpdate classname="meta-update" onClick={updateCart}/>
+              <FaTrash classname="meta-trash" onClick={() => this.props.deleteProductFromCart(item.product_SKU)} />
             </div>
-            <div className="col-4">
-              <div className="container">
-                <div className="row">
-                  <div className="col-6">
-                    <h3>{item.product_name.replace(/-/g, " ")}</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-2">{(parseInt(item.product_price_per_unit)).toLocaleString()}đ</div>
-            <div className="col-2">
-              <input
-                type="number"
-                name="product_quantity"
-                id="qty"
-                max="999"
-                min="1"
-                step="1"
-                className="input-text-qty"
-                onChange={onChange}
-                defaultValue={item.product_quantity}
-              />
-            </div>
-            <div className="col-2">
-              <div>
-                <button onClick={updateCart}>Update items</button>
-              </div>
-              <div>
-                <button
-                  onClick={() =>
-                    this.props.deleteProductFromCart(item.product_SKU)
-                  }
-                >
-                  Remove item
-                </button>
-              </div>
-              <div>{(item.product_quantity * item.product_price_per_unit).toLocaleString()}đ</div>
-            </div>
+            <div className="cart-product-total">{(item.product_quantity * item.product_price_per_unit).toLocaleString()}đ</div>
           </div>
         </div>
       </div>

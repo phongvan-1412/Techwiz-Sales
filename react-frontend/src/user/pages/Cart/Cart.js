@@ -21,58 +21,59 @@ const Cart = ({ cart, updateCart }) => {
   const dispatch = useDispatch();
   const onClick = () => {
     dispatch(submitCart(cart));
+    alert('You order is ')
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-9">
-          <h3>SHOPPING CART</h3>
-          <div className="container">
-            <div className="row">
-              <div className="col-8">ITEM(S)</div>
-              <div className="col-1">PRICE</div>
-              <div className="col-1">QTY</div>
-              <div className="col-2">SUBTOTAL</div>
-            </div>
+    <div className="row" style={{marginTop: "30px"}}>
+      <h3 className="cart-title">SHOPPING CART</h3>
+      <div className="col-md-9">
+        <div className="container">
+          <div className="row cart-table-title-wrapper">
+            <div className="col-2 cart-table-title">ITEM(S)</div>
+            <div className="col-4 cart-table-title"></div>
+            <div className="col-1 cart-table-title">PRICE</div>
+            <div className="col-1 cart-table-title"></div>
+            <div className="col-1 cart-table-title">QTY</div>
+            <div className="col-1 cart-table-title"></div>
+            <div className="col-2 cart-table-title">SUBTOTAL</div>
           </div>
-          <div>{cart.length === 0 && <div>Cart is empty</div>}</div>
-          {cart.map((item) => (
-            <CartItem
-              key={item.product_SKU}
-              item={item}
-              updateCart={updateCart}
-            ></CartItem>
-          ))}
         </div>
-        <div className="col-3">
-          <div className="container">
-            <form action="/" method="post">
-              <div>SUMARY</div>
-              <div className="row">
-                <div className="col-8">Subtotal</div>
-                <div className="col-4">{totalPayment.toLocaleString()}đ</div>
-              </div>
-              <div className="row">
-                <div className="col-8">Order Total</div>
-                <div className="col-4">{totalPayment.toLocaleString()}đ</div>
-              </div>
-                {/* {checkout ? (
-                  <PayPal subtotal={totalPayment} />
-                ) : (
-                  <button
-                    onMouseDown={() => {
-                      setCheckOut(true);
-                    }}
-                    onClick={onClick}
-                  >
-                    <Link to="/checkout">PROCEED TO PAYMENT </Link>
-                    <p>Check out</p>
-                  </button>
-                )} */}
-                <button onClick={onClick}>Check out</button>
-            </form>
+        <div>{cart.length === 0 && <div>Cart is empty</div>}</div>
+        {cart.map((item) => (
+          <CartItem
+            key={item.product_SKU}
+            item={item}
+            updateCart={updateCart}
+          ></CartItem>
+        ))}
+      </div>
+      <div className="col-md-3" style={{margin: "0px", padding: "0px"}}>
+        <div className="container cart-summary-container">
+          <div className="cart-summary-title">SUMMARY</div>
+          <div className="row cart-summary-subtotal">
+            <div className="col-md-6 cart-product-subtotal-title" style={{alignSelf: "center", textAlign:"center"}}>Subtotal</div>
+            <div className="col-md-6 cart-product-subtotal-price" style={{alignSelf: "center", textAlign:"center"}}>{totalPayment.toLocaleString()}đ</div>
           </div>
+              {/* {checkout ? (
+                <PayPal subtotal={totalPayment} />
+              ) : (
+                <button
+                  onMouseDown={() => {
+                    setCheckOut(true);
+                  }}
+                  onClick={onClick}
+                >
+                  <Link to="/checkout">PROCEED TO PAYMENT </Link>
+                  <p>Check out</p>
+                </button>
+              )} */}
+              <div className="text-center">
+                <button className="btn-checkout" onClick={onClick}>
+                      PROCEED TO CHECKOUT
+                </button> 
+              </div>
+                
         </div>
       </div>
     </div>
