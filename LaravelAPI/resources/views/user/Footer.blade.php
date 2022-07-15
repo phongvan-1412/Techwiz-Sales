@@ -33,11 +33,11 @@
             <h4>ABOUT US</h4>
             <div class="latest-blog1">
                 <span>
-                    <a href="#" class="meta-facebook">About Us</a>
+                    <a href="http://localhost:3000/about" class="meta-facebook">About Us</a>
                     <br />
                     <span id="blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, est labore deleniti eligendi officiis facere.</span> 
                     <br />
-                    <a href="/about" id="a">https://buff.ly/2zaSfAQ</a>
+                    <a href="http://localhost:3000/about" id="a">https://buff.ly/2zaSfAQ</a>
                     <br />
                     <span id="date">12 May 2022</span>
                 </span>
@@ -46,11 +46,11 @@
 
             <div class="latest-blog2">
                 <span>
-                    <a href="#" class="meta-facebook"><FaFacebook />Term and Policy</a>
+                    <a href="http://localhost:3000/term-and-policy" class="meta-facebook"><FaFacebook />Term and Policy</a>
                     <br />
                     <span id="blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, est labore deleniti eligendi officiis facere.</span> 
                     <br />
-                    <a href="/term-and-policy" id="a">https://buff.ly/2zaSfAQ</a>
+                    <a href="http://localhost:3000/term-and-policy" id="a">https://buff.ly/2zaSfAQ</a>
                     <br />
                     <span id="date">12 May 2022</span> 
                 </span>
