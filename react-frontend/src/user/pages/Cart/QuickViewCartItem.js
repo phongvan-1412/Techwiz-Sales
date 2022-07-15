@@ -9,10 +9,19 @@ import {
 import { FaSyncAlt, FaTimesCircle } from "react-icons/fa";
 
 class QuickViewCartItem extends Component {
+  state = {
+    onItemChange: false,
+  };
+
   render() {
     const { product, updateCart } = this.props;
     const onChange = (event) => {
+      this.setState({ onItemChange: true });
       this.props.updateProductFromCart(product, event.target.value);
+    };
+    const onClick = () => {
+      this.setState({ onItemChange: false });
+      updateCart();
     };
 
     return (
@@ -65,10 +74,12 @@ class QuickViewCartItem extends Component {
                         />
                       </div>
                       <div className="col-6">
-                        <FaSyncAlt
-                          onClick={updateCart}
-                          style={{ cursor: "pointer" }}
-                        />
+                        {this.state.onItemChange ? (
+                          <FaSyncAlt
+                            onClick={onClick}
+                            style={{ cursor: "pointer" }}
+                          />
+                        ) : null}
                       </div>
                     </div>
                   </div>
@@ -79,9 +90,7 @@ class QuickViewCartItem extends Component {
               <div
                 style={{ marginTop: "50px", fontSize: "20px", color: "green" }}
               >
-                {(
-                  product.product_price_per_unit * product.product_quantity
-                ).toLocaleString()}đ
+                {parseInt(product.product_price_per_unit).toLocaleString()}đ
               </div>
             </div>
           </div>
