@@ -72,27 +72,11 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
               />
             )}
           </Link>
-          <div
-            className="nav-bag"
-            style={{ height: "100px", marginTop: "50px" }}
-            onMouseEnter={() => setCartMini(true)}
-            onMouseLeave={() => setCartMini(false)}
-          >
-            <AiOutlineShoppingCart />
-            <span>Shoping Cart</span>
-            <br />
-            <span className="bag-quantity">
-              {itemsCount} items - {cartTotalPayment.toLocaleString()}đ
-            </span>
-            {cartMini && (
-              <QuickViewCartItems cart={cart} updateCart={updateCart} />
-            )}
-          </div>
 
-          <Link to="/shipping" replace className="shipping">
+          {/* <Link to="/shipping" replace className="shipping">
             Shipping
-          </Link>
-          <Link to="/needhelp" replace className="needhelp">
+          </Link> */}
+          <Link to="/term-and-policy" replace className="needhelp">
             Needhelp
           </Link>
 
@@ -110,7 +94,7 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
               </Link>
             </div>
           )}
-
+          
           <Link to="/" className="meta-facebook">
             <FaFacebook />
           </Link>
@@ -120,9 +104,23 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
           <Link to="/" className="meta-twitter">
             <FaTwitter />
           </Link>
-          <Link to="/" className="btn-bars">
-            <FaBars />
-          </Link>
+          <div
+            className="nav-bag"
+            style={{ height: "100px", marginTop: "50px" }}
+            onMouseEnter={() => setCartMini(true)}
+            onMouseLeave={() => setCartMini(false)}
+          >
+            <AiOutlineShoppingCart />
+            <span>Shoping Cart</span>
+            <br />
+            <span className="bag-quantity">
+              {itemsCount} items - {cartTotalPayment.toLocaleString()}đ
+            </span>
+            {cartMini && (
+              <QuickViewCartItems cart={cart} updateCart={updateCart} />
+            )}
+          </div>
+          
         </header>
       </div>
     </div>

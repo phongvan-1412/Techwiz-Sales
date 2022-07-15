@@ -24,7 +24,7 @@ const QuickViewCartItems = ({ cart, updateCart }) => {
       style={{
         background: "white",
         width: "500px",
-        position: "absolute",
+        position: "relative",
         marginTop: "25px",
       }}
     >

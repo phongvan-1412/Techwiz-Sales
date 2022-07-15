@@ -451,6 +451,7 @@
     font-size: 15px;
     font-weight: 530;
     padding: 15px;
+    text-transform: uppercase;
 }
 .item-link a:hover{
     color: var(--iconHover);
