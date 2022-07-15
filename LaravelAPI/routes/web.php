@@ -41,7 +41,9 @@ Route::prefix('/')->middleware('checklogin')->group(function(){
     Route::resource('/profile', Profile::class);
 
 });
-
+Route::prefix('/')->middleware('usermiddleware')->group(function(){
+    Route::resource('/userprofile', UserProfile::class);
+});
 
 // LOGIN
 Route::get('/login', [Signupin::class, 'getLoginForm']);
@@ -59,4 +61,3 @@ Route::get('/register',[Signupin::class, 'getSignupform']);
 Route::post('/register/check',[Signupin::class, 'Register']);
 Route::get('/actived/{customer}/{token}',[Signupin::class, 'actived'])->name('customer.actived');
 
-Route::resource('/userprofile', UserProfile::class);
