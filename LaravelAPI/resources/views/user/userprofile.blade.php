@@ -18,7 +18,7 @@
 
 @section('body')
 <div class="container-xl px-4 mt-4">
-    <hr class="mt-0 mb-4">
+    <hr class="mt-5 ">
     <div class="row">
         <div class="col-xl-4">
             <form action="{{route('userprofile.store')}}" method="POST" enctype="multipart/form-data">

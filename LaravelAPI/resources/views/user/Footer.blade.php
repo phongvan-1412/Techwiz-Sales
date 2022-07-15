@@ -60,15 +60,15 @@
         <div class="footer-container1-col3">
             <h4>GALLERY</h4>
             <div class="gallery1">
-                <img src={{asset('../../img/Footer/image-1.jpg')}} class="gallery1__img1" />
-                <img src={{asset('../../img/Footer/image-2.jpg')}} class="gallery1__img2" />
-                <img src={{asset('../../img/Footer/image-3.jpg')}} class="gallery1__img3" />
-                <img src={{asset('../../img/Footer/image-7.jpg')}} class="gallery1__img4" />
-                <img src={{asset('../../img/Footer/image-5.jpg')}} class="gallery1__img5" />
-                <img src={{asset('../../img/Footer/image-9.jpg')}} class="gallery1__img6" />
-                <img src={{asset('../../img/Footer/image-4.jpg')}} class="gallery1__img7" />
-                <img src={{asset('../../img/Footer/image-8.jpg')}} class="gallery1__img8" />
-                <img src={{asset('../../img/Footer/image-6.jpg')}} class="gallery1__img9" />
+                <img src="{{asset('img/image-1.jpg')}}" class="gallery1__img1" />
+                <img src="{{asset('img/image-2.jpg')}}" class="gallery1__img2" />
+                <img src="{{asset('img/image-3.jpg')}}" class="gallery1__img3" />
+                <img src="{{asset('img/image-7.jpg')}}" class="gallery1__img4" />
+                <img src="{{asset('img/image-5.jpg')}}" class="gallery1__img5" />
+                <img src="{{asset('img/image-9.jpg')}}" class="gallery1__img6" />
+                <img src="{{asset('img/image-4.jpg')}}" class="gallery1__img7" />
+                <img src="{{asset('img/image-8.jpg')}}" class="gallery1__img8" />
+                <img src="{{asset('img/image-6.jpg')}}" class="gallery1__img9" />
             </div>
         </div>
     </div>

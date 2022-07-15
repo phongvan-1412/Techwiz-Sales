@@ -17,7 +17,7 @@ class UserProfileController extends Controller
         $dateofbirth    = $request->dateofbirth;
         $customer_id    = Session::get('customer_id');
         $avatar         = $request->file('avatar');
-        $avatar_name    = Session::get('emp_img_name');
+        $avatar_name    = Session::get('customer_img_name');
         if ($request->hasFile('avatar'))
         {
             $extension  = $request->file('avatar')->extension(); // Cắt đuôi file img
