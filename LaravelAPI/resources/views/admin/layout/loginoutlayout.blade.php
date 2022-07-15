@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container.d-none">
-        <div id="header">
+        <div id="header" class="row">
             @yield('header')
         </div>
         <div class="row" id="container-profile" >

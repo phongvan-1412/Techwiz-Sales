@@ -3,12 +3,22 @@
 <!-- CSS -->
 @section('css')
 <link rel="stylesheet" href="{{asset('css/profile.css')}}">
+<link rel="stylesheet" href="{{asset('css/style-laptop.css')}}">
+<link rel="stylesheet" href="{{asset('css/style-mobile.css')}}">
+<link rel="stylesheet" href="{{asset('css/style-tablet.css')}}">
+@endsection
+
+@section('header')
+    @include('user.Header')
+@endsection
+
+@section('footer')
+    @include('user.Footer')
 @endsection
 
 @section('body')
 <div class="container-xl px-4 mt-4">
     <hr class="mt-0 mb-4">
-        <a class="btn btn-danger mb-3" href="/logout">Log Out</a>
     <div class="row">
         <div class="col-xl-4">
             <form action="{{route('userprofile.store')}}" method="POST" enctype="multipart/form-data">

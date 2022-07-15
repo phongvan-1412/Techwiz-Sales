@@ -1,7 +1,7 @@
 <footer>
-    <div className="footer-container1">
-        <div className="footer-container1-col1">
-            <div className="contact">
+    <div class="footer-container1">
+        <div class="footer-container1-col1">
+            <div class="contact">
                 <h4>CONTACT US</h4>
                 <a href="#">
                     <MdLocationOn />
@@ -19,7 +19,7 @@
                 </a>
             </div>
 
-            <div className="openingtimes">
+            <div class="openingtimes">
                 <h4>OPENING TIMES</h4>
                 <span>
                     <b>Weekdays</b> 07:30 - 22:30
@@ -29,11 +29,11 @@
             </div>
         </div>
 
-        <div className="footer-container1-col2">
+        <div class="footer-container1-col2">
             <h4>ABOUT US</h4>
-            <div className="latest-blog1">
+            <div class="latest-blog1">
                 <span>
-                    <a href="#" className="meta-facebook">About Us</a>
+                    <a href="#" class="meta-facebook">About Us</a>
                     <br />
                     <span id="blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, est labore deleniti eligendi officiis facere.</span> 
                     <br />
@@ -44,9 +44,9 @@
             </div>
             <br /><br />
 
-            <div className="latest-blog2">
+            <div class="latest-blog2">
                 <span>
-                    <a href="#" className="meta-facebook"><FaFacebook />Term and Policy</a>
+                    <a href="#" class="meta-facebook"><FaFacebook />Term and Policy</a>
                     <br />
                     <span id="blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, est labore deleniti eligendi officiis facere.</span> 
                     <br />
@@ -57,24 +57,24 @@
             </div>
         </div>
 
-        <div className="footer-container1-col3">
+        <div class="footer-container1-col3">
             <h4>GALLERY</h4>
-            <div className="gallery1">
-                <img src={{asset('../../img/Footer/image-1.jpg')}} className="gallery1__img1" />
-                <img src={{asset('../../img/Footer/image-2.jpg')}} className="gallery1__img2" />
-                <img src={{asset('../../img/Footer/image-3.jpg')}} className="gallery1__img3" />
-                <img src={{asset('../../img/Footer/image-7.jpg')}} className="gallery1__img4" />
-                <img src={{asset('../../img/Footer/image-5.jpg')}} className="gallery1__img5" />
-                <img src={{asset('../../img/Footer/image-9.jpg')}} className="gallery1__img6" />
-                <img src={{asset('../../img/Footer/image-4.jpg')}} className="gallery1__img7" />
-                <img src={{asset('../../img/Footer/image-8.jpg')}} className="gallery1__img8" />
-                <img src={{asset('../../img/Footer/image-6.jpg')}} className="gallery1__img9" />
+            <div class="gallery1">
+                <img src={{asset('../../img/Footer/image-1.jpg')}} class="gallery1__img1" />
+                <img src={{asset('../../img/Footer/image-2.jpg')}} class="gallery1__img2" />
+                <img src={{asset('../../img/Footer/image-3.jpg')}} class="gallery1__img3" />
+                <img src={{asset('../../img/Footer/image-7.jpg')}} class="gallery1__img4" />
+                <img src={{asset('../../img/Footer/image-5.jpg')}} class="gallery1__img5" />
+                <img src={{asset('../../img/Footer/image-9.jpg')}} class="gallery1__img6" />
+                <img src={{asset('../../img/Footer/image-4.jpg')}} class="gallery1__img7" />
+                <img src={{asset('../../img/Footer/image-8.jpg')}} class="gallery1__img8" />
+                <img src={{asset('../../img/Footer/image-6.jpg')}} class="gallery1__img9" />
             </div>
         </div>
     </div>
 
-    <div className="footer-containter2">
-        <div className="footer-icon">
+    <div class="footer-containter2">
+        <div class="footer-icon">
             <a href="#"><FaFacebook /></a>
             <a href="#"><FaInstagramSquare /></a>
             <a href="#"><FaTwitter /></a>
