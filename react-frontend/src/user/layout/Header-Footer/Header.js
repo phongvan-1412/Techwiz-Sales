@@ -77,7 +77,7 @@ function Header({ cart, categories, categoriesRoot, updateCart }) {
             <span>Shoping Cart</span>
             <br />
             <span className="bag-quantity">
-              {itemsCount} items - {cartTotalPayment}
+              {itemsCount} items - {cartTotalPayment.toLocaleString()}đ
             </span>
             {cartMini && (
               <QuickViewCartItems cart={cart} updateCart={updateCart} />

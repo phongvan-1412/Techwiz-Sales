@@ -39,7 +39,7 @@ class CartItem extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-2">{item.product_price_per_unit}</div>
+            <div className="col-2">{(parseInt(item.product_price_per_unit)).toLocaleString()}đ</div>
             <div className="col-2">
               <input
                 type="number"
@@ -66,7 +66,7 @@ class CartItem extends Component {
                   Remove item
                 </button>
               </div>
-              <div>{item.product_quantity * item.product_price_per_unit}</div>
+              <div>{(item.product_quantity * item.product_price_per_unit).toLocaleString()}đ</div>
             </div>
           </div>
         </div>

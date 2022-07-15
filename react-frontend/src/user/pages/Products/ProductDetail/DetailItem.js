@@ -34,7 +34,7 @@ function DetailItem({ product }) {
             </div>
           </div>
           <div className="product-detail-product-price">
-            {product.product_price_per_unit}đ
+            {(parseInt(product.product_price_per_unit)).toLocaleString()}đ
           </div>
         </div>
 

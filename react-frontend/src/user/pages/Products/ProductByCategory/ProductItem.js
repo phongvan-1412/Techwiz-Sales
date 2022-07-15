@@ -42,7 +42,7 @@ class ProductItem extends Component {
             </Link>
           </div>
 
-          <div className="product-price">{product.product_price_per_unit}đ</div>
+          <div className="product-price">{(parseInt(product.product_price_per_unit)).toLocaleString()}đ</div>
 
           <div className="cart-icons">
             <FaShoppingCart

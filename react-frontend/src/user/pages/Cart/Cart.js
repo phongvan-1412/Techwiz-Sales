@@ -51,11 +51,11 @@ const Cart = ({ cart, updateCart }) => {
               <div>SUMARY</div>
               <div className="row">
                 <div className="col-8">Subtotal</div>
-                <div className="col-4">{totalPayment}</div>
+                <div className="col-4">{totalPayment.toLocaleString()}đ</div>
               </div>
               <div className="row">
                 <div className="col-8">Order Total</div>
-                <div className="col-4">{totalPayment}</div>
+                <div className="col-4">{totalPayment.toLocaleString()}đ</div>
               </div>
                 {/* {checkout ? (
                   <PayPal subtotal={totalPayment} />
