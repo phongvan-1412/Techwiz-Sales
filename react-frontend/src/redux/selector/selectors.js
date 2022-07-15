@@ -19,7 +19,6 @@ export const productSelector = (state) => {
       return product.category_name.includes(state.product.filter.category_name);
     });
   }
-  console.log(products);
   return products;
 };
 
