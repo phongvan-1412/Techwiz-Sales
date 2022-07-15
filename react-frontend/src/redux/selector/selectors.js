@@ -1,8 +1,25 @@
 export const productSelector = (state) => {
-  const products = state.product.products.filter((product) => {
-    return product.category_name.includes(state.product.filter.category_name);
+  const tmpCategories = state.categories.categories.filter((category) => {
+    return category.category_root_name.includes(
+      state.categories.filter.category_name
+    );
   });
-
+  let products = [];
+  if (tmpCategories.length > 0) {
+    tmpCategories.forEach(category=>{
+      state.product.products.forEach((product) => {
+        if(product.category_id == category.category_id)
+        {
+          products = [product,...products];
+        }
+      });
+    })
+  } else {
+    products = state.product.products.filter((product) => {
+      return product.category_name.includes(state.product.filter.category_name);
+    });
+  }
+  console.log(products);
   return products;
 };
 

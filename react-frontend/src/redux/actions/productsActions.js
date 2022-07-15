@@ -11,7 +11,6 @@ import axios from "axios";
 
 export const getProducts = () => async (dispatch) => {
   const res = await axios.get("http://127.0.0.1:8000/api/selectallproducts");
-  console.log(res.data);
   dispatch({
     type: GET_PRODUCTS,
     payload: res.data,
