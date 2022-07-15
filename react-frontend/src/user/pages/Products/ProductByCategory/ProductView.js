@@ -11,7 +11,7 @@ const ProductView = ({ product }) => {
     setProductQV(false);
   };
   return (
-    <div className="col-xl-3 col-md-4 col-xs-6"
+    <div className="product-grid-wrapper col-xl-3 col-md-4 col-xs-6"
     onMouseEnter={() => setProductQV(true)} 
     onMouseLeave={() => setProductQV(false)}>
       {/* {productQV ? (
