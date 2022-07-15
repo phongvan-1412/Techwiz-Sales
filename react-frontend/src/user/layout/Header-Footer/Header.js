@@ -86,15 +86,11 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
             </Link>
           ) : (
             <div>
-              <Link to="/register" replace className="register">
-                Register
-              </Link>
-              <Link to="/login" replace className="login">
-                Login
-              </Link>
+              <a href="http://127.0.0.1:8000/register">Register</a>
+              <a href="http://127.0.0.1:8000/login">Login</a>
             </div>
           )}
-          
+
           <Link to="/" className="meta-facebook">
             <FaFacebook />
           </Link>
@@ -119,8 +115,7 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
             {cartMini && (
               <QuickViewCartItems cart={cart} updateCart={updateCart} />
             )}
-          </Link>
-          
+          </div>
         </header>
       </div>
     </div>
