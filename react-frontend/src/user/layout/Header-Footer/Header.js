@@ -12,7 +12,7 @@ import "../../css/style-tablet.css";
 import "../../css/style-laptop.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Dropdown from "../DropdownNavBar/Dropdown";
-import QuickViewCartItems from "../Cart/QuickViewCartItems";
+import QuickViewCartItems from "../../pages/Cart/QuickViewCartItems";
 
 function Header({ cart, categories, categoriesRoot, updateCart }) {
   const [drop, setDrop] = useState(false);
