@@ -21,7 +21,7 @@ class CartItem extends Component {
             <div className="col-2">
               <img
                 className="page-content row-panel-img"
-                src={require(`../../../../../LaravelAPI/public/ProductImage/${item.product_thumbnail_name}`)}
+                src={require(`../../../../../LaravelAPI/public/ProductImage/${item.product_img_name}`)}
                 style={{
                   width: "50%",
                   height: "auto",
@@ -66,7 +66,7 @@ class CartItem extends Component {
                   Remove item
                 </button>
               </div>
-              <div>{item.product_subtotal}</div>
+              <div>{item.product_quantity * item.product_price_per_unit}</div>
             </div>
           </div>
         </div>

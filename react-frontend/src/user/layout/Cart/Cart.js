@@ -4,23 +4,25 @@ import { Link } from "react-router-dom";
 // import { connect } from "react-redux";
 // import PropTypes from "prop-types";
 import CartItem from "./CartItem";
-import PayPal from "../../pages/Payment/PayPal";
+// import PayPal from "../../pages/Payment/PayPal";
 import { submitCart } from "../../../redux/actions/cartAction";
 import { useDispatch } from "react-redux";
 
 const Cart = ({ cart, updateCart }) => {
-  const [checkout, setCheckOut] = useState(false);
+  // const [checkout, setCheckOut] = useState(false);
 
   let totalPayment = 0;
   cart.forEach((item) => {
-    totalPayment += parseInt(item.product_subtotal);
+    totalPayment += parseInt(
+      item.product_quantity * item.product_price_per_unit
+    );
   });
 
   const dispatch = useDispatch();
   const onClick = () => {
     dispatch(submitCart(cart));
   };
-  
+
   return (
     <div className="container">
       <div className="row">
@@ -55,7 +57,6 @@ const Cart = ({ cart, updateCart }) => {
                 <div className="col-8">Order Total</div>
                 <div className="col-4">{totalPayment}</div>
               </div>
-              <div className="container">
                 {/* {checkout ? (
                   <PayPal subtotal={totalPayment} />
                 ) : (
@@ -69,10 +70,7 @@ const Cart = ({ cart, updateCart }) => {
                     <p>Check out</p>
                   </button>
                 )} */}
-                <button onClick={onClick}>
-                  <p>Check out</p>
-                </button>
-              </div>
+                <button onClick={onClick}>Check out</button>
             </form>
           </div>
         </div>
