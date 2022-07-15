@@ -445,6 +445,13 @@
     font-weight: 530;
     padding: 15px;
 }
+.item-link1 a{
+    background-color: var(--buttonColor);
+    color: var(--textColor);
+    font-size: 15px;
+    font-weight: 530;
+    padding: 15px;
+}
 .item-link a:hover{
     color: var(--iconHover);
 }
@@ -460,6 +467,10 @@
 }
 .categoryRoot-link, .categoryName{
     text-transform: uppercase;
+}
+.categoryRoot-link1{
+    text-transform: uppercase;
+    padding: 25px;
 }
 /* ----------Filter-sidebar---------- */
 .sidebar-filter{

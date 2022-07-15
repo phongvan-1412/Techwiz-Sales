@@ -69,14 +69,14 @@ const Products = ({ category }) => {
                       HOME
                     </Link>
                   </li>
-                  <li className="item-link">
+                  <li className="item-link1">
                     <Link
                       to={`/${currentCate}`}
                       replace
                       onClick={onClick}
                       name={currentCate}
                     >
-                      <span className="categoryRoot-link">
+                      <span className="categoryRoot-link1" >
                         {currentCate.replace("-", " ")}
                       </span>
                     </Link>
@@ -150,12 +150,13 @@ const Products = ({ category }) => {
                       replace
                       name={category.category_root_name}
                       onClick={onClick}
+                      style={{textTransform:"uppercase"}}
                     >
                       {category.category_root_name.replace("-", " ")}
                     </Link>
                   </li>
                   <li className="item-link">
-                    <span className="categoryRoot-link">
+                    <span className="categoryRoot-link" >
                       {category.category_name.replace("-", " ")}
                     </span>
                   </li>
