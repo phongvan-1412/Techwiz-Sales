@@ -50,7 +50,7 @@ class CartItem extends Component {
             />
           </div>
           <div className="col-md-2" style={{alignSelf:"center"}}>
-            <div className="cart-icons">
+            <div className="cart-checkout-icons">
               <GrUpdate classname="meta-update" onClick={updateCart}/>
               <FaTrash classname="meta-trash" onClick={() => this.props.deleteProductFromCart(item.product_SKU)} />
             </div>

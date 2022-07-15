@@ -104,14 +104,14 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
           <Link to="/" className="meta-twitter">
             <FaTwitter />
           </Link>
-          <div
+          
+          <Link to="#"
             className="nav-bag"
             style={{ height: "100px", marginTop: "50px" }}
             onMouseEnter={() => setCartMini(true)}
             onMouseLeave={() => setCartMini(false)}
           >
-            <AiOutlineShoppingCart />
-            <span>Shoping Cart</span>
+            <AiOutlineShoppingCart style={{color: "white"}}/>
             <br />
             <span className="bag-quantity">
               {itemsCount} items - {cartTotalPayment.toLocaleString()}đ
@@ -119,7 +119,7 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
             {cartMini && (
               <QuickViewCartItems cart={cart} updateCart={updateCart} />
             )}
-          </div>
+          </Link>
           
         </header>
       </div>
