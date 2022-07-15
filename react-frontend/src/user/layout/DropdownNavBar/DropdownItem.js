@@ -26,7 +26,7 @@ const DropdownItem = ({ category_name, categories }) => {
                 name={cate.category_name}
                 onClick={onClick}
               >
-                {cate.category_name}
+                {cate.category_name.replace("-", " ")}
               </Link>
             </div>
           );
