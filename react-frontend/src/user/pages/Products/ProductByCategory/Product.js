@@ -1,7 +1,7 @@
 import React from "react";
 import ProductView from "./ProductView";
 
-const Products = ({ products, loading }) => {
+const Product = ({ products, loading }) => {
   if (loading != true) {
     return <h2>Products not found</h2>;
   }
@@ -20,4 +20,4 @@ const Products = ({ products, loading }) => {
   );
 };
 
-export default Products;
+export default Product;
