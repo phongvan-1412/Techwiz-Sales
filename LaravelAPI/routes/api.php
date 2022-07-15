@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryAPI;
 use App\Http\Controllers\ProductAPI;
 use App\Http\Controllers\BillApi;
+use App\Http\Controllers\CustomerApi;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +28,7 @@ Route::get('/selectallcategory',[CategoryAPI::class, 'SelectCategories']);
 Route::get('/selectallproducts',[ProductAPI::class, 'SelectProducts']);
 
 Route::post('/submitcart',[BillApi::class, 'InsertBill']);
-// Route::get('/selectactiveblog',[BlogApi::class, 'SelectActiveBlog']);
+
+Route::get('/customerlogin',[CustomerApi::class, 'CustomerLoginInfo']);
+
 // Route::get('/selectactiveblog',[BlogApi::class, 'SelectActiveBlog']);

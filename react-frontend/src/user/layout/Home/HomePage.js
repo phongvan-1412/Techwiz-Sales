@@ -5,7 +5,7 @@ import Footer from "../Header-Footer/Footer";
 import useForceUpdate from "use-force-update";
 import { getCart } from "../../../redux/actions/cartAction";
 
-function HomePage({ products, cart, categories, categoriesRoot }) {
+function HomePage({ products, cart, categories, categoriesRoot,customer }) {
   const forceUpdate = useForceUpdate();
 
   const updateCart = () => {
@@ -20,6 +20,7 @@ function HomePage({ products, cart, categories, categoriesRoot }) {
         categoriesRoot={categoriesRoot}
         categories={categories}
         updateCart={updateCart}
+        customer={customer}
       />
       <div className="row">
         <div className="col-md-2"></div>
