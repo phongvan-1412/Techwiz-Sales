@@ -120,7 +120,7 @@ const Products = ({ category }) => {
               {/* display-products  */}
 
               <div className="col-md-9">
-                <div className="row">
+                <div className="row" style={{marginTop: "-20px"}}>
                   {currentProducts.map((product) => {
                     return (
                       <ProductView
