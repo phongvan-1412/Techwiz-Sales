@@ -14,7 +14,7 @@ class WrapBreadcrumbDetail extends Component{
             <div className="wrap-breadcrumb" >
                 <ul>
                     <li className="item-link"><Link to="#" className="home-link">HOME</Link></li>
-                    <li className="item-link"><Link to="#">{product.category_name.replace(/-/g, " ")}</Link></li>
+                    <li className="item-link categoryName"><Link to="#">{product.category_name.replace(/-/g, " ")}</Link></li>
                     <li className="item-link"><span>{product.product_name.replace(/-/g, " ")}</span></li>
                 </ul>
             </div>

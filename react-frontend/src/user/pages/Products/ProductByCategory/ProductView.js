@@ -11,11 +11,9 @@ const ProductView = ({ product }) => {
     setProductQV(false);
   };
   return (
-    <div
-      style={{ width: "160px" }}
-      onMouseEnter={() => setProductQV(true)}
-      onMouseLeave={() => setProductQV(false)}
-    >
+    <div className="col-xl-3 col-md-4 col-xs-6"
+    onMouseEnter={() => setProductQV(true)} 
+    onMouseLeave={() => setProductQV(false)}>
       {/* {productQV ? (
         <div style={{ position: "absolute", marginTop: "160px" }}>
           <div

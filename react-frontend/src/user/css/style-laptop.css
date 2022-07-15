@@ -445,6 +445,9 @@
     font-weight: 530;
     padding: 15px;
 }
+.item-link a:hover{
+    color: var(--iconHover);
+}
 .item-link span{
     background-color: var(--buttonColor);
     color: var(--textColor);
@@ -603,7 +606,7 @@
     margin-bottom: 5px;
 }
 .product-name{
-    width: 200px;
+    width: 150px;
     height: 20px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -642,6 +645,7 @@
 }
 .pagination{
     z-index: 2;
+    margin-top: 25px;
 }
 .pagination li{
     margin-right: 10px;

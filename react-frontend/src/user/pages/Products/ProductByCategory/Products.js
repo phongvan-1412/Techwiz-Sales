@@ -18,7 +18,7 @@ const Products = ({ category }) => {
   const localCategories = useSelector(categorySelector);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(5);
+  const [productsPerPage] = useState(8);
 
   let check = false;
   if (localCategories.length > 0) {
@@ -46,12 +46,12 @@ const Products = ({ category }) => {
 
   return (
     <div className="row">
-      <div className="col-12">
+      <div className="row" style={{padding: "0px", margin: "0px"}}>
         {check ? (
-          <div className="container">
+          <div className="container" style={{padding: "0px", margin: "0px"}}>
             <div className="row">
               {/* wrap-breadcrumb */}
-              <div className="wrap-breadcrumb">
+              <div className="wrap-breadcrumb" style={{margin: "50px 0px"}}>
                 <ul>
                   <li className="item-link">
                     <Link to="/" className="home-link">
@@ -98,24 +98,21 @@ const Products = ({ category }) => {
               {/* display-products  */}
 
               <div className="col-md-9">
-                {currentProducts.map((product) => {
-                  return (
-                    <div className="container product-by-category-display">
-                      <ProductView
-                        key={product.product_SKU}
-                        product={product}
-                      />
-                    </div>
-                  );
-                })}
+                <div className="row">
+                  {currentProducts.map((product) => {
+                    return (
+                        <ProductView key={product.product_SKU} product={product}/>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
         ) : (
-          <div className="container">
+          <div className="container" style={{padding: "0px", margin: "0px"}}>
             <div className="row">
               {/* wrap-breadcrumb */}
-              <div className="wrap-breadcrumb">
+              <div className="wrap-breadcrumb" style={{margin: "50px 0px"}}>
                 <ul>
                   <li className="item-link">
                     <Link to="/" className="home-link">
@@ -123,9 +120,9 @@ const Products = ({ category }) => {
                     </Link>
                   </li>
                   <li className="item-link">
-                    <span className="categoryRoot-link">
+                    <Link to="#" className="categoryRoot-link">
                       {category.category_root_name.replace("-", " ")}
-                    </span>
+                    </Link>
                   </li>
                   <li className="item-link">
                     <span className="categoryRoot-link">
@@ -165,36 +162,37 @@ const Products = ({ category }) => {
 
               {/* display-products  */}
               <div className="col-md-9">
+                <div className="row">
                 {currentProducts.map((product) => {
                   return (
-                    <div className="container product-by-category-display">
-                      <ProductView
-                        key={product.product_SKU}
-                        product={product}
-                      />
-                      {/* <Pagination productsPerPage={productsPerPage} totalProducts={product.length} paginate={paginate}/> */}
-                    </div>
+                    <ProductView key={product.product_SKU} product={product}/>
                   );
                 })}
+                </div>
               </div>
             </div>
           </div>
         )}
       </div>
-      <div className="col-12">
-        <ul className="pagination">
-          {pageNumbers.map((number) => (
-            <li key={number} className="page-item">
-              <button
-                to="#"
-                className="page-link"
-                onClick={() => paginate(number)}
-              >
-                {number}
-              </button>
-            </li>
-          ))}
-        </ul>
+
+      <div className="row" style={{padding: "0px", margin: "0px"}}>
+        <div className="col-md-3" style={{padding: "0px", margin: "0px"}}></div>
+
+        <div className="col-md-9" style={{padding: "0px", margin: "0px"}}>
+          <ul className="pagination">
+            {pageNumbers.map((number) => (
+              <li key={number} className="page-item">
+                <Link
+                  to="#"
+                  className="page-link"
+                  onClick={() => paginate(number)}
+                >
+                  {number}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
