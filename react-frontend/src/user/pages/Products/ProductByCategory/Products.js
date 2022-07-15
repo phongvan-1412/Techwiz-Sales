@@ -51,7 +51,6 @@ const Products = ({ category }) => {
   }
   const dispatch = useDispatch();
   const onClick = (event) => {
-    console.log(event.target.name);
     dispatch(getProductsByCategory(event.target.name));
     dispatch(getCategoriesByRoot(event.target.name));
   };
@@ -76,9 +75,9 @@ const Products = ({ category }) => {
                       onClick={onClick}
                       name={currentCate}
                     >
-                      <span className="categoryRoot-link1" >
+                      {/* <span className="categoryRoot-link1" > */}
                         {currentCate.replace("-", " ")}
-                      </span>
+                      {/* </span> */}
                     </Link>
                   </li>
                 </ul>
