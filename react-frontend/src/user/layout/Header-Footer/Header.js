@@ -14,22 +14,27 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import Dropdown from "../DropdownNavBar/Dropdown";
 import QuickViewCartItems from "../../pages/Cart/QuickViewCartItems";
 
-function Header({ cart, categories, categoriesRoot, updateCart }) {
+function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
   const [drop, setDrop] = useState(false);
   const [cartMini, setCartMini] = useState(false);
   const [itemsCount, setItemsCount] = useState(0);
   const [cartTotalPayment, setCartTotal] = useState(0);
+  const [isCustomerLogin, setIsCustomerLogin] = useState(false);
 
   useEffect(() => {
     const fetchCategories = () => {
       let totalPayment = 0;
       let count = 0;
       cart.forEach((item) => {
-        totalPayment += parseInt(item.product_quantity * item.product_price_per_unit);
+        totalPayment += parseInt(
+          item.product_quantity * item.product_price_per_unit
+        );
         count += parseInt(item.product_quantity);
       });
+
       setItemsCount(count);
       setCartTotal(totalPayment);
+      setIsCustomerLogin(customer.length > 0);
     };
 
     fetchCategories();
@@ -90,12 +95,22 @@ function Header({ cart, categories, categoriesRoot, updateCart }) {
           <Link to="/needhelp" replace className="needhelp">
             Needhelp
           </Link>
-          <Link to="/register" replace className="register">
-            Register
-          </Link>
-          <Link to="/login" replace className="login">
-            Login
-          </Link>
+
+          {isCustomerLogin ? (
+            <Link to="/customer" replace className="customer">
+              Customer
+            </Link>
+          ) : (
+            <div>
+              <Link to="/register" replace className="register">
+                Register
+              </Link>
+              <Link to="/login" replace className="login">
+                Login
+              </Link>
+            </div>
+          )}
+
           <Link to="/" className="meta-facebook">
             <FaFacebook />
           </Link>

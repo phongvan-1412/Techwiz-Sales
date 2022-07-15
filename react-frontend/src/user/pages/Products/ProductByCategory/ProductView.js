@@ -59,7 +59,7 @@ const ProductView = ({ product }) => {
           </div>
         </div>
       ) : null} */}
-      <ProductItem product={product} />
+      <ProductItem product={product}/>
     </div>
   );
 };

@@ -49,7 +49,7 @@ class MainRoute extends Component {
 
             {/* Product Detail   */}
           {products.map((product) => (
-            <Route key={product.product_SKU} path={`/${product.category_name}/${product.product_name}`} element={<ProductDetail product={product} products={products}/>}></Route>
+            <Route key={product.product_SKU} path={`/${product.category_name}/${product.product_name}`} element={<ProductDetail product={product} products={products} categories={categories}/>}></Route>
           ))} 
         </Routes>
       </div>
