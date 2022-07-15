@@ -6,6 +6,7 @@ import {
   deleteProductFromCart,
   getCart,
 } from "../../../redux/actions/cartAction";
+import { FaSyncAlt, FaTimesCircle } from "react-icons/fa";
 
 class QuickViewCartItem extends Component {
   render() {
@@ -29,6 +30,16 @@ class QuickViewCartItem extends Component {
                   objectPosition: "center",
                 }}
               />
+              <FaTimesCircle
+                style={{
+                  cursor: "pointer",
+                  marginLeft: "75px",
+                  marginTop: "-30px",
+                }}
+                onClick={() =>
+                  this.props.deleteProductFromCart(product.product_SKU)
+                }
+              />
             </div>
             <div className="col-6">
               <div className="container">
@@ -44,7 +55,7 @@ class QuickViewCartItem extends Component {
                           type="number"
                           name="product_quantity"
                           id="qty"
-                          max="999"
+                          max="12"
                           min="1"
                           step="1"
                           className="input-text-qty"
@@ -53,24 +64,24 @@ class QuickViewCartItem extends Component {
                         />
                       </div>
                       <div className="col-6">
-                        <button onClick={updateCart}>Update items</button>
-                        <button
-                          onClick={() =>
-                            this.props.deleteProductFromCart(
-                              product.product_SKU
-                            )
-                          }
-                        >
-                          Remove item
-                        </button>
+                        <FaSyncAlt
+                          onClick={updateCart}
+                          style={{ cursor: "pointer" }}
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-2">
-              <div>{product.product_price_per_unit * product.product_quantity}</div>
+            <div className="col-4">
+              <div
+                style={{ marginTop: "50px", fontSize: "20px", color: "green" }}
+              >
+                {(
+                  product.product_price_per_unit * product.product_quantity
+                ).toLocaleString()}đ
+              </div>
             </div>
           </div>
         </div>
