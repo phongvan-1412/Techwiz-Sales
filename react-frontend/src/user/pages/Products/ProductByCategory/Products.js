@@ -30,6 +30,7 @@ const Products = ({ category }) => {
       {check ? (
         <div className="container">
           <div className="row">
+            {/* wrap-breadcrumb */}
             <div className="wrap-breadcrumb">
               <ul>
                 <li className="item-link">
@@ -44,10 +45,12 @@ const Products = ({ category }) => {
                 </li>
               </ul>
             </div>
-            <div className="col-3">
+
+            {/* sidebar-filter  */}
+            <div className="col-md-3">
               <div>
-                <ul>
-                  <li className="">
+                <ul className="list-style vertical-list list-limited">
+                  <li >
                     <span className="categoryRoot-link">
                       {localCategories.map((cate) => {
                         return (
@@ -59,7 +62,9 @@ const Products = ({ category }) => {
                 </ul>
               </div>
             </div>
-            <div className="col-9">
+
+            {/* display-products  */}
+            <div className="col-md-9">
               {localProducts.map((product) => {
                 return (
                   <ProductView key={product.product_SKU} product={product} />
