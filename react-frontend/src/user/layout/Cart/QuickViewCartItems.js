@@ -7,7 +7,7 @@ import QuickViewCartItem from "./QuickViewCartItem";
 const QuickViewCartItems = ({ cart, updateCart }) => {
   let totalPayment = 0;
   cart.forEach((item) => {
-    totalPayment += parseInt(item.product_subtotal);
+    totalPayment += parseInt(item.product_quantity * item.product_price_per_unit);
   });
   
   return (

@@ -21,7 +21,7 @@ class QuickViewCartItem extends Component {
             <div className="col-2">
               <img
                 className="page-content row-panel-img"
-                src={require(`../../../../../LaravelAPI/public/ProductImage/${product.product_thumbnail_name}`)}
+                src={require(`../../../../../LaravelAPI/public/ProductImage/${product.product_img_name}`)}
                 style={{
                   width: "150%",
                   height: "auto",
@@ -70,7 +70,7 @@ class QuickViewCartItem extends Component {
               </div>
             </div>
             <div className="col-2">
-              <div>{product.product_subtotal}</div>
+              <div>{product.product_price_per_unit * product.product_quantity}</div>
             </div>
           </div>
         </div>

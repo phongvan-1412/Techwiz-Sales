@@ -25,7 +25,7 @@ function Header({ cart, categories, categoriesRoot, updateCart }) {
       let totalPayment = 0;
       let count = 0;
       cart.forEach((item) => {
-        totalPayment += parseInt(item.product_subtotal);
+        totalPayment += parseInt(item.product_quantity * item.product_price_per_unit);
         count += parseInt(item.product_quantity);
       });
       setItemsCount(count);

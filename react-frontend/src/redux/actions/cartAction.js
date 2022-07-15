@@ -9,15 +9,12 @@ import axios from "axios";
 
 export const addProductToCart = (product, quantity) => {
   const product_quantity = quantity;
-  const product_subtotal = product_quantity * product.product_price;
   const newProduct = [
     {
       ...product,
       product_quantity,
-      product_subtotal,
     },
   ];
-
   return {
     type: ADD_PRODUCT_TO_CART,
     payload: newProduct,
@@ -39,14 +36,13 @@ export const deleteProductFromCart = (product_SKU) => {
 
 export const updateProductFromCart = (product, quantity) => {
   const product_quantity = quantity;
-  const product_subtotal = product_quantity * product.product_price;
   const newProduct = [
     {
       ...product,
       product_quantity,
-      product_subtotal,
     },
   ];
+
   return {
     type: UPDATE_PRODUCT_FROM_CART,
     payload: newProduct,
