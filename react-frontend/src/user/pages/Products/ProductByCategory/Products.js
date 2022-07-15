@@ -12,6 +12,9 @@ import {
 } from "../../../../redux/selector/selectors";
 
 import ProductView from "./ProductView";
+import { getProductsByCategory } from "../../../../redux/actions/productsActions";
+import { getCategoriesByRoot } from "../../../../redux/actions/categoriesActions";
+import { useDispatch } from "react-redux";
 
 const Products = ({ category }) => {
   const localProducts = useSelector(productSelector);
@@ -34,7 +37,10 @@ const Products = ({ category }) => {
   //Get current products
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = localProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = localProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
   //Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -43,25 +49,37 @@ const Products = ({ category }) => {
   for (let i = 1; i <= Math.ceil(localProducts.length / productsPerPage); i++) {
     pageNumbers.push(i);
   }
-
+  const dispatch = useDispatch();
+  const onClick = (event) => {
+    console.log(event.target.name);
+    dispatch(getProductsByCategory(event.target.name));
+    dispatch(getCategoriesByRoot(event.target.name));
+  };
   return (
     <div className="row">
-      <div className="row" style={{padding: "0px", margin: "0px"}}>
+      <div className="row" style={{ padding: "0px", margin: "0px" }}>
         {check ? (
-          <div className="container" style={{padding: "0px", margin: "0px"}}>
+          <div className="container" style={{ padding: "0px", margin: "0px" }}>
             <div className="row">
               {/* wrap-breadcrumb */}
-              <div className="wrap-breadcrumb" style={{margin: "50px 0px"}}>
+              <div className="wrap-breadcrumb" style={{ margin: "50px 0px" }}>
                 <ul>
                   <li className="item-link">
-                    <Link to="/" className="home-link">
+                    <Link replace to="/" className="home-link">
                       HOME
                     </Link>
                   </li>
                   <li className="item-link">
-                    <span className="categoryRoot-link">
-                      {currentCate.replace("-", " ")}
-                    </span>
+                    <Link
+                      to={`/${currentCate}`}
+                      replace
+                      onClick={onClick}
+                      name={currentCate}
+                    >
+                      <span className="categoryRoot-link">
+                        {currentCate.replace("-", " ")}
+                      </span>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -80,12 +98,16 @@ const Products = ({ category }) => {
                           <ul
                             className="list-style vertical-list list-limited"
                             data-show="6"
+                            key={cate.category_id}
                           >
                             <li className="list-item">
-                              <Link to="#">
-                                <span className="categoryRoot-link">
-                                  {cate.category_name.replace("-", " ")}
-                                </span>
+                              <Link
+                                to={`/${cate.category_root_name}/${cate.category_name}`}
+                                replace
+                                onClick={onClick}
+                                name={cate.category_name}
+                              >
+                                {cate.category_name.replace("-", " ")}
                               </Link>
                             </li>
                           </ul>
@@ -101,7 +123,10 @@ const Products = ({ category }) => {
                 <div className="row">
                   {currentProducts.map((product) => {
                     return (
-                        <ProductView key={product.product_SKU} product={product}/>
+                      <ProductView
+                        key={product.product_SKU}
+                        product={product}
+                      />
                     );
                   })}
                 </div>
@@ -109,18 +134,23 @@ const Products = ({ category }) => {
             </div>
           </div>
         ) : (
-          <div className="container" style={{padding: "0px", margin: "0px"}}>
+          <div className="container" style={{ padding: "0px", margin: "0px" }}>
             <div className="row">
               {/* wrap-breadcrumb */}
-              <div className="wrap-breadcrumb" style={{margin: "50px 0px"}}>
+              <div className="wrap-breadcrumb" style={{ margin: "50px 0px" }}>
                 <ul>
                   <li className="item-link">
-                    <Link to="/" className="home-link">
+                    <Link replace to="/" className="home-link">
                       HOME
                     </Link>
                   </li>
                   <li className="item-link">
-                    <Link to="#" className="categoryRoot-link">
+                    <Link
+                      to={`/${category.category_root_name}`}
+                      replace
+                      name={category.category_root_name}
+                      onClick={onClick}
+                    >
                       {category.category_root_name.replace("-", " ")}
                     </Link>
                   </li>
@@ -163,11 +193,14 @@ const Products = ({ category }) => {
               {/* display-products  */}
               <div className="col-md-9">
                 <div className="row">
-                {currentProducts.map((product) => {
-                  return (
-                    <ProductView key={product.product_SKU} product={product}/>
-                  );
-                })}
+                  {currentProducts.map((product) => {
+                    return (
+                      <ProductView
+                        key={product.product_SKU}
+                        product={product}
+                      />
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -175,10 +208,13 @@ const Products = ({ category }) => {
         )}
       </div>
 
-      <div className="row" style={{padding: "0px", margin: "0px"}}>
-        <div className="col-md-3" style={{padding: "0px", margin: "0px"}}></div>
+      <div className="row" style={{ padding: "0px", margin: "0px" }}>
+        <div
+          className="col-md-3"
+          style={{ padding: "0px", margin: "0px" }}
+        ></div>
 
-        <div className="col-md-9" style={{padding: "0px", margin: "0px"}}>
+        <div className="col-md-9" style={{ padding: "0px", margin: "0px" }}>
           <ul className="pagination">
             {pageNumbers.map((number) => (
               <li key={number} className="page-item">

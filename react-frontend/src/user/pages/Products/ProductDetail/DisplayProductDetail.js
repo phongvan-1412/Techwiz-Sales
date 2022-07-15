@@ -19,8 +19,6 @@ class DisplayProductDetail extends Component {
             </div>
         )
     }
-
-        
 }
 
 export default DisplayProductDetail;
