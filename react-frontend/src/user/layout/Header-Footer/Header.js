@@ -115,7 +115,7 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
             {cartMini && (
               <QuickViewCartItems cart={cart} updateCart={updateCart} />
             )}
-          </div>
+          </Link>
         </header>
       </div>
     </div>
