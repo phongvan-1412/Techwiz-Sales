@@ -74,6 +74,33 @@
     font-size: 2.5em;
     display: none;
 }
+/* ----------CATEGORY DROP DOWN---------- */
+.services-submenu-top{
+    height: 100px; 
+    position: absolute
+}
+.services-submenu{
+    background-color:whitesmoke;
+    width: 800px;
+    margin-left: -100px;
+    margin-top: 15px;
+    position: absolute;
+    box-shadow: 1px 2px 2px 2px rgba(0,0,0,0.25)
+}
+/* .submenu-name{
+    color:var(--textColor);
+} */
+.submenu-name{
+    cursor: pointer;
+    color: black;
+}
+.submenu-name:hover{
+    color: red
+}
+.category-top{
+    height: 100px;
+    position: absolute 
+}
 /* ----------QUICK VIEW CART---------- */
 .quick-view-cart{
     background: white;

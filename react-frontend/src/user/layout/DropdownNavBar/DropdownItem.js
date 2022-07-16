@@ -15,12 +15,13 @@ const DropdownItem = ({ category_name, categories }) => {
   };
   return (
     <div>
-      <div style={{ height: "100px", position: "absolute" }}></div>
+      <div className="category-top"></div>
       <div className="row">
         {cates.map((cate) => {
           return (
             <div className="col-12" key={cate.category_id}>
               <Link
+                style={{ cursor: "pointer", color: "black" }}
                 key={cate.category_id}
                 to={`/${cate.category_root_name}/${cate.category_name}`}
                 name={cate.category_name}
