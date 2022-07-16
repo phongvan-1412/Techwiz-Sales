@@ -373,10 +373,9 @@
 /* ----------LANDINGPAGE-SLIDE---------- */
 .slick-list{
     z-index: 2;
+    margin: 0 -5px;
 }
-.slide-title{
-    border-bottom: none;
-}
+
 .slide-title .top-content{
     display: flex;
     align-items: center;
@@ -703,6 +702,7 @@
 /* ----------Display-Product---------- */
 .product-grid-wrapper{
     margin: 20px 0px;
+    padding: 5px
 }
 .product-grid-wrapper:hover{
     box-shadow: 1px 2px 2px 2px rgba(0,0,0,0.25);

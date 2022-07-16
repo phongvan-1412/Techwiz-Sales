@@ -21,7 +21,7 @@ const LandingPageSlider1 = () => {
     ref.current.slickPrev();
   };
 
-  const settings = { dots: false, infinite: false, speed: 500, slidesToShow: 5, slidesToScroll: 1};
+  const settings = { dots: false, infinite: false, speed: 350, slidesToShow: 5, slidesToScroll: 1};
   
   const localProducts = useSelector(productSlideCategorySelector1);
 
@@ -45,10 +45,12 @@ const LandingPageSlider1 = () => {
 
           <Slider ref={ref} {...settings}>
             {localProducts.map((product) => (
+            <div className="product-grid-wrapper">
                <ProductItem 
                key={product.product_SKU}
                product={product}
              ></ProductItem>
+            </div>
             ))}
           </Slider>
           
