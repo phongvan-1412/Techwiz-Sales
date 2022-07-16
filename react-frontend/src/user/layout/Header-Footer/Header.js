@@ -59,11 +59,12 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
           <Link
             to="#"
             replace
-            style={{height:"100px", marginTop:"57px"}}
+            style={{ height: "100px", marginTop: "57px" }}
             className="product"
             onMouseEnter={() => setDrop(true)}
             onMouseLeave={() => setDrop(false)}
-          >Product
+          >
+            Product
             <span>
               {drop && (
                 <Dropdown
@@ -101,15 +102,20 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
           <a href="https://twitter.com/" className="meta-twitter">
             <FaTwitter />
           </a>
-          
-          <Link  to="#" className="nav-bag-container">
-            <AiOutlineShoppingCart style={{color: "white"}}/>
-            <div 
-            className="nav-bag-wrapper" 
-            onMouseEnter={() => setCartMini(true)}
-            onMouseLeave={() => setCartMini(false)}>
+          <Link to="#" className="nav-bag-container">
+            <AiOutlineShoppingCart style={{ color: "white" }} />
+            <div
+              className="nav-bag-wrapper"
+              onMouseEnter={() => setCartMini(true)}
+              onMouseLeave={() => setCartMini(false)}
+            >
               <div className="bag-quantity">
-                <span className="bag-quantity-content" style={{color: "white"}}>{itemsCount} items - {cartTotalPayment.toLocaleString()}đ</span>
+                <span
+                  className="bag-quantity-content"
+                  style={{ color: "white" }}
+                >
+                  {itemsCount} items - {cartTotalPayment.toLocaleString()}đ
+                </span>
               </div>
               <div className="bag-price">
                 <span className="bag-price-content">
@@ -119,7 +125,6 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
                 </span>
               </div>
             </div>
-            
           </Link>
         </header>
       </div>
