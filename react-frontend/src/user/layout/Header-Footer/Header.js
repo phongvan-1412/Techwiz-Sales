@@ -91,13 +91,13 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
             </div>
           )}
 
-          <Link to="/" className="meta-facebook">
+          <Link to="https://www.facebook.com/" className="meta-facebook">
             <FaFacebook />
           </Link>
-          <Link to="/" className="meta-instagram">
+          <Link to="https://www.instagram.com/?hl=en" className="meta-instagram">
             <FaInstagramSquare />
           </Link>
-          <Link to="/" className="meta-twitter">
+          <Link to="https://twitter.com/" className="meta-twitter">
             <FaTwitter />
           </Link>
           
