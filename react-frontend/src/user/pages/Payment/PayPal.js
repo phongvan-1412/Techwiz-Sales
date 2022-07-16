@@ -22,7 +22,7 @@ const PayPal = ({subtotal}) => {
             },
             onApprove: async (data, actions) => {
                 const order = await (actions.order.capture())
-                console.log(order)
+                console.log(data)
             },
             onError: (err) => {
                 console.log(err)

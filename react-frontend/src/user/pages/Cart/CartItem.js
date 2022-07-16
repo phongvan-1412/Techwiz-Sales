@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-
+import { Link } from 'react-router-dom'
 import { GrUpdate } from 'react-icons/gr'
 import { FaTrash } from 'react-icons/fa'
 
@@ -51,8 +51,8 @@ class CartItem extends Component {
           </div>
           <div className="col-md-2" style={{alignSelf:"center"}}>
             <div className="cart-checkout-icons">
-              <GrUpdate classname="meta-update" onClick={updateCart}/>
-              <FaTrash classname="meta-trash" onClick={() => this.props.deleteProductFromCart(item.product_SKU)} />
+              <Link to="#"><GrUpdate classname="meta-update" onClick={updateCart} /></Link>
+              <Link to="#"><FaTrash classname="meta-trash" onClick={() => this.props.deleteProductFromCart(item.product_SKU)} style={{color: "black"}}/></Link>
             </div>
             <div className="cart-product-total">{(item.product_quantity * item.product_price_per_unit).toLocaleString()}đ</div>
           </div>

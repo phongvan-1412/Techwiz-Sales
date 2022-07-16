@@ -106,8 +106,7 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
             <AiOutlineShoppingCart style={{ color: "white" }} />
             <div
               className="nav-bag-wrapper"
-              onMouseEnter={() => setCartMini(true)}
-              onMouseLeave={() => setCartMini(false)}
+              onClick={() => setCartMini(!cartMini)}
             >
               <div className="bag-quantity">
                 <span

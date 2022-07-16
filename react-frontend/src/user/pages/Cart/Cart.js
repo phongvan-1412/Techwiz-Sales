@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-// import { connect } from "react-redux";
-// import PropTypes from "prop-types";
 import CartItem from "./CartItem";
-// import PayPal from "../../pages/Payment/PayPal";
+import PayPal from "../../pages/Payment/PayPal";
 import { submitCart } from "../../../redux/actions/cartAction";
 import { useDispatch } from "react-redux";
 
 const Cart = ({ cart, updateCart }) => {
-  // const [checkout, setCheckOut] = useState(false);
+  const [checkout, setCheckOut] = useState(false);
 
   let totalPayment = 0;
   cart.forEach((item) => {
@@ -55,24 +53,19 @@ const Cart = ({ cart, updateCart }) => {
             <div className="col-md-6 cart-product-subtotal-title" style={{alignSelf: "center", textAlign:"center"}}>Subtotal</div>
             <div className="col-md-6 cart-product-subtotal-price" style={{alignSelf: "center", textAlign:"center"}}>{totalPayment.toLocaleString()}đ</div>
           </div>
-              {/* {checkout ? (
+              {checkout ? (
+                
                 <PayPal subtotal={totalPayment} />
               ) : (
-                <button
-                  onMouseDown={() => {
-                    setCheckOut(true);
-                  }}
-                  onClick={onClick}
-                >
-                  <Link to="/checkout">PROCEED TO PAYMENT </Link>
-                  <p>Check out</p>
-                </button>
-              )} */}
-              <div className="text-center">
-                <button className="btn-checkout" onClick={onClick}>
-                      PROCEED TO CHECKOUT
-                </button> 
+                <div className="text-center">
+                  <button className="btn-checkout"onMouseDown={() => {
+                      setCheckOut(true);
+                    }}  onClick={onClick}>
+                        PROCEED TO CHECKOUT
+                  </button> 
               </div>
+              )}
+              
                 
         </div>
       </div>
