@@ -74,6 +74,50 @@
     font-size: 2.5em;
     display: none;
 }
+/* ----------QUICK VIEW CART---------- */
+.quick-view-cart{
+    background: white;
+    width: 500px;
+    position: relative;
+    margin-top: 15px;
+    box-shadow: 1px 2px 2px 2px rgba(0,0,0,0.25)
+}
+.quick-view-cart-title{
+    margin-left: 10px
+}
+.quick-view-cart-price{
+    float: right;  
+    margin-top: -40px; 
+    margin-right: 10px 
+}
+.quick-view-cart-items{
+    height: 200px;
+    overflow-y: scroll;
+}
+.quick-view-cart-subtotal-title{
+    margin-left: 10px
+}
+.quick-view-cart-subtotal{
+    float: right; 
+    margin-right: 15px
+}
+.btn-view-cart{
+    background: black;
+    width: 450px;
+    height: 50px;
+    margin-left: 15px;
+    font-size: 20px
+}
+.btn-check-out{
+    background: #007a65;
+    width: 450px;
+    height: 50px;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: white
+}
 
 /* ----------FOOTER---------- */
 .footer-container1{

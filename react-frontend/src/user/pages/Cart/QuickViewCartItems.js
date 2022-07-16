@@ -20,25 +20,18 @@ const QuickViewCartItems = ({ cart, updateCart }) => {
   };
 
   return (
-    <div
-      style={{
-        background: "white",
-        width: "500px",
-        position: "relative",
-        marginTop: "25px",
-      }}
-    >
+    <div className="quick-view-cart">
       <div>
-        <h3 style={{ marginLeft: "10px" }}>
+        <h3 className="quick-view-cart-title">
           <b>YOUR PRODUCT</b>
         </h3>
-        <h3 style={{ float: "right", marginTop: "-40px", marginRight: "10px" }}>
+        <h3 className="quick-view-cart-price">
           <b>PRICE</b>
         </h3>
         <hr />
       </div>
       <div>
-        <div style={{ height: "200px", overflowY: "scroll" }}>
+        <div className="quick-view-cart-items">
           {cart.map((item) => (
             <QuickViewCartItem
               key={item.product_SKU}
@@ -51,13 +44,13 @@ const QuickViewCartItems = ({ cart, updateCart }) => {
       <hr />
       <div>
         <div className="row">
-          <div className="col-6" style={{ marginLeft: "10px" }}>
+          <div className="col-6 quick-view-cart-subtotal-title">
             <h5>
               <b>CART SUBTOTAL: </b>
             </h5>
           </div>
-          <div className="col-4">
-            <h5 style={{ float: "right", marginRight: "15px" }}>
+          <div className="col-4 ">
+            <h5 className="quick-view-cart-subtotal">
               {totalPayment.toLocaleString()}đ
             </h5>
           </div>
@@ -67,15 +60,17 @@ const QuickViewCartItems = ({ cart, updateCart }) => {
       <div className="container">
         <hr />
         <div className="row">
-          <div className="col-12" >
-            <button style={{background:'black',width:'450px', height: "50px",marginLeft:'15px',fontSize:'20px' }}>
-              <Link to="/cart" replace >
+          <div>
+            <button className="col-12 btn-view-cart">
+              <Link to="/cart" replace>
                 View Cart
               </Link>
             </button>
           </div>
-          <div className="col-12" >
-            <button style={{background:'#007a65',width:'450px', height: "50px",marginLeft:'15px',marginTop:'10px',marginBottom:'10px',fontSize:'20px',color:'white' }} onClick={onClick}>Check Out</button>
+          <div className="col-12">
+            <button className="btn-check-out" onClick={onClick}>
+              Check Out
+            </button>
           </div>
         </div>
       </div>
