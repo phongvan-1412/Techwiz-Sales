@@ -65,9 +65,9 @@ class SignupSigninController extends Controller
 
     public function Logout(Request $request){
         
-        dd(CustomerApi::CustomerLoginInfo());
-        // $request->session()->flush();
-        // return redirect()->action([Signupin::class, 'getLoginForm']);
+        // dd(CustomerApi::CustomerLoginInfo());
+        $request->session()->flush();
+        return redirect()->action([Signupin::class, 'getLoginForm']);
     }
 
     public function getSignupform(){
