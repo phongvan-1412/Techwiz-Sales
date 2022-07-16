@@ -45,7 +45,7 @@ class Footer extends Component{
                         <h4>ABOUT US</h4>
                         <div className="latest-blog1">
                             <span>
-                                <Link to="/about" className="meta-facebook"><FaFacebook />about us</Link>
+                                <Link to="/about" className="meta-facebook"><FaFacebook /> About Us</Link>
                                 <br />
                                 <span id="blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, est labore deleniti eligendi officiis facere.</span> 
                                 <br />
@@ -58,7 +58,7 @@ class Footer extends Component{
 
                         <div className="latest-blog2">
                             <span>
-                                <Link to="/term-and-policy" className="meta-facebook"><FaFacebook />Term and Policy</Link>
+                                <Link to="/term-and-policy" className="meta-facebook"><FaFacebook /> Term and Policy</Link>
                                 <br />
                                 <span id="blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, est labore deleniti eligendi officiis facere.</span> 
                                 <br />

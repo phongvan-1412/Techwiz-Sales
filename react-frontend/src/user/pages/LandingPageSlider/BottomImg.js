@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 class BottomImg extends Component {
   render() {
     return (
-      <div className="row panel-bottom">
-          <div className="row page-content ">
+      <div className="row  landingpage-slider panel-bottom">
+          <div className="row page-content  ">
             <div className="col-md-4 bottom-col-1">
               <Link to="/"><img
-                  className="page-content row-panel-bottom-img"
+                  className="page-content row-panel-bottom-img-col-1 img1"
                   src={require(`../../img/LandingPage/1.jpg`)}/>
               </Link>
             </div>
@@ -16,15 +16,15 @@ class BottomImg extends Component {
             <div className="col-md-4 bottom-col-2">
               <div className="row">
 
-                <div className="col-md-12">
+                <div className="col-md-12" style={{padding: "0px", margin: "0px"}}>
                   <Link to="/"><img
-                    className="page-content row-panel-bottom-img-col2 img1"
+                    className="page-content row-panel-bottom-img-col2 img2"
                     src={require(`../../img/LandingPage/2.jpg`)}/>
                   </Link>
                 </div>
-                <div className="col-md-12" style={{marginBottom:'0px',paddingBottom:'0px'}}>
+                <div className="col-md-12" style={{padding: "0px", margin: "0px"}}>
                   <Link to="/"><img
-                    className="page-content row-panel-bottom-img-col2 img2"
+                    className="page-content row-panel-bottom-img-col2 img3"
                     src={require(`../../img/LandingPage/3.png`)}/>
                   </Link>
                 </div>

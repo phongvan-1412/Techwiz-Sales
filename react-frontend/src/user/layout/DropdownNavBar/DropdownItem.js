@@ -14,25 +14,23 @@ const DropdownItem = ({ category_name, categories }) => {
     dispatch(getCategoriesByRoot(event.target.name));
   };
   return (
-    <div>
-      <div className="category-top"></div>
-      <div className="row">
-        {cates.map((cate) => {
-          return (
-            <div className="col-12" key={cate.category_id}>
-              <Link
-                style={{ cursor: "pointer", color: "black" }}
-                key={cate.category_id}
-                to={`/${cate.category_root_name}/${cate.category_name}`}
-                name={cate.category_name}
-                onClick={onClick}
-              >
-                {cate.category_name.replace("-", " ")}
-              </Link>
-            </div>
-          );
-        })}
-      </div>
+    <div className="row submenu-subname" >
+      {cates.map((cate) => {
+        return (
+          <div className="col-12" key={cate.category_id}>
+            <Link
+              style={{ cursor: "pointer", color: "black" }}
+              key={cate.category_id}
+              to={`/${cate.category_root_name}/${cate.category_name}`}
+              name={cate.category_name}
+              onClick={onClick}
+              className="submenu-subname-name"
+            >
+              {cate.category_name.replace("-", " ")}
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 };

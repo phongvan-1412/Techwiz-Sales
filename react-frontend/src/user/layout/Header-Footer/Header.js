@@ -62,15 +62,15 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
             className="product"
             onMouseEnter={() => setDrop(true)}
             onMouseLeave={() => setDrop(false)}
-            style={{ height: "100px" }}
-          >
-            <p style={{ marginTop: "30px" }}>Product</p>
-            {drop && (
-              <Dropdown
-                categoriesRoot={categoriesRoot}
-                categories={categories}
-              />
-            )}
+          >Product
+            <span>
+              {drop && (
+                <Dropdown
+                  categoriesRoot={categoriesRoot}
+                  categories={categories}
+                />
+              )}
+            </span>
           </Link>
 
           {/* <Link to="/shipping" replace className="shipping">
@@ -101,20 +101,24 @@ function Header({ cart, categories, categoriesRoot, updateCart, customer }) {
             <FaTwitter />
           </Link>
           
-          <Link to="#"
-            className="nav-bag"
-            style={{ height: "100px", marginTop: "50px" }}
-            onMouseEnter={() => setCartMini(true)}
-            onMouseLeave={() => setCartMini(false)}
-          >
+          <Link  to="#" className="nav-bag-container">
             <AiOutlineShoppingCart style={{color: "white"}}/>
-            <br />
-            <span className="bag-quantity">
-              {itemsCount} items - {cartTotalPayment.toLocaleString()}đ
-            </span>
-            {cartMini && (
-              <QuickViewCartItems cart={cart} updateCart={updateCart} />
-            )}
+            <div 
+            className="nav-bag-wrapper" 
+            onMouseEnter={() => setCartMini(true)}
+            onMouseLeave={() => setCartMini(false)}>
+              <div className="bag-quantity">
+                <span className="bag-quantity-content">{itemsCount} items - {cartTotalPayment.toLocaleString()}đ</span>
+              </div>
+              <div className="bag-price">
+                <span className="bag-price-content">
+                  {cartMini && (
+                    <QuickViewCartItems cart={cart} updateCart={updateCart} />
+                  )}
+                </span>
+              </div>
+            </div>
+            
           </Link>
         </header>
       </div>

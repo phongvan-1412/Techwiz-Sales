@@ -34,8 +34,7 @@ const LandingPageSlider3 = () => {
   };
   
     return (
-      <div>
-        <div className="slide-title">
+        <div className=" landingpage-slider slide-title">
           <div className="slide-title top-content">
             <h4>
               <b>DRINK</b>
@@ -62,7 +61,6 @@ const LandingPageSlider3 = () => {
             </button>
           </div>
         </div>
-      </div>
     );
   }
 

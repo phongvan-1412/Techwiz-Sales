@@ -28,7 +28,7 @@ class TopSlider extends Component {
       fade: true,
     };
     return (
-      <div className="row page-content-panel">
+      <div className="row page-content-panel landingpage-slider">
         <div>
           <button
             type="button"

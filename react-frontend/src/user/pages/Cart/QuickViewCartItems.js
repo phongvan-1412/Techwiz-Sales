@@ -21,8 +21,8 @@ const QuickViewCartItems = ({ cart, updateCart }) => {
 
   return (
     <div className="quick-view-cart">
-      <div>
-        <h3 className="quick-view-cart-title">
+      <div className="quick-view-cart-title-wrapper">
+        <h3 className="quick-view-cart-headtext">
           <b>YOUR PRODUCT</b>
         </h3>
         <h3 className="quick-view-cart-price">
@@ -43,7 +43,7 @@ const QuickViewCartItems = ({ cart, updateCart }) => {
       </div>
       <hr />
       <div>
-        <div className="row">
+        <div className="row quick-view-cart-subtotal-wrapper">
           <div className="col-6 quick-view-cart-subtotal-title">
             <h5>
               <b>CART SUBTOTAL: </b>

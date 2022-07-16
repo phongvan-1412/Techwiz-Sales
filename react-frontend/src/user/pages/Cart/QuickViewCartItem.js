@@ -77,7 +77,7 @@ class QuickViewCartItem extends Component {
             </div>
             <div className="col-4">
               <div
-                style={{ marginTop: "50px", fontSize: "20px", color: "green" }}
+                style={{ marginTop: "50px", fontSize: "20px", color: "#007a65" }}
               >
                 {(
                   product.product_price_per_unit * product.product_quantity

@@ -15,42 +15,36 @@ const Dropdown = ({ categoriesRoot, categories }) => {
     dispatch(getCategoriesByRoot(event.target.name));
   };
   return (
-    <div>
-      <div className="services-submenu-top"></div>
-      <div>
-        <ul className="services-submenu" style={{}}>
-          <div className="container">
-            <div className="row">
-              {categoriesRoot.map((category) => {
-                return (
-                  <div className="col-3" key={category.category_id}>
-                    <div className="row">
-                      <div className="col-12 " key={category.category_id}>
-                        <Link
-                          className="submenu-name"
-                          to={category.category_name}
-                          name={category.category_name}
-                          style={{}}
-                          onClick={onClick}
-                        >
-                          {category.category_name.replace("-", " ")}
-                        </Link>
-                      </div>
-                      <div className="col-12">
-                        <DropdownItem
-                          categories={categories}
-                          category_name={category.category_name}
-                        />
-                      </div>
-                    </div>
+    <ul className="services-submenu" >
+      <div className="container">
+        <div className="row">
+          {categoriesRoot.map((category) => {
+            return (
+              <div className="col-3" key={category.category_id}>
+                <div className="row submenu-name-wrapper">
+                  <div className="col-12 " key={category.category_id}>
+                    <Link
+                      className="submenu-name"
+                      to={category.category_name}
+                      name={category.category_name}
+                      onClick={onClick}
+                    >
+                      {category.category_name.replace("-", " ")}
+                    </Link>
                   </div>
-                );
-              })}
-            </div>
-          </div>
-        </ul>
+                  <div className="col-12">
+                    <DropdownItem
+                      categories={categories}
+                      category_name={category.category_name}
+                    />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </ul>
   );
 };
 
