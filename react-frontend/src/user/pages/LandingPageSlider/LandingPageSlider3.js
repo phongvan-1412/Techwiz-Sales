@@ -21,7 +21,7 @@ const LandingPageSlider3 = () => {
     ref.current.slickPrev();
   };
 
-  const settings = { dots: false, infinite: false, speed: 500, slidesToShow: 5, slidesToScroll: 1};
+  const settings = { dots: false, infinite: false, speed: 350, slidesToShow: 5, slidesToScroll: 1};
   
   const localProducts = useSelector(productSlideCategorySelector3);
 
