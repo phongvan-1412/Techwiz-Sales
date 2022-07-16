@@ -10,7 +10,7 @@ use App\Models\Customer;
 use Session;
 use Mail;
 use Str;
-
+use App\Http\Controllers\CustomerApi;
 
 class SignupSigninController extends Controller
 {
@@ -56,6 +56,7 @@ class SignupSigninController extends Controller
             Session::put('customer_address',$user->customer_address);
             Session::put('status',$user->status);
             Session::put('token',$user->token);
+            CustomerApi::CustomerLoginInfo($user);
             return redirect('/userprofile');
         }else{
             return redirect()->back()->withInput()->with('msg','Incorrect email or password !');
@@ -63,6 +64,7 @@ class SignupSigninController extends Controller
     }
 
     public function Logout(Request $request){
+        CustomerApi::CustomerLoginInfo();
         $request->session()->flush();
         return redirect()->action([Signupin::class, 'getLoginForm']);
     }
